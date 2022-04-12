@@ -34,6 +34,11 @@ public class Login extends AppCompatActivity {
         startActivity(signup);
     }
 
+    public void onLoginButtonClicked(View caller){
+        Intent signup = new Intent(this, SignUpScreen.class);
+        startActivity(signup);
+    }
+
     public void onDebugClicked(View caller){
         Intent debug = new Intent(this, Categories.class);
         startActivity(debug);
