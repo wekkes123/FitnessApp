@@ -11,6 +11,7 @@
         android:layout_width="543dp"
         android:layout_height="941dp"
         android:layout_marginTop="-100dp"
+        android:contentDescription="@string/achtergrond"
         android:src="@drawable/samuel_girven_vj2s0c20qco_unsplash"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -67,7 +68,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:text="Login"
+        android:text="@string/login"
         app:layout_constraintStart_toStartOf="@+id/LoginPassword"
         app:layout_constraintTop_toBottomOf="@+id/LoginPassword" />
 
@@ -76,7 +77,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:text="Sign Up"
+        android:text="@string/sign_up"
         app:layout_constraintEnd_toEndOf="@+id/LoginPassword"
         app:layout_constraintTop_toBottomOf="@+id/LoginPassword" />
 

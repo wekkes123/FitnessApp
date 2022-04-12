@@ -14,6 +14,7 @@ public class Login extends AppCompatActivity {
 
     private TextView LoginText;
     private Button LoginButton;
+    private Button SignUpButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,9 +26,11 @@ public class Login extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         //end
         setContentView(R.layout.activity_main);
+        SignUpButton = (Button) findViewById(R.id.SignUpButton);
     }
 
-    public void signUpButton_Clicked(View caller){
-        Intent signup = new intent(this, )
+    public void onSignUpButton_Clicked(View caller){
+        Intent signup = new Intent(this, SignUpScreen.class);
+        startActivity(signup);
     }
 }
