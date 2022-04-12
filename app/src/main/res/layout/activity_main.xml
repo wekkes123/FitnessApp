@@ -11,10 +11,10 @@
         android:layout_width="543dp"
         android:layout_height="941dp"
         android:layout_marginTop="-100dp"
-        android:contentDescription="@string/achtergrond"
         android:src="@drawable/samuel_girven_vj2s0c20qco_unsplash"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/todo" />
 
     <TextView
         android:id="@+id/LoginText"
@@ -67,18 +67,29 @@
         android:id="@+id/LoginButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="28dp"
         android:text="@string/login"
-        app:layout_constraintStart_toStartOf="@+id/LoginPassword"
+        app:layout_constraintEnd_toStartOf="@+id/SignUpButton"
         app:layout_constraintTop_toBottomOf="@+id/LoginPassword" />
 
     <Button
         android:id="@+id/SignUpButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="100dp"
         android:text="@string/sign_up"
-        app:layout_constraintEnd_toEndOf="@+id/LoginPassword"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/LoginPassword" />
+
+    <Button
+        android:id="@+id/debug"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onDebugClicked"
+        android:text="debug"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="16dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
