@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FitnessApp">
         <activity
+            android:name=".Cardio"
+            android:exported="false" />
+        <activity
             android:name=".Categories"
             android:exported="false" />
         <activity
