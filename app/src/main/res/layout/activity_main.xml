@@ -7,22 +7,24 @@
     tools:context=".Login">
 
     <TextView
+        android:id="@+id/LoginText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="120dp"
-        android:text="Hello World!"
+        android:text="@string/fitness_buddy"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/LoginLogo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="-220dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:src="@tools:sample/backgrounds/scenic" />
+        tools:src="@tools:sample/backgrounds/scenic"
+        android:contentDescription="@string/todo" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
