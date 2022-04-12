@@ -13,8 +13,7 @@
         android:layout_marginTop="-100dp"
         android:src="@drawable/samuel_girven_vj2s0c20qco_unsplash"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:contentDescription="@string/todo" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/LoginText"
@@ -79,6 +78,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="100dp"
+        android:onClick="onSignUpButtonClicked"
         android:text="@string/sign_up"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/LoginPassword" />
@@ -88,7 +88,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="onDebugClicked"
-        android:text="debug"
+        android:text="@string/debug"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
