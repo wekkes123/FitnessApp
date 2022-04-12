@@ -1,6 +1,8 @@
 package be.kuleuven.fitnessapp;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.TextView;
@@ -23,6 +25,9 @@ public class Login extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         //end
         setContentView(R.layout.activity_main);
+    }
 
+    public void signUpButton_Clicked(View caller){
+        Intent signup = new intent(this, )
     }
 }
