@@ -7,4 +7,10 @@
     <string name="sign_up">Sign Up</string>
     <string name="login">Login</string>
     <string name="achtergrond">Achtergrond</string>
+    <string name="choose">Choose</string>
+    <string name="cardio">Cardio</string>
+    <string name="heavy_lifting">Heavy Lifting</string>
+    <string name="calisthetics">Calisthetics</string>
+    <string name="endurance">Endurance</string>
+    <string name="streches">Stretches</string>
 </resources>
