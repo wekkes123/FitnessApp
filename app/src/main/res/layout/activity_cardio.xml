@@ -6,4 +6,33 @@
     android:layout_height="match_parent"
     tools:context=".Cardio">
 
+    <TextView
+        android:id="@+id/the_1st_title"
+        android:layout_width="124dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="92dp"
+        android:layout_marginTop="16dp"
+        android:text="Cardio"
+        android:textSize="34sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/the_2nd_title"
+        android:layout_width="277dp"
+        android:layout_height="118dp"
+        android:text="Info about cardio"
+        android:textSize="34sp"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="146dp" />
+
+    <Button
+        android:id="@+id/backButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="300dp"
+        android:layout_marginTop="664dp"
+        android:text="back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
