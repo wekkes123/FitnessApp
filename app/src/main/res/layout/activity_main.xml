@@ -32,14 +32,14 @@
         android:id="@+id/LoginUsername"
         android:layout_width="210dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="16dp"
         android:ems="10"
         android:hint="@string/username"
         android:importantForAutofill="no"
         android:inputType="textPersonName"
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/LoginFoto"
         tools:ignore="TextContrastCheck" />
@@ -60,15 +60,24 @@
         app:layout_constraintTop_toBottomOf="@+id/LoginUsername"
         tools:ignore="TextContrastCheck" />
 
-    <TextView
-        android:id="@+id/LoginHereText"
+    <Button
+        android:id="@+id/LoginButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="28dp"
         android:text="Login"
-        android:textSize="25sp"
+        app:layout_constraintEnd_toStartOf="@+id/SignUpButton"
+        app:layout_constraintTop_toBottomOf="@+id/LoginPassword" />
+
+    <Button
+        android:id="@+id/SignUpButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="100dp"
+        android:text="Sign Up"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/LoginFoto" />
+        app:layout_constraintTop_toBottomOf="@+id/LoginPassword" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
