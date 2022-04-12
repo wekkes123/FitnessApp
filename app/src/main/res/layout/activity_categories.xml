@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
-        android:text="heavy lifting"
+        android:text="@string/heavy_lifting"
         app:layout_constraintBottom_toTopOf="@+id/third_exercise"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/first_exercise" />
@@ -21,7 +21,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
-        android:text="Cardio"
+        android:onClick="onCardioClicked"
+        android:text="@string/cardio"
         app:layout_constraintBottom_toTopOf="@+id/second_exercise"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
@@ -32,7 +33,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
-        android:text="Endurance"
+        android:text="@string/endurance"
         app:layout_constraintBottom_toTopOf="@+id/fifth_exercise"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/third_exercise" />
@@ -42,7 +43,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
-        android:text="streches"
+        android:text="@string/streches"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/fourth_exercise" />
@@ -52,7 +53,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
-        android:text="Calisthetics"
+        android:text="@string/calisthetics"
         app:layout_constraintBottom_toTopOf="@+id/fourth_exercise"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/second_exercise" />
@@ -63,7 +64,7 @@
         android:layout_height="55dp"
         android:layout_marginStart="68dp"
         android:layout_marginTop="4dp"
-        android:text="         Choose"
+        android:text="@string/choose"
         android:textSize="34sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

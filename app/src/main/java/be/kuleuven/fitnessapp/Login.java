@@ -1,6 +1,8 @@
 package be.kuleuven.fitnessapp;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.TextView;
@@ -16,7 +18,7 @@ public class Login extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //zorcht voor fullscreen
+        //zorgt voor fullscreen
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getSupportActionBar().hide();
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
@@ -24,5 +26,10 @@ public class Login extends AppCompatActivity {
         //end
         setContentView(R.layout.activity_main);
 
+    }
+
+    public void onDebugClicked(View caller){
+        Intent debug = new Intent(this, Categories.class);
+        startActivity(debug);
     }
 }
