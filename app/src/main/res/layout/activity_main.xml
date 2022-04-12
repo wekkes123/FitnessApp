@@ -8,20 +8,20 @@
 
     <ImageView
         android:id="@+id/LoginFoto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="-50dp"
-        android:contentDescription="@string/logo"
-        android:src="@drawable/grass"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="543dp"
+        android:layout_height="941dp"
+        android:layout_marginTop="-100dp"
+        android:src="@drawable/samuel_girven_vj2s0c20qco_unsplash"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
+        android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="103dp"
         android:text="@string/fitness_buddy"
+        android:textColor="#0B38D6"
         android:textSize="32sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -32,16 +32,17 @@
         android:id="@+id/LoginUsername"
         android:layout_width="210dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="250dp"
         android:ems="10"
         android:hint="@string/username"
         android:importantForAutofill="no"
         android:inputType="textPersonName"
         android:minHeight="48dp"
+        android:textColorHint="#000000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/LoginFoto"
+        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="TextContrastCheck" />
 
     <EditText
@@ -54,6 +55,7 @@
         android:importantForAutofill="no"
         android:inputType="textPassword"
         android:minHeight="48dp"
+        android:textColorHint="#000000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"

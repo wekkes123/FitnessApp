@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">FitnessApp</string>
-    <string name="fitness_buddy">Fitness Buddy</string>
-    <string name="username">Username</string>
-    <string name="password">Password</string>
+    <string name="fitness_buddy"><b>Fitness Buddy</b></string>
+    <string name="username"><b>Username</b></string>
+    <string name="password"><b>Password</b></string>
     <string name="logo">logo</string>
 </resources>
