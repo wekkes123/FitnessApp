@@ -1,5 +1,7 @@
 package be.kuleuven.fitnessapp;
 
+//...
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
