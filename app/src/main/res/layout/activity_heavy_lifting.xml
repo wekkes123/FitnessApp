@@ -4,30 +4,32 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Cardio">
+    tools:context=".Heavy_Lifting">
 
     <TextView
-        android:id="@+id/the_1st_title"
-        android:layout_width="124dp"
-        android:layout_height="75dp"
-        android:layout_marginStart="92dp"
-        android:layout_marginTop="16dp"
-        android:text="Cardio"
+        android:id="@+id/more_info_cardio"
+        android:layout_width="222dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="76dp"
+        android:layout_marginTop="4dp"
+        android:text="heavy lifting"
         android:textSize="34sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/more_info_cardio"
+        android:id="@+id/More_info_lifting"
         android:layout_width="277dp"
         android:layout_height="118dp"
-        android:text="Info about cardio"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="80dp"
+        android:text="Info about lifting"
         android:textSize="34sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/the_1st_title" />
+        app:layout_constraintTop_toBottomOf="@+id/more_info_cardio" />
 
     <Button
-        android:id="@+id/backButton"
+        android:id="@+id/backButton2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="300dp"
@@ -35,4 +37,5 @@
         android:text="back"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

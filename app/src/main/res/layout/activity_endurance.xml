@@ -4,30 +4,32 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Cardio">
+    tools:context=".Endurance">
 
     <TextView
-        android:id="@+id/the_1st_title"
-        android:layout_width="124dp"
-        android:layout_height="75dp"
+        android:id="@+id/the_4th_title"
+        android:layout_width="232dp"
+        android:layout_height="58dp"
         android:layout_marginStart="92dp"
         android:layout_marginTop="16dp"
-        android:text="Cardio"
+        android:text="Endurance"
         android:textSize="34sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/more_info_cardio"
+        android:id="@+id/more_info_endurance"
         android:layout_width="277dp"
         android:layout_height="118dp"
-        android:text="Info about cardio"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="84dp"
+        android:text="Info about endurance"
         android:textSize="34sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/the_1st_title" />
+        app:layout_constraintTop_toBottomOf="@+id/the_4th_title" />
 
     <Button
-        android:id="@+id/backButton"
+        android:id="@+id/backButton4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="300dp"
