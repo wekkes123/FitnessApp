@@ -25,7 +25,10 @@ public class Login extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         //end
         setContentView(R.layout.activity_main);
+    }
 
+    public void signUpButton_Clicked(View caller){
+        Intent signup = new intent(this, )
     }
 
     public void onDebugClicked(View caller){

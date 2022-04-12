@@ -17,12 +17,12 @@
         android:contentDescription="@string/todo" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/LoginText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="103dp"
         android:text="@string/fitness_buddy"
-        android:textColor="#0B38D6"
+        android:textColor="#3F51B5"
         android:textSize="32sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
