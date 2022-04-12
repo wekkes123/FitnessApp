@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Cardio">
+    tools:context=".Calisthetics">
 
     <TextView
-        android:id="@+id/the_1st_title"
+        android:id="@+id/the_3rd_title"
         android:layout_width="124dp"
         android:layout_height="75dp"
         android:layout_marginStart="92dp"
@@ -18,16 +18,18 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/more_info_cardio"
+        android:id="@+id/more_info_calesthetics"
         android:layout_width="277dp"
         android:layout_height="118dp"
-        android:text="Info about cardio"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="56dp"
+        android:text="Info about calesthetics"
         android:textSize="34sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/the_1st_title" />
+        app:layout_constraintTop_toBottomOf="@+id/the_3rd_title" />
 
     <Button
-        android:id="@+id/backButton"
+        android:id="@+id/backButton3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="300dp"
@@ -35,4 +37,5 @@
         android:text="back"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
