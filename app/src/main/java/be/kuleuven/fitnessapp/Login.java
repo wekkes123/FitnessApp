@@ -27,9 +27,6 @@ public class Login extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public void signUpButton_Clicked(View caller){
-        Intent signup = new intent(this, )
-    }
 
     public void onDebugClicked(View caller){
         Intent debug = new Intent(this, Categories.class);

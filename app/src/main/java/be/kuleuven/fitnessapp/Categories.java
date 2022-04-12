@@ -32,7 +32,27 @@ public class Categories extends AppCompatActivity {
     }
 
     public void onCardioClicked(View caller){
-    Intent intent = new Intent(this, Cardio.class);
-    startActivity(intent);
+    Intent cardioChosen = new Intent(this, Cardio.class);
+    startActivity(cardioChosen);
+    }
+
+    public void onHeavyLiftingClicked(View caller){
+        Intent HeavyLiftChosen = new Intent(this, Heavy_Lifting.class);
+        startActivity(HeavyLiftChosen);
+    }
+
+    public void onCalistheticsClicked(View caller){
+        Intent CaliChosen = new Intent(this, Calisthetics.class);
+        startActivity(CaliChosen);
+    }
+
+    public void onEnduranceClicked(View caller){
+        Intent EndurChosen = new Intent(this, Endurance.class);
+        startActivity(EndurChosen);
+    }
+
+    public void onStretchesClicked(View caller){
+        Intent StretchChosen = new Intent(this, Stretches.class);
+        startActivity(StretchChosen);
     }
 }
