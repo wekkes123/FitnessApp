@@ -19,7 +19,7 @@ public class Login extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //zorcht voor fullscreen
+        //zorgt voor fullscreen
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getSupportActionBar().hide();
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
@@ -32,5 +32,10 @@ public class Login extends AppCompatActivity {
     public void onSignUpButton_Clicked(View caller){
         Intent signup = new Intent(this, SignUpScreen.class);
         startActivity(signup);
+    }
+
+    public void onDebugClicked(View caller){
+        Intent debug = new Intent(this, Categories.class);
+        startActivity(debug);
     }
 }
