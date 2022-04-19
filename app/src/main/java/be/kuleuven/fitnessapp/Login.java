@@ -29,7 +29,12 @@ public class Login extends AppCompatActivity {
         SignUpButton = (Button) findViewById(R.id.SignUpButton);
     }
 
-    public void onSignUpButton_Clicked(View caller){
+    public void onSignUpButtonClicked(View caller){
+        Intent signup = new Intent(this, SignUpScreen.class);
+        startActivity(signup);
+    }
+
+    public void onLoginButtonClicked(View caller){
         Intent signup = new Intent(this, SignUpScreen.class);
         startActivity(signup);
     }

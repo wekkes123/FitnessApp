@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:onClick="onSignUpButton_Clicked"
+    android:onClick="onSignUpButtonClicked"
     tools:context=".Login">
 
     <ImageView
@@ -12,6 +12,7 @@
         android:layout_width="543dp"
         android:layout_height="941dp"
         android:layout_marginTop="-100dp"
+        android:contentDescription="@string/niks"
         android:src="@drawable/samuel_girven_vj2s0c20qco_unsplash"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -68,9 +69,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="28dp"
+        android:onClick="onLoginButtonClicked"
         android:text="@string/login"
-        app:layout_constraintEnd_toStartOf="@+id/SignUpButton"
+        app:layout_constraintStart_toStartOf="@+id/LoginPassword"
         app:layout_constraintTop_toBottomOf="@+id/LoginPassword" />
 
     <Button
@@ -78,9 +79,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="100dp"
+        android:onClick="onSignUpButtonClicked"
         android:text="@string/sign_up"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/LoginPassword"
         app:layout_constraintTop_toBottomOf="@+id/LoginPassword" />
 
     <Button
