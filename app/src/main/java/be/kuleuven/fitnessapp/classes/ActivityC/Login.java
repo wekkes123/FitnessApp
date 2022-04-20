@@ -7,12 +7,9 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.TextView;
 import android.widget.Button;
-
 import androidx.appcompat.app.AppCompatActivity;
-
-import com.google.common.hash.Hashing;
-
 import java.nio.charset.StandardCharsets;
+import com.google.common.hash.Hashing;
 
 import be.kuleuven.fitnessapp.R;
 
@@ -54,6 +51,4 @@ public class Login extends AppCompatActivity {
         System.out.println(sha256hex);
         return sha256hex;
     }
-
-
 }

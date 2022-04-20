@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
-
 import be.kuleuven.fitnessapp.R;
 
 public class SignUpScreen extends AppCompatActivity {
