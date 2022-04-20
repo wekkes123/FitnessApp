@@ -10,6 +10,11 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.common.hash.Hashing;
+
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
+
 public class Login extends AppCompatActivity {
 
     private TextView LoginText;
@@ -35,12 +40,19 @@ public class Login extends AppCompatActivity {
     }
 
     public void onLoginButtonClicked(View caller){
-        Intent signup = new Intent(this, SignUpScreen.class);
-        startActivity(signup);
+        encryptPassword("yo");
     }
 
     public void onDebugClicked(View caller){
         Intent debug = new Intent(this, Categories.class);
         startActivity(debug);
     }
+
+    public String encryptPassword(String pw){
+        String sha256hex = Hashing.sha256().hashString(pw, StandardCharsets.UTF_8).toString();
+        System.out.println(sha256hex);
+        return sha256hex;
+    }
+
+
 }
