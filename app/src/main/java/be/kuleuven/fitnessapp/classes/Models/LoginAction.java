@@ -30,13 +30,16 @@ public class LoginAction {
     private String Password;
     private Context LoginContext;
     private RequestQueue requestqueue;
+    private boolean LoginInDB;
 
 
     public LoginAction(String username, String password, Context context){
+        System.out.println("2");
         Username = username;
-        Password = encryptPassword(password);
+        //Password = encryptPassword(password);
+        Password = password;
         LoginContext = context;
-        requestLogin();
+        LoginInDB = false;
     }
 
     public String encryptPassword(String pw){
@@ -45,10 +48,11 @@ public class LoginAction {
         return sha256hex;
     }
 
-    public boolean checkLoginInfo(){
-        return false;
+    public interface LoginCallBack{
+        void onSucces();
     }
-    public void requestLogin(){
+
+    public void requestLogin(final LoginCallBack callBack){
         RequestQueue requestqueue = Volley.newRequestQueue(LoginContext);
         String requestURL = "https://studev.groept.be/api/a21pt213/SelectAll";
 
@@ -59,13 +63,15 @@ public class LoginAction {
                     public void onResponse(String response) {
                         try {
                             JSONArray responseArray = new JSONArray(response);
-                            ArrayList<String> data = new ArrayList<String>();
                             for(int i = 0; i < responseArray.length(); i++){
                                 JSONObject curObject = responseArray.getJSONObject(i);
-                                data.add(curObject.getString("Username"));
-                                data.add(curObject.getString("Password"));
+                                if(curObject.getString("Username").equals(Username) && curObject.getString("Password").equals(Password)){
+                                    System.out.println("true");
+                                    callBack.onSucces();
+                                    return;
+                                }
                             }
-                            System.out.println(data.get(0) + data.get(1) + data.get(2) + data.get(3));
+
                         }
                         catch( JSONException e ){
                             //display error message
@@ -80,8 +86,7 @@ public class LoginAction {
                     }
                 }
         );
-
         requestqueue.add(submitRequest);
-    }
 
+    }
 }

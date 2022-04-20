@@ -56,14 +56,19 @@ public class Login extends AppCompatActivity {
 
     public void onLoginButtonClicked(View caller){
         LoginAction logindata = new LoginAction(Username.getText().toString(), Password.getText().toString(), this);
-        if(logindata.checkLoginInfo()){
-            Intent intent = new Intent(this, Categories.class);
-            startActivity(intent);
-        }
-        else{
+        logindata.requestLogin(new LoginAction.LoginCallBack() {
+            @Override
+            public void onSucces() {
+                System.out.println("yep");
+                Loginuccesfull();
+            }
+        });
+    }
 
-        }
 
+    public void Loginuccesfull(){
+        Intent intent = new Intent(this, Categories.class);
+        startActivity(intent);
     }
 
     public void onDebugClicked(View caller){
