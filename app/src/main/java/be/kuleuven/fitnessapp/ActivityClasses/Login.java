@@ -1,4 +1,4 @@
-package be.kuleuven.fitnessapp;
+package be.kuleuven.fitnessapp.ActivityClasses;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,7 +13,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.common.hash.Hashing;
 
 import java.nio.charset.StandardCharsets;
-import java.security.MessageDigest;
+
+import be.kuleuven.fitnessapp.R;
 
 public class Login extends AppCompatActivity {
 
