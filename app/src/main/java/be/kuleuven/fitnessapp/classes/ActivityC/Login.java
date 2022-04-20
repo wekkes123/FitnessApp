@@ -5,17 +5,24 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Button;
+
 import androidx.appcompat.app.AppCompatActivity;
-import java.nio.charset.StandardCharsets;
+
 import com.google.common.hash.Hashing;
 
+import java.nio.charset.StandardCharsets;
+
 import be.kuleuven.fitnessapp.R;
+import be.kuleuven.fitnessapp.classes.Models.LoginAction;
 
 public class Login extends AppCompatActivity {
 
     private TextView LoginText;
+    private EditText Username;
+    private EditText Password;
     private Button LoginButton;
     private Button SignUpButton;
 
@@ -30,6 +37,10 @@ public class Login extends AppCompatActivity {
         //end
         setContentView(R.layout.activity_main);
         SignUpButton = (Button) findViewById(R.id.SignUpButton);
+        LoginButton = (Button) findViewById(R.id.LoginButton);
+        Username = (EditText) findViewById(R.id.LoginUsername);
+        Password = (EditText) findViewById(R.id.LoginPassword);
+
     }
 
     public void onSignUpButtonClicked(View caller){
@@ -38,7 +49,10 @@ public class Login extends AppCompatActivity {
     }
 
     public void onLoginButtonClicked(View caller){
-        encryptPassword("yo");
+
+        LoginAction logindata = new LoginAction(Username.getText().toString(), Password.getText().toString());
+        Intent intent = new Intent(this, Categories.class);
+        startActivity(intent);
     }
 
     public void onDebugClicked(View caller){
@@ -46,9 +60,5 @@ public class Login extends AppCompatActivity {
         startActivity(debug);
     }
 
-    public String encryptPassword(String pw){
-        String sha256hex = Hashing.sha256().hashString(pw, StandardCharsets.UTF_8).toString();
-        System.out.println(sha256hex);
-        return sha256hex;
-    }
+
 }
