@@ -28,6 +28,7 @@ public class Categories extends AppCompatActivity {
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         //end
+
         setContentView(R.layout.activity_categories);
         Cardio = (Button) findViewById(R.id.first_exercise);
         Heavy_lifting = (Button) findViewById(R.id.second_exercise);

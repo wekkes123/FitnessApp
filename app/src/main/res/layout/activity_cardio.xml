@@ -19,10 +19,12 @@
 
     <TextView
         android:id="@+id/more_info_cardio"
-        android:layout_width="277dp"
-        android:layout_height="118dp"
-        android:text="Info about cardio"
-        android:textSize="34sp"
+        android:layout_width="354dp"
+        android:layout_height="143dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:text="What is a cardio? Cardio is a form of training in which you train a (part of) your body and then mainly the cardiovascular system (heart and circulatory system) by means of (intensive) exercise or sport."
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/the_1st_title" />
 
@@ -35,4 +37,34 @@
         android:text="back"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/first_common_exercise_cardio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="328dp"
+        android:text="Running"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/second_common_exercise_cardio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="32dp"
+        android:text="swimming"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/first_common_exercise_cardio" />
+
+    <Button
+        android:id="@+id/third_common_exercise_cardio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="40dp"
+        android:text="biking"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/second_common_exercise_cardio" />
 </androidx.constraintlayout.widget.ConstraintLayout>
