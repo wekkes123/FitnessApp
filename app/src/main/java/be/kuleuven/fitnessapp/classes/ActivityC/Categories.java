@@ -1,4 +1,4 @@
-package be.kuleuven.fitnessapp.ActivityClasses;
+package be.kuleuven.fitnessapp.classes.ActivityC;
 
 import androidx.appcompat.app.AppCompatActivity;
 

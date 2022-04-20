@@ -1,4 +1,4 @@
-package be.kuleuven.fitnessapp.ActivityClasses;
+package be.kuleuven.fitnessapp.classes.ActivityC;
 
 import android.content.Intent;
 import android.os.Bundle;

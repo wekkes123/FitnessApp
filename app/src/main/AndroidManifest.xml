@@ -10,28 +10,28 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FitnessApp">
         <activity
-            android:name=".ActivityClasses.SignUpScreen"
+            android:name=".classes.ActivityC.SignUpScreen"
             android:exported="false" />
         <activity
-            android:name=".ActivityClasses.Stretches"
+            android:name=".classes.ActivityC.Stretches"
             android:exported="false" />
         <activity
-            android:name=".ActivityClasses.Endurance"
+            android:name=".classes.ActivityC.Endurance"
             android:exported="false" />
         <activity
-            android:name=".ActivityClasses.Calisthetics"
+            android:name=".classes.ActivityC.Calisthetics"
             android:exported="false" />
         <activity
-            android:name=".ActivityClasses.Heavy_Lifting"
+            android:name=".classes.ActivityC.Heavy_Lifting"
             android:exported="false" />
         <activity
-            android:name=".ActivityClasses.Cardio"
+            android:name=".classes.ActivityC.Cardio"
             android:exported="false" />
         <activity
-            android:name=".ActivityClasses.Categories"
+            android:name=".classes.ActivityC.Categories"
             android:exported="false" />
         <activity
-            android:name=".ActivityClasses.Login"
+            android:name=".classes.ActivityC.Login"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

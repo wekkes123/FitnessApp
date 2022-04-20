@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ActivityClasses.Heavy_Lifting">
+    tools:context=".classes.ActivityC.Heavy_Lifting">
 
     <TextView
         android:id="@+id/more_info_cardio"
