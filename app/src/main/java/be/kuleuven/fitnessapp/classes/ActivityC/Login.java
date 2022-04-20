@@ -55,9 +55,7 @@ public class Login extends AppCompatActivity {
     }
 
     public void onLoginButtonClicked(View caller){
-        //nog niet klaar
-        requestLogin();
-        LoginAction logindata = new LoginAction(Username.getText().toString(), Password.getText().toString());
+        LoginAction logindata = new LoginAction(Username.getText().toString(), Password.getText().toString(), this);
         if(logindata.checkLoginInfo()){
             Intent intent = new Intent(this, Categories.class);
             startActivity(intent);
@@ -71,30 +69,6 @@ public class Login extends AppCompatActivity {
     public void onDebugClicked(View caller){
         Intent debug = new Intent(this, Categories.class);
         startActivity(debug);
-    }
-
-    public void requestLogin(){
-        RequestQueue requestqueue = Volley.newRequestQueue(this);
-        String requestURL = "https://studev.groept.be/api/a21pt213/SelectAll";
-
-        StringRequest submitRequest = new StringRequest(Request.Method.GET, requestURL,
-
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        System.out.print(response);
-                    }
-                },
-
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        System.out.print("error");
-                    }
-                }
-        );
-
-        requestqueue.add(submitRequest);
     }
 
 }
