@@ -8,34 +8,29 @@
 
     <TextView
         android:id="@+id/the_3rd_title"
-        android:layout_width="124dp"
-        android:layout_height="75dp"
-        android:layout_marginStart="92dp"
-        android:layout_marginTop="16dp"
-        android:text="Cardio"
-        android:textSize="34sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/more_info_calesthetics"
-        android:layout_width="277dp"
-        android:layout_height="118dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="56dp"
-        android:text="Info about calesthetics"
-        android:textSize="34sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/the_3rd_title" />
-
-    <Button
-        android:id="@+id/backButton3"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="300dp"
-        android:layout_marginTop="664dp"
-        android:text="back"
+        android:layout_marginTop="4dp"
+        android:text="@string/calisthetics"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <ScrollView
+        android:layout_width="411dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="65dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/the_3rd_title">
+
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/niks"></TextView>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
