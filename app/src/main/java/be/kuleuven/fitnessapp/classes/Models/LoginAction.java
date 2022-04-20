@@ -66,7 +66,7 @@ public class LoginAction {
                             for(int i = 0; i < responseArray.length(); i++){
                                 JSONObject curObject = responseArray.getJSONObject(i);
                                 if(curObject.getString("Username").equals(Username) && curObject.getString("Password").equals(Password)){
-                                    System.out.println("true");
+                                    //System.out.println("true");
                                     callBack.onSucces();
                                     return;
                                 }
@@ -87,6 +87,5 @@ public class LoginAction {
                 }
         );
         requestqueue.add(submitRequest);
-
     }
 }
