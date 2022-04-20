@@ -8,24 +8,30 @@
 
     <TextView
         android:id="@+id/the_5th_title"
-        android:layout_width="265dp"
-        android:layout_height="49dp"
-        android:layout_marginStart="92dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
         android:text="Stretches"
         android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/more_info_stretches"
-        android:layout_width="277dp"
-        android:layout_height="118dp"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="144dp"
-        android:text="Info about stretches"
-        android:textSize="34sp"
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/the_5th_title" />
+        app:layout_constraintTop_toBottomOf="@+id/the_5th_title">
+
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text = "@string/niks" ></TextView>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
