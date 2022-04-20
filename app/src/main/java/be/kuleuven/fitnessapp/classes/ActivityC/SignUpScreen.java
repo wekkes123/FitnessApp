@@ -5,10 +5,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Button;
+import android.widget.EditText;
 
 import be.kuleuven.fitnessapp.R;
 
 public class SignUpScreen extends AppCompatActivity {
+
+    private EditText Username;
+    private EditText Password;
+    private Button LoginButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,5 +26,6 @@ public class SignUpScreen extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         //end
         setContentView(R.layout.activity_sign_up_screen);
+
     }
 }

@@ -26,6 +26,9 @@ public class LoginAction {
         return sha256hex;
     }
 
+    public boolean checkLoginInfo(){
+        return false;
+    }
 
 
 
