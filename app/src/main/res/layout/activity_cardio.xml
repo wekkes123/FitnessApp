@@ -8,63 +8,31 @@
 
     <TextView
         android:id="@+id/the_1st_title"
-        android:layout_width="124dp"
+        android:layout_width="0dp"
         android:layout_height="75dp"
-        android:layout_marginStart="92dp"
-        android:layout_marginTop="16dp"
-        android:text="Cardio"
+        android:layout_marginTop="4dp"
+        android:text="@string/cardio"
         android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/more_info_cardio"
-        android:layout_width="354dp"
-        android:layout_height="143dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="20dp"
-        android:text="What is a cardio? Cardio is a form of training in which you train a (part of) your body and then mainly the cardiovascular system (heart and circulatory system) by means of (intensive) exercise or sport."
-        android:textSize="16sp"
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/the_1st_title" />
+        app:layout_constraintTop_toBottomOf="@+id/the_1st_title">
 
-    <Button
-        android:id="@+id/backButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="300dp"
-        android:layout_marginTop="664dp"
-        android:text="back"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/first_common_exercise_cardio"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="328dp"
-        android:text="Running"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Running \n \n Running trains endurance and builds muscles.\n Sport can provide the body with the movement it needs. \n There are studies that indicate that exercising has many benefits. \n Running can also help the athlete build mental strength; a healthy mind in a healthy body. \n \n \n  Swimming\n \n Swimming is a water sport in which the swimmer moves through the water by means of arm and leg movements. \n A distinction is made between recreational swimming and competitive swimming. \n There are different strokes with which one moves: front crawl, breaststroke, back crawl, compound backstroke and butterfly. \n Swimming is considered a very healthy form of recreation and exercise.\n \n \n  Biking \n \n " />
+    </ScrollView>
 
-    <Button
-        android:id="@+id/second_common_exercise_cardio"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="32dp"
-        android:text="swimming"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/first_common_exercise_cardio" />
 
-    <Button
-        android:id="@+id/third_common_exercise_cardio"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="40dp"
-        android:text="biking"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/second_common_exercise_cardio" />
 </androidx.constraintlayout.widget.ConstraintLayout>
