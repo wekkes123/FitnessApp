@@ -1,4 +1,4 @@
-package be.kuleuven.fitnessapp;
+package be.kuleuven.fitnessapp.classes.ActivityC;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,6 +9,12 @@ import android.widget.TextView;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.common.hash.Hashing;
+
+import java.nio.charset.StandardCharsets;
+
+import be.kuleuven.fitnessapp.R;
 
 public class Login extends AppCompatActivity {
 
@@ -35,12 +41,19 @@ public class Login extends AppCompatActivity {
     }
 
     public void onLoginButtonClicked(View caller){
-        Intent signup = new Intent(this, SignUpScreen.class);
-        startActivity(signup);
+        encryptPassword("yo");
     }
 
     public void onDebugClicked(View caller){
         Intent debug = new Intent(this, Categories.class);
         startActivity(debug);
     }
+
+    public String encryptPassword(String pw){
+        String sha256hex = Hashing.sha256().hashString(pw, StandardCharsets.UTF_8).toString();
+        System.out.println(sha256hex);
+        return sha256hex;
+    }
+
+
 }

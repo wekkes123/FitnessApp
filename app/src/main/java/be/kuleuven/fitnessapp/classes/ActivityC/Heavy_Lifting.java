@@ -1,4 +1,4 @@
-package be.kuleuven.fitnessapp;
+package be.kuleuven.fitnessapp.classes.ActivityC;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,7 +6,9 @@ import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
 
-public class Calisthetics extends AppCompatActivity {
+import be.kuleuven.fitnessapp.R;
+
+public class Heavy_Lifting extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,6 +19,6 @@ public class Calisthetics extends AppCompatActivity {
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         //end
-        setContentView(R.layout.activity_calisthetics);
+        setContentView(R.layout.activity_heavy_lifting);
     }
 }

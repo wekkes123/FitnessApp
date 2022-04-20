@@ -1,10 +1,12 @@
-package be.kuleuven.fitnessapp;
+package be.kuleuven.fitnessapp.classes.ActivityC;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
+
+import be.kuleuven.fitnessapp.R;
 
 public class Endurance extends AppCompatActivity {
 

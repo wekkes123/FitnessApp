@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Endurance">
+    tools:context=".classes.ActivityC.Endurance">
 
     <TextView
         android:id="@+id/the_4th_title"
