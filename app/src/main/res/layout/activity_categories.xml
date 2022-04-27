@@ -22,7 +22,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
-        android:onClick="onCardioClicked"
+        android:onClick="onExerciseClicked"
         android:text="@string/cardio"
         app:layout_constraintBottom_toTopOf="@+id/second_exercise"
         app:layout_constraintStart_toStartOf="parent"
