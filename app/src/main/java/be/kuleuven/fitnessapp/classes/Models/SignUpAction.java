@@ -26,19 +26,11 @@ public class SignUpAction {
 
     public interface SignUpCallBack{
         void onSucces();
+        void onFail();
     }
 
-    public boolean checkValidUsername(){
-        if(username != null){
-            return true;
-        }
-        else{
-            return true;
 
-        }
-    }
-
-    public void requestLogin(final LoginAction.LoginCallBack callBack){
+    public void requestSignUpValidation(final SignUpAction.SignUpCallBack callBack){
         RequestQueue requestqueue = Volley.newRequestQueue(SignUpContext);
         String requestURL = "https://studev.groept.be/api/a21pt213/SelectAll";
 
@@ -49,15 +41,19 @@ public class SignUpAction {
                     public void onResponse(String response) {
                         try {
                             JSONArray responseArray = new JSONArray(response);
+                            boolean a = false;
                             for(int i = 0; i < responseArray.length(); i++){
                                 JSONObject curObject = responseArray.getJSONObject(i);
                                 if(curObject.getString("Username").equals(username)){
-                                    //System.out.println("true");
-                                    callBack.onSucces();
+                                    a = true;
+                                    callBack.onFail();
                                     return;
                                 }
                             }
-
+                            //extra veiligheid met if kan later weg worden gehaald?
+                            if(!a){
+                                callBack.onSucces();
+                            }
                         }
                         catch( JSONException e ){
                             //display error message

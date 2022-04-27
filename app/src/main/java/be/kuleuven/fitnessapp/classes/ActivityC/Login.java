@@ -59,13 +59,13 @@ public class Login extends AppCompatActivity {
         logindata.requestLogin(new LoginAction.LoginCallBack() {
             @Override
             public void onSucces() {
-                Loginuccesfull();
+                LoginSuccesfull();
             }
         });
     }
 
 
-    public void Loginuccesfull(){
+    public void LoginSuccesfull(){
         Intent intent = new Intent(this, Categories.class);
         startActivity(intent);
     }
