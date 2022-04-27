@@ -18,6 +18,7 @@ public class Categories extends AppCompatActivity {
     private Button Endurance;
     private Button Calesthetics;
     private Button Stretches;
+    private String type_of_ex;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,28 +38,71 @@ public class Categories extends AppCompatActivity {
         Stretches = (Button) findViewById(R.id.fifth_exercise);
     }
 
-    public void onCardioClicked(View caller){
-    Intent cardioChosen = new Intent(this, Cardio.class);
-    startActivity(cardioChosen);
+
+
+    public void onExerciseClicked (View caller, String type_of_ex)
+    {
+        Cardio.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View caller) {
+
+            }
+        });
+        if (type_of_ex == "cardio")
+        {
+            Intent cardioChosen = new Intent(this, Cardio.class);
+            startActivity(cardioChosen);
+        }
+
+        else if (type_of_ex == "heavy_lift")
+        {
+            Intent HeavyLiftChosen = new Intent(this, Heavy_Lifting.class);
+            startActivity(HeavyLiftChosen);
+        }
+
+        else if (type_of_ex == "cali")
+        {
+            Intent CaliChosen = new Intent(this, Calisthetics.class);
+            startActivity(CaliChosen);
+        }
+
+        else if (type_of_ex == "endur")
+        {
+            Intent EndurChosen = new Intent(this, Endurance.class);
+            startActivity(EndurChosen);
+        }
+
+        else if (type_of_ex == "stret")
+        {
+            Intent StretchChosen = new Intent(this, Stretches.class);
+            startActivity(StretchChosen);
+        }
+
     }
 
-    public void onHeavyLiftingClicked(View caller){
-        Intent HeavyLiftChosen = new Intent(this, Heavy_Lifting.class);
-        startActivity(HeavyLiftChosen);
+    public String onCardioClicked(){
+        type_of_ex = "cardio";
+    return type_of_ex;
     }
 
-    public void onCalistheticsClicked(View caller){
-        Intent CaliChosen = new Intent(this, Calisthetics.class);
-        startActivity(CaliChosen);
+    public String onHeavyLiftingClicked(){
+        type_of_ex = "heavy_lift";
+        return type_of_ex;
     }
 
-    public void onEnduranceClicked(View caller){
-        Intent EndurChosen = new Intent(this, Endurance.class);
-        startActivity(EndurChosen);
+    public String onCalistheticsClicked(){
+        type_of_ex = "cali";
+        return type_of_ex;
     }
 
-    public void onStretchesClicked(View caller){
-        Intent StretchChosen = new Intent(this, Stretches.class);
-        startActivity(StretchChosen);
+    public String onEnduranceClicked(){
+        type_of_ex = "endu";
+        return type_of_ex;
     }
+
+    public String onStretchesClicked(){
+        type_of_ex = "stret";
+        return type_of_ex;
+
+    }
+
 }
