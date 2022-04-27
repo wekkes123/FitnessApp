@@ -39,9 +39,6 @@ public class Categories extends AppCompatActivity {
     }
 
 
-
-
-
     public void onExerciseClicked (String type_of_ex)
     {
         if (type_of_ex == "cardio")
@@ -51,33 +48,28 @@ public class Categories extends AppCompatActivity {
                 public void onClick(View caller) {
                     Intent cardioChosen = new Intent( Categories.this, exercise.class);
                     startActivity(cardioChosen);
-
                 }
             });
         }
-
         else if (type_of_ex == "heavy_lift")
         {
-
             final Button Heavy_lifting = (Button) findViewById(R.id.second_exercise);
             Heavy_lifting.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View caller) {
-                    Intent HeavyLiftChosen = new Intent( Categories.this, Heavy_Lifting.class);
-                    startActivity(HeavyLiftChosen);
+                    Intent HeavyChosen = new Intent( Categories.this, exercise.class);
+                    startActivity(HeavyChosen);
                 }
             });
         }
-
-        else if (type_of_ex == "cali")
+        else if(type_of_ex == "cali")
         {
             final Button Calisthetics = (Button) findViewById(R.id.third_exercise);
             Calisthetics.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View caller) {
-                    Intent CaliChosen = new Intent(Categories.this, Calisthetics.class);
+                    Intent CaliChosen = new Intent( Categories.this, exercise.class);
                     startActivity(CaliChosen);
                 }
             });
-
         }
 
         else if (type_of_ex == "endur")
@@ -85,19 +77,18 @@ public class Categories extends AppCompatActivity {
             final Button Endurance = (Button) findViewById(R.id.fourth_exercise);
             Endurance.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View caller) {
-                    Intent EndurChosen = new Intent(Categories.this, Endurance.class);
+                    Intent EndurChosen = new Intent( Categories.this, exercise.class);
                     startActivity(EndurChosen);
                 }
             });
         }
-
         else if (type_of_ex == "stret")
         {
             final Button Stretches = (Button) findViewById(R.id.fifth_exercise);
             Stretches.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View caller) {
-                    Intent StretchChosen = new Intent(Categories.this, Stretches.class);
-                    startActivity(StretchChosen);
+                    Intent StretChosen = new Intent( Categories.this, exercise.class);
+                    startActivity(StretChosen);
                 }
             });
         }
