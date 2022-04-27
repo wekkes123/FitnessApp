@@ -34,7 +34,6 @@ public class LoginAction {
 
 
     public LoginAction(String username, String password, Context context){
-        System.out.println("2");
         Username = username;
         //Password = encryptPassword(password);
         Password = password;
