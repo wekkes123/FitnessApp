@@ -8,25 +8,36 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.common.hash.Hashing;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.lang.reflect.Array;
+import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
+
 public class SignUpAction {
     private String username;
     private String password;
     private Context SignUpContext;
-    private String URL;
 
     public SignUpAction(String username, String password, Context context){
         this.username = username;
-        this.password = password;
+        this.password = encryptPassword(password);
         SignUpContext = context;
     }
 
-    public void makeURL(){
-        URL = "yo";
+    public String encryptPassword(String pw){
+        String sha256hex = Hashing.sha256().hashString(pw, StandardCharsets.UTF_8).toString();
+        System.out.println(sha256hex);
+        return sha256hex;
+    }
+
+    public String getURL(){
+        String URL = "https://studev.groept.be/api/a21pt213/InsertSUinfo/" + username + "/" + password + "/";
+        return URL;
     }
 
     public interface SignUpCallBack{
@@ -35,12 +46,16 @@ public class SignUpAction {
     }
 
     public interface SignUpToDB{
-        void onSucces();
+        void Succes();
     }
 
 
 
     public void requestSignUpValidation(final SignUpAction.SignUpCallBack callBack){
+        if(!username.matches("[a-zA-Z0-9]*")){
+            callBack.onFail();
+            return;
+        }
         RequestQueue requestqueue = Volley.newRequestQueue(SignUpContext);
         String requestURL = "https://studev.groept.be/api/a21pt213/SelectAll";
 
@@ -82,9 +97,9 @@ public class SignUpAction {
         requestqueue.add(submitRequest);
     }
 
-    public void requestSignUpToDB(final SignUpAction.SignUpCallBack callBack){
+    public void requestSignUpToDB(final SignUpAction.SignUpToDB callBack){
         RequestQueue requestqueue = Volley.newRequestQueue(SignUpContext);
-        String requestURL = "https://studev.groept.be/api/a21pt213/SelectAll";
+        String requestURL = getURL();
 
         StringRequest submitRequest = new StringRequest(Request.Method.GET, requestURL,
 
@@ -93,20 +108,9 @@ public class SignUpAction {
                     public void onResponse(String response) {
                         try {
                             JSONArray responseArray = new JSONArray(response);
-                            boolean a = false;
-                            for(int i = 0; i < responseArray.length(); i++){
-                                JSONObject curObject = responseArray.getJSONObject(i);
-                                if(curObject.getString("Username").equals(username)){
-                                    a = true;
-                                    callBack.onFail();
-                                    return;
-                                }
-                            }
-                            //extra veiligheid met if kan later weg worden gehaald?
-                            if(!a){
-                                callBack.onSucces();
-                            }
+                            callBack.Succes();
                         }
+
                         catch( JSONException e ){
                             //display error message
                         }

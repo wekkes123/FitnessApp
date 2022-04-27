@@ -19,4 +19,5 @@
     <string name="todo">TODO</string>
     <string name="popupText">Username invalid or not available \n\nClick anywhere to continue</string>
     <string name="popupTextFail"> Account has been created! \n\nClick anywhere to continue</string>
+    <string name="please_only_use_letters_and_numbers_for_username"><b>Please only use letters and numbers for username</b></string>
 </resources>
