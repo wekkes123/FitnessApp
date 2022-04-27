@@ -40,6 +40,8 @@ public class Categories extends AppCompatActivity {
 
 
 
+
+
     public void onExerciseClicked (String type_of_ex)
     {
         if (type_of_ex == "cardio")
