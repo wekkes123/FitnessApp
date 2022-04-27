@@ -24,6 +24,7 @@ public class SignUpScreen extends AppCompatActivity {
     private EditText SignUpUsername;
     private EditText SignUpPassword;
     private Button LoginButton;
+    //private TextView errorText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,9 +36,9 @@ public class SignUpScreen extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         //end
         setContentView(R.layout.activity_sign_up_screen);
-        TextView text = (TextView) findViewById(R.id.text);
         SignUpPassword = (EditText) findViewById(R.id.SignUpPassword);
         SignUpUsername = (EditText) findViewById(R.id.SignUpUsername);
+
     }
 
     public void onSignUpButtonSUClicked(View caller){
@@ -45,11 +46,18 @@ public class SignUpScreen extends AppCompatActivity {
         signup.requestSignUpValidation(new SignUpAction.SignUpCallBack() {
             @Override
             public void onSucces() {
-                showPopupWindow(caller, false);
+                signup.requestSignUpToDB(new SignUpAction.SignUpToDB() {
+                    @Override
+                    public void Succes() {
+                        showPopupWindow(caller, false);
+                    }
+                });
             }
 
             @Override
             public void onFail() {
+                TextView errorText = (TextView) findViewById(R.id.ErrorMessage);
+                errorText.setVisibility(View.VISIBLE);
                 showPopupWindow(caller, true);
             }
         });
@@ -58,19 +66,13 @@ public class SignUpScreen extends AppCompatActivity {
 
 
     public void showPopupWindow(View view, boolean fail){
-        /*
-        if(fail){
-            text.setText("Account has been created! \n\nClick anywhere to continue");
-        }
-        else{
-            text.setText("Username invalid or not available \n\nClick anywhere to continue");
-        }
-        */
-
         // inflate the layout of the popup window
         LayoutInflater inflater = (LayoutInflater)
                 getSystemService(LAYOUT_INFLATER_SERVICE);
-        View popupView = inflater.inflate(R.layout.popup_window, null);
+        View popupView = inflater.inflate(R.layout.popup_window_fail, null);
+        if(!fail) {
+            popupView = inflater.inflate(R.layout.popup_window_succes, null);
+        }
 
         // create the popup window
         int width = LinearLayout.LayoutParams.WRAP_CONTENT;
