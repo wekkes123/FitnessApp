@@ -18,7 +18,7 @@ public class Categories extends AppCompatActivity {
     private Button Endurance;
     private Button Calesthetics;
     private Button Stretches;
-    private String type_of_ex;
+    public String type_of_ex;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -101,17 +101,26 @@ public class Categories extends AppCompatActivity {
 
     public void onHeavyLiftingClicked(){
         type_of_ex = "heavy_lift";
+        onExerciseClicked(type_of_ex);
     }
 
     public void onCalistheticsClicked(){
         type_of_ex = "cali";
+        onExerciseClicked(type_of_ex);
     }
 
     public void onEnduranceClicked(){
         type_of_ex = "endur";
+        onExerciseClicked(type_of_ex);
     }
 
     public void onStretchesClicked(){
         type_of_ex = "stret";
+        onExerciseClicked(type_of_ex);
+    }
+
+    public String getType_of_ex()
+    {
+        return type_of_ex;
     }
 }
