@@ -45,18 +45,15 @@ public class SignUpAction {
                             for(int i = 0; i < responseArray.length(); i++){
                                 JSONObject curObject = responseArray.getJSONObject(i);
                                 if(curObject.getString("Username").equals(username)){
+                                    a = true;
                                     callBack.onFail();
-                                    //a = true;
-                                    //return;
+                                    return;
                                 }
                             }
-                            /*
+                            //extra veiligheid met if kan later weg worden gehaald?
                             if(!a){
                                 callBack.onSucces();
                             }
-                            System.out.println("test");
-                            */
-
                         }
                         catch( JSONException e ){
                             //display error message

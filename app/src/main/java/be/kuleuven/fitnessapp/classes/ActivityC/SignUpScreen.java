@@ -43,23 +43,23 @@ public class SignUpScreen extends AppCompatActivity {
         signup.requestSignUpValidation(new SignUpAction.SignUpCallBack() {
             @Override
             public void onSucces() {
-
+                showPopupWindow(caller, false);
             }
 
             @Override
             public void onFail() {
-            System.out.println("test2");
+                showPopupWindow(caller, true);
             }
         });
     }
 
 
 
-    public void showPopupWindow(View view){
+    public void showPopupWindow(View view, boolean fail){
         // inflate the layout of the popup window
         LayoutInflater inflater = (LayoutInflater)
                 getSystemService(LAYOUT_INFLATER_SERVICE);
-        View popupView = inflater.inflate(R.layout.popup_window, null);
+        View popupView = inflater.inflate(R.layout.popup_window_fail, null);
 
         // create the popup window
         int width = LinearLayout.LayoutParams.WRAP_CONTENT;
@@ -76,6 +76,37 @@ public class SignUpScreen extends AppCompatActivity {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 popupWindow.dismiss();
+                if(!fail){
+                    Intent backLogin = new Intent(SignUpScreen.this, Login.class);
+                    startActivity(backLogin);
+                }
+                return true;
+            }
+        });
+    }
+
+    public void showPopupWindowSucces(View view){
+
+        LayoutInflater inflater = (LayoutInflater)
+                getSystemService(LAYOUT_INFLATER_SERVICE);
+        View popupView = inflater.inflate(R.layout.popup_window_succes, null);
+
+        // create the popup window
+        int width = LinearLayout.LayoutParams.WRAP_CONTENT;
+        int height = LinearLayout.LayoutParams.WRAP_CONTENT;
+        boolean focusable = true; // lets taps outside the popup also dismiss it
+        final PopupWindow popupWindow = new PopupWindow(popupView, width, height, focusable);
+
+        // show the popup window
+        // which view you pass in doesn't matter, it is only used for the window tolken
+        popupWindow.showAtLocation(view, Gravity.CENTER, 0, 0);
+
+        // dismiss the popup window when touched
+        popupView.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                popupWindow.dismiss();
+
                 return true;
             }
         });

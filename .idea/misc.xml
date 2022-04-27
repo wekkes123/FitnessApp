@@ -7,7 +7,6 @@
         <entry key="..\:/Users/tobia/AndroidStudioProjects/FitnessApp2/app/src/main/res/layout/activity_cardio.xml" value="0.2625" />
         <entry key="..\:/Users/tobia/AndroidStudioProjects/FitnessApp2/app/src/main/res/layout/activity_categories.xml" value="0.2625" />
         <entry key="..\:/Users/tobia/AndroidStudioProjects/FitnessApp2/app/src/main/res/layout/activity_endurance.xml" value="0.2" />
-        <entry key="..\:/Users/tobia/AndroidStudioProjects/FitnessApp2/app/src/main/res/layout/activity_exercise.xml" value="0.2625" />
         <entry key="..\:/Users/tobia/AndroidStudioProjects/FitnessApp2/app/src/main/res/layout/activity_heavy_lifting.xml" value="0.2625" />
         <entry key="..\:/Users/tobia/AndroidStudioProjects/FitnessApp2/app/src/main/res/layout/activity_main.xml" value="0.2625" />
         <entry key="..\:/Users/tobia/AndroidStudioProjects/FitnessApp2/app/src/main/res/layout/activity_sign_up_screen.xml" value="0.2625" />
@@ -18,6 +17,8 @@
         <entry key="..\:/Users/vanlo/AndroidStudioProjects/FitnessApp2/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/Users/vanlo/AndroidStudioProjects/FitnessApp2/app/src/main/res/layout/activity_sign_up_screen.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/vanlo/AndroidStudioProjects/FitnessApp2/app/src/main/res/layout/popup_window.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/vanlo/AndroidStudioProjects/FitnessApp2/app/src/main/res/layout/popup_window_fail.xml" value="0.264" />
+        <entry key="..\:/Users/vanlo/AndroidStudioProjects/FitnessApp2/app/src/main/res/layout/popup_window_succes.xml" value="0.1" />
       </map>
     </option>
   </component>
