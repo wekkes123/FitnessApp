@@ -13,6 +13,21 @@ public class exercise extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_exercise);
     }
+    public String title;
+    public String info;
+    public int PR;
 
 
+
+
+    public String getInfo()
+    {
+
+        return info;
+    }
+
+    public int getPR()
+    {
+        return PR;
+    }
 }
