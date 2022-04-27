@@ -18,7 +18,8 @@ public class Categories extends AppCompatActivity {
     private Button Endurance;
     private Button Calesthetics;
     private Button Stretches;
-    public String type_of_ex;
+    public String type_of_ex = "nothingATM";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +48,8 @@ public class Categories extends AppCompatActivity {
             Cardio.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View caller) {
                     Intent cardioChosen = new Intent( Categories.this, exercise.class);
+                    exercise ex1 = new exercise();
+                    ex1.MakeTitle();
                     startActivity(cardioChosen);
                 }
             });
@@ -57,6 +60,8 @@ public class Categories extends AppCompatActivity {
             Heavy_lifting.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View caller) {
                     Intent HeavyChosen = new Intent( Categories.this, exercise.class);
+                    exercise ex1 = new exercise();
+                    ex1.MakeTitle();
                     startActivity(HeavyChosen);
                 }
             });
@@ -67,6 +72,8 @@ public class Categories extends AppCompatActivity {
             Calisthetics.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View caller) {
                     Intent CaliChosen = new Intent( Categories.this, exercise.class);
+                    exercise ex1 = new exercise();
+                    ex1.MakeTitle();
                     startActivity(CaliChosen);
                 }
             });
@@ -78,6 +85,8 @@ public class Categories extends AppCompatActivity {
             Endurance.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View caller) {
                     Intent EndurChosen = new Intent( Categories.this, exercise.class);
+                    exercise ex1 = new exercise();
+                    ex1.MakeTitle();
                     startActivity(EndurChosen);
                 }
             });
@@ -88,6 +97,8 @@ public class Categories extends AppCompatActivity {
             Stretches.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View caller) {
                     Intent StretChosen = new Intent( Categories.this, exercise.class);
+                    exercise ex1 = new exercise();
+                    ex1.MakeTitle();
                     startActivity(StretChosen);
                 }
             });
