@@ -39,7 +39,7 @@ public class SignUpScreen extends AppCompatActivity {
     }
 
     public void onSignUpButtonSUClicked(View caller){
-        SignUpAction signup = new SignUpAction(SignUpUsername.getText().toString(), SignUpPassword.getText().toString());
+        SignUpAction signup = new SignUpAction(SignUpUsername.getText().toString(), SignUpPassword.getText().toString(), this);
         showPopupWindow(caller);
 
     }
