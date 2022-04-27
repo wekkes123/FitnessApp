@@ -35,8 +35,8 @@ public class LoginAction {
 
     public LoginAction(String username, String password, Context context){
         Username = username;
-        //Password = encryptPassword(password);
-        Password = password;
+        Password = encryptPassword(password);
+        //Password = password;
         LoginContext = context;
         LoginInDB = false;
     }
