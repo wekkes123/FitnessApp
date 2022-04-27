@@ -59,7 +59,6 @@ public class Login extends AppCompatActivity {
         logindata.requestLogin(new LoginAction.LoginCallBack() {
             @Override
             public void onSucces() {
-                System.out.println("yep");
                 Loginuccesfull();
             }
         });
