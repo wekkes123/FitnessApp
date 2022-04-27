@@ -40,69 +40,85 @@ public class Categories extends AppCompatActivity {
 
 
 
-    public void onExerciseClicked (View caller, String type_of_ex)
+    public void onExerciseClicked (String type_of_ex)
     {
-        Cardio.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View caller) {
-
-            }
-        });
         if (type_of_ex == "cardio")
         {
-            Intent cardioChosen = new Intent(this, Cardio.class);
-            startActivity(cardioChosen);
+            final Button Cardio = (Button) findViewById(R.id.first_exercise);
+            Cardio.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View caller) {
+                    Intent cardioChosen = new Intent( Categories.this, exercise.class);
+                    startActivity(cardioChosen);
+
+                }
+            });
         }
 
         else if (type_of_ex == "heavy_lift")
         {
-            Intent HeavyLiftChosen = new Intent(this, Heavy_Lifting.class);
-            startActivity(HeavyLiftChosen);
+
+            final Button Heavy_lifting = (Button) findViewById(R.id.second_exercise);
+            Heavy_lifting.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View caller) {
+                    Intent HeavyLiftChosen = new Intent( Categories.this, Heavy_Lifting.class);
+                    startActivity(HeavyLiftChosen);
+                }
+            });
         }
 
         else if (type_of_ex == "cali")
         {
-            Intent CaliChosen = new Intent(this, Calisthetics.class);
-            startActivity(CaliChosen);
+            final Button Calisthetics = (Button) findViewById(R.id.third_exercise);
+            Calisthetics.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View caller) {
+                    Intent CaliChosen = new Intent(Categories.this, Calisthetics.class);
+                    startActivity(CaliChosen);
+                }
+            });
+
         }
 
         else if (type_of_ex == "endur")
         {
-            Intent EndurChosen = new Intent(this, Endurance.class);
-            startActivity(EndurChosen);
+            final Button Endurance = (Button) findViewById(R.id.fourth_exercise);
+            Endurance.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View caller) {
+                    Intent EndurChosen = new Intent(Categories.this, Endurance.class);
+                    startActivity(EndurChosen);
+                }
+            });
         }
 
         else if (type_of_ex == "stret")
         {
-            Intent StretchChosen = new Intent(this, Stretches.class);
-            startActivity(StretchChosen);
+            final Button Stretches = (Button) findViewById(R.id.fifth_exercise);
+            Stretches.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View caller) {
+                    Intent StretchChosen = new Intent(Categories.this, Stretches.class);
+                    startActivity(StretchChosen);
+                }
+            });
         }
-
     }
 
-    public String onCardioClicked(){
+    public void onCardioClicked(View caller){
         type_of_ex = "cardio";
-    return type_of_ex;
+        onExerciseClicked(type_of_ex);
     }
 
-    public String onHeavyLiftingClicked(){
+    public void onHeavyLiftingClicked(){
         type_of_ex = "heavy_lift";
-        return type_of_ex;
     }
 
-    public String onCalistheticsClicked(){
+    public void onCalistheticsClicked(){
         type_of_ex = "cali";
-        return type_of_ex;
     }
 
-    public String onEnduranceClicked(){
-        type_of_ex = "endu";
-        return type_of_ex;
+    public void onEnduranceClicked(){
+        type_of_ex = "endur";
     }
 
-    public String onStretchesClicked(){
+    public void onStretchesClicked(){
         type_of_ex = "stret";
-        return type_of_ex;
-
     }
-
 }
