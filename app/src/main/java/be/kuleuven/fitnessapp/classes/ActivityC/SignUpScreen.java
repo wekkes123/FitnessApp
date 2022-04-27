@@ -40,9 +40,20 @@ public class SignUpScreen extends AppCompatActivity {
 
     public void onSignUpButtonSUClicked(View caller){
         SignUpAction signup = new SignUpAction(SignUpUsername.getText().toString(), SignUpPassword.getText().toString(), this);
-        showPopupWindow(caller);
+        signup.requestSignUpValidation(new SignUpAction.SignUpCallBack() {
+            @Override
+            public void onSucces() {
 
+            }
+
+            @Override
+            public void onFail() {
+            System.out.println("test2");
+            }
+        });
     }
+
+
 
     public void showPopupWindow(View view){
         // inflate the layout of the popup window
