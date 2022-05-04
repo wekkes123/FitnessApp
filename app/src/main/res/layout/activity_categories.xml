@@ -24,6 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="3dp"
         android:layout_marginTop="152dp"
+        android:onClick="onCardioClicked"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/cardio2" />
@@ -50,7 +51,7 @@
         app:srcCompat="@drawable/calisthenics2" />
 
     <ImageButton
-        android:id="@+id/fifth_exercise"
+        android:id="@+id/fourth_exercise"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="1dp"

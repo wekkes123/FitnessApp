@@ -20,14 +20,16 @@ public class exercise extends AppCompatActivity {
         setContentView(R.layout.activity_exercise);
 
         Bundle extras = getIntent().getExtras();
-        title = (String) extras.get("title");
+        title = (String) extras.get(title);
+
+        tv1 = (TextView)findViewById(R.id.title_exercise);
+        tv1.setText(title);
     }
 
 
     public void MakeTitle()
     {
-        tv1 = (TextView)findViewById(R.id.title_exercise);
-        tv1.setText(title);
+
     }
 
     public void MakeInfo()
