@@ -21,8 +21,9 @@ public class Categories extends AppCompatActivity {
 
     private boolean ButtonCardio;
     private boolean ButtonHeavyLift;
-    private boolean ButtonCalisthetics;
+    private boolean ButtonCalisthenics;
     private boolean ButtonStretches;
+
 
     public String title;
 
@@ -35,7 +36,7 @@ public class Categories extends AppCompatActivity {
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         //end
-        ButtonCalisthetics = false;
+        ButtonCalisthenics = false;
         ButtonCardio = false;
         ButtonStretches = false;
         ButtonHeavyLift = false;
@@ -60,23 +61,23 @@ public class Categories extends AppCompatActivity {
         else if (ButtonHeavyLift) {
             final ImageButton Heavy_lifting = (ImageButton) findViewById(R.id.second_exercise);
             Intent LiftIntent = new Intent(this, exercise.class);
-            LiftIntent.putExtra(title, "Cardio");
+            LiftIntent.putExtra(title, "Heavy Lifting");
             startActivity(LiftIntent);
 
         }
 
-        else if(ButtonCalisthetics)
+        else if(ButtonCalisthenics)
         {
-            final ImageButton Calisthetics = (ImageButton) findViewById(R.id.third_exercise);
+            final ImageButton Calisthenics = (ImageButton) findViewById(R.id.third_exercise);
             Intent CaliIntent = new Intent(this, exercise.class);
-            CaliIntent.putExtra(title, "Cardio");
+            CaliIntent.putExtra(title, "Calisthenics");
             startActivity(CaliIntent);
         }
 
         else if (ButtonStretches) {
             final ImageButton Stretches = (ImageButton) findViewById(R.id.fourth_exercise);
             Intent StretIntent = new Intent(this, exercise.class);
-            StretIntent.putExtra(title, "Cardio");
+            StretIntent.putExtra(title, "Stretches");
             startActivity(StretIntent);
         }
     }
@@ -92,7 +93,7 @@ public class Categories extends AppCompatActivity {
     }
 
     public void onCalistheticsClicked(View caller) {
-        ButtonCalisthetics = true;
+        ButtonCalisthenics = true;
         onExerciseClicked();
     }
 

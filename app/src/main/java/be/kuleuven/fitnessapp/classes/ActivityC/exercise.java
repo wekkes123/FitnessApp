@@ -26,38 +26,4 @@ public class exercise extends AppCompatActivity {
         tv1.setText(title);
     }
 
-
-    public void MakeTitle()
-    {
-
-    }
-
-    public void MakeInfo()
-    {
-        if (title == "Cardio")
-        {
-            info = "";
-        }
-        else if (title == "Heavy Lifting")
-        {
-            info = "";
-        }
-        else if (title == "Calisthetics")
-        {
-            info = "";
-        }
-        else if (title == "Endurance")
-        {
-            info = "";
-        }
-        else if (title == "Stretches") {
-            info = "";
-        }
-    }
-
-    public void MakePR()
-    {
-        TextView tv1 = (TextView)findViewById(R.id.PR_exercise);
-        tv1.setText(PR);
-    }
 }
