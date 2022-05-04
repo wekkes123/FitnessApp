@@ -18,16 +18,14 @@ public class exercise extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_exercise);
-        tv1 = (TextView) findViewById(R.id.title_exercise);
-        tv1.setText((String)getIntent().getExtras().get("title"));
+
+        Bundle extras = getIntent().getExtras();
+        title = (String) extras.get("title");
     }
 
 
     public void MakeTitle()
     {
-        Categories Object1 = new Categories();
-        title = Object1.getType_of_ex();
-
         tv1 = (TextView)findViewById(R.id.title_exercise);
         tv1.setText(title);
     }

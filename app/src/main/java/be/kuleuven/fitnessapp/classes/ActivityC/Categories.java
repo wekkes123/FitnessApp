@@ -25,6 +25,8 @@ public class Categories extends AppCompatActivity {
     private boolean ButtonCalisthetics;
     private boolean ButtonStretches;
 
+    public String title;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +41,7 @@ public class Categories extends AppCompatActivity {
         ButtonEndurance = false;
         ButtonStretches = false;
         ButtonHeavyLift = false;
+
         setContentView(R.layout.activity_categories);
         Cardio = (Button) findViewById(R.id.first_exercise);
         Heavy_lifting = (Button) findViewById(R.id.second_exercise);
@@ -54,6 +57,7 @@ public class Categories extends AppCompatActivity {
             Cardio.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View caller) {
                     Intent cardioChosen = new Intent(Categories.this, exercise.class);
+                    cardioChosen.putExtra("title", "Cardio");
                     exercise ex1 = new exercise();
                     ex1.MakeTitle();
                     startActivity(cardioChosen);
