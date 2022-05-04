@@ -24,6 +24,7 @@ public class Categories extends AppCompatActivity {
     private boolean ButtonCalisthenics;
     private boolean ButtonStretches;
 
+
     public String title;
 
     @Override
@@ -60,23 +61,23 @@ public class Categories extends AppCompatActivity {
         else if (ButtonHeavyLift) {
             final ImageButton Heavy_lifting = (ImageButton) findViewById(R.id.second_exercise);
             Intent LiftIntent = new Intent(this, exercise.class);
-            LiftIntent.putExtra(title, "Cardio");
+            LiftIntent.putExtra(title, "Heavy Lifting");
             startActivity(LiftIntent);
 
         }
 
         else if(ButtonCalisthenics)
         {
-            final ImageButton Calisthetics = (ImageButton) findViewById(R.id.third_exercise);
+            final ImageButton Calisthenics = (ImageButton) findViewById(R.id.third_exercise);
             Intent CaliIntent = new Intent(this, exercise.class);
-            CaliIntent.putExtra(title, "Cardio");
+            CaliIntent.putExtra(title, "Calisthenics");
             startActivity(CaliIntent);
         }
 
         else if (ButtonStretches) {
             final ImageButton Stretches = (ImageButton) findViewById(R.id.fourth_exercise);
             Intent StretIntent = new Intent(this, exercise.class);
-            StretIntent.putExtra(title, "Cardio");
+            StretIntent.putExtra(title, "Stretches");
             startActivity(StretIntent);
         }
     }
