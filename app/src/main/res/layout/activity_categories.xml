@@ -27,24 +27,28 @@
         android:background="@null"
         android:onClick="onCardioClicked"
         android:scaleType="fitCenter"
+        app:layout_constraintEnd_toStartOf="@+id/second_exercise"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/cardio2" />
+        app:srcCompat="@drawable/cardio2"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/second_exercise"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="1dp"
         android:layout_marginTop="152dp"
         android:adjustViewBounds="true"
         android:background="@null"
         android:onClick="onHeavyLiftingClicked"
         android:scaleType="fitCenter"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/first_exercise"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/heavylifting2" />
+        app:srcCompat="@drawable/heavylifting2"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/third_exercise"
@@ -55,23 +59,27 @@
         android:background="@null"
         android:onClick="onCalistheticsClicked"
         android:scaleType="fitCenter"
+        app:layout_constraintEnd_toStartOf="@+id/fourth_exercise"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/first_exercise"
-        app:srcCompat="@drawable/calisthenics2" />
+        app:srcCompat="@drawable/calisthenics2"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/fourth_exercise"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="1dp"
         android:layout_marginTop="1dp"
         android:adjustViewBounds="true"
         android:background="@null"
         android:onClick="onStretchesClicked"
         android:scaleType="fitCenter"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/third_exercise"
         app:layout_constraintTop_toBottomOf="@+id/second_exercise"
-        app:srcCompat="@drawable/stretching2" />
+        app:srcCompat="@drawable/stretching2"
+        tools:ignore="SpeakableTextPresentCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
