@@ -38,13 +38,14 @@ public class Categories extends AppCompatActivity {
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         //end
+        setContentView(R.layout.activity_categories);
         welcomeTxt = (TextView) findViewById(R.id.welcomeTxt);
+        Bundle extras = getIntent().getExtras();
+        welcomeTxt.setText("Hello " + extras.get("Username").toString() + " !");
         ButtonCalisthenics = false;
         ButtonCardio = false;
         ButtonStretches = false;
         ButtonHeavyLift = false;
-
-        setContentView(R.layout.activity_categories);
         Cardio = (ImageButton) findViewById(R.id.first_exercise);
         Heavy_lifting = (ImageButton) findViewById(R.id.second_exercise);
         Calesthetics = (ImageButton)findViewById(R.id.third_exercise);

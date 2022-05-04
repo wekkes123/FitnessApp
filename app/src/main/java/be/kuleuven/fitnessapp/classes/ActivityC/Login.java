@@ -67,12 +67,16 @@ public class Login extends AppCompatActivity {
 
     public void LoginSuccesfull(){
         Intent intent = new Intent(this, Categories.class);
+        if(Username.getText().toString() != null) {
+            intent.putExtra("Username", Username.getText().toString());
+        }
         startActivity(intent);
     }
 
     public void onDebugClicked(View caller){
-        Intent debug = new Intent(this, Categories.class);
-        startActivity(debug);
+        Username.setText("Wout");
+        Password.setText("123");
+        LoginSuccesfull();
     }
 
 }
