@@ -21,7 +21,7 @@ public class Categories extends AppCompatActivity {
 
     private boolean ButtonCardio;
     private boolean ButtonHeavyLift;
-    private boolean ButtonCalisthetics;
+    private boolean ButtonCalisthenics;
     private boolean ButtonStretches;
 
     public String title;
@@ -35,7 +35,7 @@ public class Categories extends AppCompatActivity {
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         //end
-        ButtonCalisthetics = false;
+        ButtonCalisthenics = false;
         ButtonCardio = false;
         ButtonStretches = false;
         ButtonHeavyLift = false;
@@ -65,7 +65,7 @@ public class Categories extends AppCompatActivity {
 
         }
 
-        else if(ButtonCalisthetics)
+        else if(ButtonCalisthenics)
         {
             final ImageButton Calisthetics = (ImageButton) findViewById(R.id.third_exercise);
             Intent CaliIntent = new Intent(this, exercise.class);
@@ -92,7 +92,7 @@ public class Categories extends AppCompatActivity {
     }
 
     public void onCalistheticsClicked(View caller) {
-        ButtonCalisthetics = true;
+        ButtonCalisthenics = true;
         onExerciseClicked();
     }
 

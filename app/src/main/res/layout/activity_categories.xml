@@ -7,7 +7,7 @@
     tools:context=".classes.ActivityC.Categories">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/welcomeTxt"
         android:layout_width="274dp"
         android:layout_height="55dp"
         android:layout_marginTop="44dp"
@@ -25,6 +25,7 @@
         android:layout_marginTop="152dp"
         android:adjustViewBounds="true"
         android:background="@null"
+        android:contentDescription="@string/todo"
         android:onClick="onCardioClicked"
         android:scaleType="fitCenter"
         app:layout_constraintEnd_toStartOf="@+id/second_exercise"
@@ -32,7 +33,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/cardio2"
-        tools:ignore="SpeakableTextPresentCheck" />
+        tools:ignore="SpeakableTextPresentCheck,DuplicateSpeakableTextCheck" />
 
     <ImageButton
         android:id="@+id/second_exercise"
@@ -41,6 +42,7 @@
         android:layout_marginTop="152dp"
         android:adjustViewBounds="true"
         android:background="@null"
+        android:contentDescription="@string/todo"
         android:onClick="onHeavyLiftingClicked"
         android:scaleType="fitCenter"
         app:layout_constraintEnd_toEndOf="parent"
@@ -57,6 +59,7 @@
         android:layout_marginTop="1dp"
         android:adjustViewBounds="true"
         android:background="@null"
+        android:contentDescription="@string/todo"
         android:onClick="onCalistheticsClicked"
         android:scaleType="fitCenter"
         app:layout_constraintEnd_toStartOf="@+id/fourth_exercise"
@@ -73,6 +76,7 @@
         android:layout_marginTop="1dp"
         android:adjustViewBounds="true"
         android:background="@null"
+        android:contentDescription="@string/todo"
         android:onClick="onStretchesClicked"
         android:scaleType="fitCenter"
         app:layout_constraintEnd_toEndOf="parent"
