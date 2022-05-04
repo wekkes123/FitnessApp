@@ -22,4 +22,9 @@
     <string name="please_only_use_letters_and_numbers_for_username"><b>Please only use letters and numbers for username</b></string>
     <string name="nog_geen">nog geen</string>
     <string name="title">title</string>
+    <string name="cardio2"><b>Cardio</b></string>
+    <string name="lifting2"><b>Heavy Lifting</b></string>
+    <string name="Calisthenics2"><b>Calisthenics</b></string>
+    <string name="Streches2"><b>Streches</b></string>
+
 </resources>
