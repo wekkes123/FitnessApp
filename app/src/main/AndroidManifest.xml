@@ -21,15 +21,6 @@
             android:name=".classes.ActivityC.Stretches"
             android:exported="false" />
         <activity
-            android:name=".classes.ActivityC.Endurance"
-            android:exported="false" />
-        <activity
-            android:name=".classes.ActivityC.Calisthetics"
-            android:exported="false" />
-        <activity
-            android:name=".classes.ActivityC.Heavy_Lifting"
-            android:exported="false" />
-        <activity
             android:name=".classes.ActivityC.Cardio"
             android:exported="false" />
         <activity
