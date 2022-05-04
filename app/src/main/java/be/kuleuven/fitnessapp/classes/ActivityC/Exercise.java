@@ -32,11 +32,20 @@ public class Exercise extends AppCompatActivity {
         //initiate variables
         extras = getIntent().getExtras();
         this.Username = extras.get("Username").toString();
-        Action = new ExersizeAction(Username, title,this);
+        Action = new ExersizeAction(Username, title,this, this);
         //initiate tables
+        System.out.println("yes");
         initiateTables();
         //
 
+    }
+
+    public void ShowLoadingPopup(){
+        //nog maken
+    }
+
+    public void StopLoadingPopup(){
+        //nog maken
     }
 
     public void initiateTables(){

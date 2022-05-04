@@ -13,18 +13,23 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import be.kuleuven.fitnessapp.classes.ActivityC.Exercise;
+
 public class ExersizeAction {
     private Context ExersizeC;
     private String Username;
     private String Title;
+    private Exercise exercise;
 
-    public ExersizeAction(String Username,String Title,Context context){
+    public ExersizeAction(String Username,String Title,Context context, Exercise exercise){
         this.Username = Username;
         this.Title = Title;
+        this.exercise = exercise;
         ExersizeC = context;
     }
 
     public void initializeTables(){
+        //exercise.ShowLoadingPopup();
         if(Title.equals("Streches")){
             return;
         }
@@ -38,7 +43,8 @@ public class ExersizeAction {
             public void onFail() {
                 switch(Title) {
                     case "Cardio":
-
+                        System.out.println("yes2");
+                        makeCardio();
                     case "Heavy Lifting":
 
                     case "Calisthenics":
@@ -51,6 +57,12 @@ public class ExersizeAction {
         void onSucces();
         void onFail();
     }
+
+    public interface ECallback2{
+        void onSucces();
+    }
+
+    public interface EmptyCallback{}
 
     public void checkForTables(final ExersizeAction.ECallback callBack){
         RequestQueue requestqueue = Volley.newRequestQueue(ExersizeC);
@@ -69,6 +81,37 @@ public class ExersizeAction {
                                     callBack.onSucces();
                                 }
                             }
+                            callBack.onFail();
+                        }
+                        catch( JSONException e ){
+                            //display error message
+                        }
+                    }
+                },
+
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        System.out.print("error");
+                    }
+                }
+        );
+        requestqueue.add(submitRequest);
+    }
+
+    public void InsertWeight(final ExersizeAction.ECallback2 callBack,String oef, String Weight){
+        RequestQueue requestqueue = Volley.newRequestQueue(ExersizeC);
+
+        String requestURL = "https://studev.groept.be/api/a21pt213/ExInsertNewCardio/" + Username + "/" + oef + "/" + Weight;
+
+        StringRequest submitRequest = new StringRequest(Request.Method.GET, requestURL,
+
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            JSONArray responseArray = new JSONArray(response);
+                            callBack.onSucces();
                         }
                         catch( JSONException e ){
                             //display error message
@@ -88,10 +131,35 @@ public class ExersizeAction {
 
 
     public void makeCardio(){
+        InsertWeight(new ECallback2() {
+            @Override
+            public void onSucces() {
 
+            }
+        },"Lopen", "Total_km");
+
+        InsertWeight(new ECallback2() {
+            @Override
+            public void onSucces() {
+
+            }
+        },"Fietsen", "Total_km");
+        InsertWeight(new ECallback2() {
+            @Override
+            public void onSucces() {
+
+            }
+        },"Roeien", "Total_km");
+        InsertWeight(new ECallback2() {
+            @Override
+            public void onSucces() {
+
+            }
+        },"Roeien", "Total_km");
     }
 
     public void makeHL(){
+
 
     }
 
