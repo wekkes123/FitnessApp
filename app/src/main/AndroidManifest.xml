@@ -18,12 +18,6 @@
             android:name=".classes.ActivityC.SignUpScreen"
             android:exported="false" />
         <activity
-            android:name=".classes.ActivityC.Stretches"
-            android:exported="false" />
-        <activity
-            android:name=".classes.ActivityC.Cardio"
-            android:exported="false" />
-        <activity
             android:name=".classes.ActivityC.Categories"
             android:exported="false" />
         <activity

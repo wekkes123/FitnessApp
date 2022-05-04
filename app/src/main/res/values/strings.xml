@@ -27,4 +27,23 @@
     <string name="Calisthenics2"><b>Calisthenics</b></string>
     <string name="Streches2"><b>Streches</b></string>
 
+
+    <string-array name="Cardio">
+        <item>Running</item>
+        <item>Swimming</item>
+        <item>Biking</item>
+        <item>Rowing</item>
+    </string-array>
+
+    <string-array name="Lifting">
+        <item>Mercury</item>
+        <item>Venus</item>
+        <item>Earth</item>
+        <item>Mars</item>
+        <item>Jupiter</item>
+        <item>Saturn</item>
+        <item>Uranus</item>
+        <item>Neptune</item>
+    </string-array>
+
 </resources>

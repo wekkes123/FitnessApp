@@ -11,35 +11,31 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
-        android:text= "@string/title"
+        android:text="@string/title"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" >
-    </TextView>
+        app:layout_constraintTop_toTopOf="parent"></TextView>
 
 
-    <TextView
-        android:id="@+id/PR_exercise"
-        android:layout_width="wrap_content"
+    <Spinner
+        android:id="@+id/planets_spinner"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="24dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:text = "@string/nog_geen" >
-    </TextView>
+        android:layout_marginTop="24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title_exercise" />
 
     <ScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/title_exercise"
-        app:layout_constraintVertical_bias="1.0">
+        app:layout_constraintTop_toBottomOf="@+id/editTextNumberDecimal2">
 
         <TableLayout
             android:layout_width="match_parent"
@@ -194,12 +190,36 @@
             <TableRow>
 
                 <TextView
-                    android:id="@+id/other_row4"
+                    android:id="@+id/five_one"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="next row"
+                    android:text="first column \t"
                     tools:layout_editor_absoluteX="134dp"
                     tools:layout_editor_absoluteY="11dp" />
+
+                <TextView
+                    android:id="@+id/five_two"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="second column \t"
+                    tools:layout_editor_absoluteX="177dp"
+                    tools:layout_editor_absoluteY="4dp" />
+
+                <TextView
+                    android:id="@+id/five_three"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="third column \t"
+                    tools:layout_editor_absoluteX="177dp"
+                    tools:layout_editor_absoluteY="4dp" />
+
+                <TextView
+                    android:id="@+id/five_four"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="fourth column \t"
+                    tools:layout_editor_absoluteX="177dp"
+                    tools:layout_editor_absoluteY="4dp" />
 
             </TableRow>
 
@@ -207,48 +227,504 @@
             <TableRow>
 
                 <TextView
-                    android:id="@+id/other_row5"
+                    android:id="@+id/six_one"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="next row"
+                    android:text="first column \t"
                     tools:layout_editor_absoluteX="134dp"
                     tools:layout_editor_absoluteY="11dp" />
+
+                <TextView
+                    android:id="@+id/six_two"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="second column \t"
+                    tools:layout_editor_absoluteX="177dp"
+                    tools:layout_editor_absoluteY="4dp" />
+
+                <TextView
+                    android:id="@+id/six_three"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="third column \t"
+                    tools:layout_editor_absoluteX="177dp"
+                    tools:layout_editor_absoluteY="4dp" />
+
+                <TextView
+                    android:id="@+id/six_four"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="fourth column \t"
+                    tools:layout_editor_absoluteX="177dp"
+                    tools:layout_editor_absoluteY="4dp" />
 
             </TableRow>
 
             <TableRow>
 
                 <TextView
-                    android:id="@+id/other_row6"
+                    android:id="@+id/seven_one"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="next row"
+                    android:text="first column \t"
                     tools:layout_editor_absoluteX="134dp"
                     tools:layout_editor_absoluteY="11dp" />
+
+                <TextView
+                    android:id="@+id/seven_two"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="second column \t"
+                    tools:layout_editor_absoluteX="177dp"
+                    tools:layout_editor_absoluteY="4dp" />
+
+                <TextView
+                    android:id="@+id/seven_three"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="third column \t"
+                    tools:layout_editor_absoluteX="177dp"
+                    tools:layout_editor_absoluteY="4dp" />
+
+                <TextView
+                    android:id="@+id/seven_four"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="fourth column \t"
+                    tools:layout_editor_absoluteX="177dp"
+                    tools:layout_editor_absoluteY="4dp" />
 
             </TableRow>
 
             <TableRow>
 
                 <TextView
-                    android:id="@+id/other_row7"
+                    android:id="@+id/eight_one"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="next row"
+                    android:text="first column \t"
                     tools:layout_editor_absoluteX="134dp"
                     tools:layout_editor_absoluteY="11dp" />
+
+                <TextView
+                    android:id="@+id/eight_two"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="second column \t"
+                    tools:layout_editor_absoluteX="177dp"
+                    tools:layout_editor_absoluteY="4dp" />
+
+                <TextView
+                    android:id="@+id/eight_three"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="third column \t"
+                    tools:layout_editor_absoluteX="177dp"
+                    tools:layout_editor_absoluteY="4dp" />
+
+                <TextView
+                    android:id="@+id/eight_four"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="fourth column \t"
+                    tools:layout_editor_absoluteX="177dp"
+                    tools:layout_editor_absoluteY="4dp" />
 
             </TableRow>
 
             <TableRow>
 
                 <TextView
-                    android:id="@+id/other_row8"
+                    android:id="@+id/ten_one"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="next row"
+                    android:text="first column \t"
                     tools:layout_editor_absoluteX="134dp"
                     tools:layout_editor_absoluteY="11dp" />
+
+                <TextView
+                    android:id="@+id/ten_two"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="second column \t"
+                    tools:layout_editor_absoluteX="177dp"
+                    tools:layout_editor_absoluteY="4dp" />
+
+                <TextView
+                    android:id="@+id/ten_three"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="third column \t"
+                    tools:layout_editor_absoluteX="177dp"
+                    tools:layout_editor_absoluteY="4dp" />
+
+                <TextView
+                    android:id="@+id/ten_four"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="fourth column \t"
+                    tools:layout_editor_absoluteX="177dp"
+                    tools:layout_editor_absoluteY="4dp" />
+
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/eleven_one"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="first column \t"
+                    tools:layout_editor_absoluteX="134dp"
+                    tools:layout_editor_absoluteY="11dp" />
+
+                <TextView
+                    android:id="@+id/eleven_two"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="second column \t"
+                    tools:layout_editor_absoluteX="177dp"
+                    tools:layout_editor_absoluteY="4dp" />
+
+                <TextView
+                    android:id="@+id/eleven_three"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="third column \t"
+                    tools:layout_editor_absoluteX="177dp"
+                    tools:layout_editor_absoluteY="4dp" />
+
+                <TextView
+                    android:id="@+id/eleven_four"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="fourth column \t"
+                    tools:layout_editor_absoluteX="177dp"
+                    tools:layout_editor_absoluteY="4dp" />
+
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/twelve_one"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="first column \t"
+                    tools:layout_editor_absoluteX="134dp"
+                    tools:layout_editor_absoluteY="11dp" />
+
+                <TextView
+                    android:id="@+id/twelve_two"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="second column \t"
+                    tools:layout_editor_absoluteX="177dp"
+                    tools:layout_editor_absoluteY="4dp" />
+
+                <TextView
+                    android:id="@+id/twelve_three"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="third column \t"
+                    tools:layout_editor_absoluteX="177dp"
+                    tools:layout_editor_absoluteY="4dp" />
+
+                <TextView
+                    android:id="@+id/twelve_four"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="fourth column \t"
+                    tools:layout_editor_absoluteX="177dp"
+                    tools:layout_editor_absoluteY="4dp" />
+
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/thirtheen_one"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="first column \t"
+                    tools:layout_editor_absoluteX="134dp"
+                    tools:layout_editor_absoluteY="11dp" />
+
+                <TextView
+                    android:id="@+id/thirtheen_two"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="second column \t"
+                    tools:layout_editor_absoluteX="177dp"
+                    tools:layout_editor_absoluteY="4dp" />
+
+                <TextView
+                    android:id="@+id/thirtheen_three"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="third column \t"
+                    tools:layout_editor_absoluteX="177dp"
+                    tools:layout_editor_absoluteY="4dp" />
+
+                <TextView
+                    android:id="@+id/thirtheen_four"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="fourth column \t"
+                    tools:layout_editor_absoluteX="177dp"
+                    tools:layout_editor_absoluteY="4dp" />
+
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/fourtheen_one"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="first column \t"
+                    tools:layout_editor_absoluteX="134dp"
+                    tools:layout_editor_absoluteY="11dp" />
+
+                <TextView
+                    android:id="@+id/fourtheen_two"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="second column \t"
+                    tools:layout_editor_absoluteX="177dp"
+                    tools:layout_editor_absoluteY="4dp" />
+
+                <TextView
+                    android:id="@+id/fourtheen_three"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="third column \t"
+                    tools:layout_editor_absoluteX="177dp"
+                    tools:layout_editor_absoluteY="4dp" />
+
+                <TextView
+                    android:id="@+id/fourtheen_four"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="fourth column \t"
+                    tools:layout_editor_absoluteX="177dp"
+                    tools:layout_editor_absoluteY="4dp" />
+
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/fiftheen_one"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="first column \t"
+                    tools:layout_editor_absoluteX="134dp"
+                    tools:layout_editor_absoluteY="11dp" />
+
+                <TextView
+                    android:id="@+id/fiftheen_two"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="second column \t"
+                    tools:layout_editor_absoluteX="177dp"
+                    tools:layout_editor_absoluteY="4dp" />
+
+                <TextView
+                    android:id="@+id/fiftheen_three"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="third column \t"
+                    tools:layout_editor_absoluteX="177dp"
+                    tools:layout_editor_absoluteY="4dp" />
+
+                <TextView
+                    android:id="@+id/fiftheen_four"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="fourth column \t"
+                    tools:layout_editor_absoluteX="177dp"
+                    tools:layout_editor_absoluteY="4dp" />
+
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/sixteen_one"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="first column \t"
+                    tools:layout_editor_absoluteX="134dp"
+                    tools:layout_editor_absoluteY="11dp" />
+
+                <TextView
+                    android:id="@+id/sixteen_two"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="second column \t"
+                    tools:layout_editor_absoluteX="177dp"
+                    tools:layout_editor_absoluteY="4dp" />
+
+                <TextView
+                    android:id="@+id/sixteen_three"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="third column \t"
+                    tools:layout_editor_absoluteX="177dp"
+                    tools:layout_editor_absoluteY="4dp" />
+
+                <TextView
+                    android:id="@+id/sixteen_four"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="fourth column \t"
+                    tools:layout_editor_absoluteX="177dp"
+                    tools:layout_editor_absoluteY="4dp" />
+
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/seventeen_one"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="first column \t"
+                    tools:layout_editor_absoluteX="134dp"
+                    tools:layout_editor_absoluteY="11dp" />
+
+                <TextView
+                    android:id="@+id/seventeen_two"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="second column \t"
+                    tools:layout_editor_absoluteX="177dp"
+                    tools:layout_editor_absoluteY="4dp" />
+
+                <TextView
+                    android:id="@+id/seventeen_three"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="third column \t"
+                    tools:layout_editor_absoluteX="177dp"
+                    tools:layout_editor_absoluteY="4dp" />
+
+                <TextView
+                    android:id="@+id/seventeen_four"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="fourth column \t"
+                    tools:layout_editor_absoluteX="177dp"
+                    tools:layout_editor_absoluteY="4dp" />
+
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/eighteen_one"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="first column \t"
+                    tools:layout_editor_absoluteX="134dp"
+                    tools:layout_editor_absoluteY="11dp" />
+
+                <TextView
+                    android:id="@+id/eighteen_two"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="second column \t"
+                    tools:layout_editor_absoluteX="177dp"
+                    tools:layout_editor_absoluteY="4dp" />
+
+                <TextView
+                    android:id="@+id/eigtheen_three"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="third column \t"
+                    tools:layout_editor_absoluteX="177dp"
+                    tools:layout_editor_absoluteY="4dp" />
+
+                <TextView
+                    android:id="@+id/eigtheen_four"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="fourth column \t"
+                    tools:layout_editor_absoluteX="177dp"
+                    tools:layout_editor_absoluteY="4dp" />
+
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/nineteen_one"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="first column \t"
+                    tools:layout_editor_absoluteX="134dp"
+                    tools:layout_editor_absoluteY="11dp" />
+
+                <TextView
+                    android:id="@+id/nineteen_two"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="second column \t"
+                    tools:layout_editor_absoluteX="177dp"
+                    tools:layout_editor_absoluteY="4dp" />
+
+                <TextView
+                    android:id="@+id/nineteen_three"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="third column \t"
+                    tools:layout_editor_absoluteX="177dp"
+                    tools:layout_editor_absoluteY="4dp" />
+
+                <TextView
+                    android:id="@+id/nineteen_four"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="fourth column \t"
+                    tools:layout_editor_absoluteX="177dp"
+                    tools:layout_editor_absoluteY="4dp" />
+
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/twenty_one"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="first column \t"
+                    tools:layout_editor_absoluteX="134dp"
+                    tools:layout_editor_absoluteY="11dp" />
+
+                <TextView
+                    android:id="@+id/twenty_two"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="second column \t"
+                    tools:layout_editor_absoluteX="177dp"
+                    tools:layout_editor_absoluteY="4dp" />
+
+                <TextView
+                    android:id="@+id/twenty_three"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="third column \t"
+                    tools:layout_editor_absoluteX="177dp"
+                    tools:layout_editor_absoluteY="4dp" />
+
+                <TextView
+                    android:id="@+id/twenty_four"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="fourth column \t"
+                    tools:layout_editor_absoluteX="177dp"
+                    tools:layout_editor_absoluteY="4dp" />
 
             </TableRow>
 
@@ -261,6 +737,39 @@
 
 
     </ScrollView>
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/editTextNumberDecimal2"
+        app:layout_constraintTop_toBottomOf="@+id/planets_spinner" />
+
+    <EditText
+        android:id="@+id/editTextNumberDecimal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        app:layout_constraintEnd_toStartOf="@+id/editTextNumberDecimal2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/planets_spinner" />
+
+    <EditText
+        android:id="@+id/editTextNumberDecimal2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        app:layout_constraintEnd_toStartOf="@+id/button2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/editTextNumberDecimal"
+        app:layout_constraintTop_toBottomOf="@+id/planets_spinner" />
+
 
 
 
