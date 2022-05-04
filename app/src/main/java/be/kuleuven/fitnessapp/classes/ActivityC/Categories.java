@@ -10,6 +10,8 @@ import android.widget.ImageButton;
 
 import be.kuleuven.fitnessapp.R;
 
+
+
 public class Categories extends AppCompatActivity {
     private ImageButton Cardio;
     private ImageButton Heavy_lifting;
