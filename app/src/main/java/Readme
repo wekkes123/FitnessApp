@@ -4,3 +4,24 @@ public interface kennen
 Categories (class) , onExerciseClicked, OnclickListener
 
 spinner en koppeling op activity exercise
+
+
+
+
+
+Table sizes
+
+Cardio
+    Lopen   ("Totaal aantal km",km)
+    (var km, tijd)
+    Fietsen ("Totaal aantal km",km)
+
+    (var km, tijd)
+    Zwemmen ("Totaal aantal km",km)
+    (var m, tijd)
+
+    Roeien ("Totaal aantal km",km)
+    (var km, tijd)
+
+
+Heavy lifting
