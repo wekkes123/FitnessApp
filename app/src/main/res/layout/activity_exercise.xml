@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".classes.ActivityC.Stretches">
+    tools:context=".classes.ActivityC.exercise">
 
     <TextView
         android:id="@+id/title_exercise"
@@ -48,6 +48,7 @@
         </TextView>
 
     </ScrollView>
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
