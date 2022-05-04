@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import be.kuleuven.fitnessapp.R;
+import be.kuleuven.fitnessapp.classes.Models.ExersizeAction;
 
 public class Exercise extends AppCompatActivity {
 
@@ -13,6 +14,9 @@ public class Exercise extends AppCompatActivity {
     public String info;
     public int PR;
     private TextView tv1;
+    private Bundle extras;
+    private String Username;
+    private ExersizeAction Action;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +29,18 @@ public class Exercise extends AppCompatActivity {
         tv1.setText(title);
         //
 
+        //initiate variables
+        extras = getIntent().getExtras();
+        this.Username = extras.get("Username").toString();
+        Action = new ExersizeAction(Username, title,this);
+        //initiate tables
+        initiateTables();
+        //
 
+    }
+
+    public void initiateTables(){
+        Action.initializeTables();
     }
 
 }
