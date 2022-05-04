@@ -18,9 +18,8 @@ import be.kuleuven.fitnessapp.R;
 public class Categories extends AppCompatActivity {
     private ImageButton Cardio;
     private ImageButton Heavy_lifting;
-    private Button Endurance;
-    private Button Calesthetics;
-    private Button Stretches;
+    private ImageButton Calesthetics;
+    private ImageButton Stretches;
     public String type_of_ex = "nothingATM";
 
     private boolean ButtonCardio;
@@ -50,12 +49,11 @@ public class Categories extends AppCompatActivity {
         Cardio = (ImageButton) findViewById(R.id.first_exercise);
         Heavy_lifting = (ImageButton) findViewById(R.id.second_exercise);
         Calesthetics = (ImageButton)findViewById(R.id.third_exercise);
-        //Endurance = (Button) findViewById(R.id.fourth_exercise);
         Stretches = (ImageButton) findViewById(R.id.fifth_exercise);
     }
 
 
-    public void onExerciseClicked (String type_of_ex)
+    public void onExerciseClicked ()
     {
         if (type_of_ex == "cardio")
         {
@@ -70,7 +68,7 @@ public class Categories extends AppCompatActivity {
                 }
             });
         } else if (ButtonHeavyLift) {
-            final Button Heavy_lifting = (Button) findViewById(R.id.second_exercise);
+            final ImageButton Heavy_lifting = (ImageButton) findViewById(R.id.second_exercise);
         }
         else if (type_of_ex == "heavy_lift")
         {
@@ -85,7 +83,7 @@ public class Categories extends AppCompatActivity {
                 }
             });
         } else if (ButtonCalisthetics) {
-            final Button Calisthetics = (Button) findViewById(R.id.third_exercise);
+            final ImageButton Calisthetics = (ImageButton) findViewById(R.id.third_exercise);
         }
         else if(type_of_ex == "cali")
         {
