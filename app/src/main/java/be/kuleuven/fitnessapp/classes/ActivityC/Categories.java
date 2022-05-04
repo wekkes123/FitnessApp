@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 import be.kuleuven.fitnessapp.R;
 
@@ -18,6 +19,7 @@ public class Categories extends AppCompatActivity {
     private ImageButton Heavy_lifting;
     private ImageButton Calesthetics;
     private ImageButton Stretches;
+    private TextView welcomeTxt;
 
     private boolean ButtonCardio;
     private boolean ButtonHeavyLift;
@@ -36,6 +38,7 @@ public class Categories extends AppCompatActivity {
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         //end
+        welcomeTxt = (TextView) findViewById(R.id.welcomeTxt);
         ButtonCalisthenics = false;
         ButtonCardio = false;
         ButtonStretches = false;
