@@ -8,16 +8,18 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import be.kuleuven.fitnessapp.R;
 
 
 public class Categories extends AppCompatActivity {
-    private Button Cardio;
-    private Button Heavy_lifting;
+    private ImageButton Cardio;
+    private ImageButton Heavy_lifting;
     private Button Endurance;
     private Button Calesthetics;
     private Button Stretches;
+    public String type_of_ex = "nothingATM";
 
     private boolean ButtonCardio;
     private boolean ButtonHeavyLift;
@@ -43,17 +45,19 @@ public class Categories extends AppCompatActivity {
         ButtonHeavyLift = false;
 
         setContentView(R.layout.activity_categories);
-        Cardio = (Button) findViewById(R.id.first_exercise);
-        Heavy_lifting = (Button) findViewById(R.id.second_exercise);
-        Calesthetics = (Button) findViewById(R.id.third_exercise);
-        Endurance = (Button) findViewById(R.id.fourth_exercise);
-        Stretches = (Button) findViewById(R.id.fifth_exercise);
+        Cardio = (ImageButton) findViewById(R.id.first_exercise);
+        Heavy_lifting = (ImageButton) findViewById(R.id.second_exercise);
+        Calesthetics = (ImageButton)findViewById(R.id.third_exercise);
+        //Endurance = (Button) findViewById(R.id.fourth_exercise);
+        Stretches = (ImageButton) findViewById(R.id.fifth_exercise);
     }
 
 
-    public void onExerciseClicked() {
-        if (ButtonCardio) {
-            final Button Cardio = (Button) findViewById(R.id.first_exercise);
+    public void onExerciseClicked (String type_of_ex)
+    {
+        if (type_of_ex == "cardio")
+        {
+            final ImageButton Cardio = (ImageButton) findViewById(R.id.first_exercise);
             Cardio.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View caller) {
                     Intent cardioChosen = new Intent(Categories.this, exercise.class);
@@ -65,42 +69,46 @@ public class Categories extends AppCompatActivity {
             });
         } else if (ButtonHeavyLift) {
             final Button Heavy_lifting = (Button) findViewById(R.id.second_exercise);
+        }
+        else if (type_of_ex == "heavy_lift")
+        {
+            final ImageButton Heavy_lifting = (ImageButton) findViewById(R.id.second_exercise);
             Heavy_lifting.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View caller) {
                     Intent HeavyChosen = new Intent(Categories.this, exercise.class);
                     startActivity(HeavyChosen);
                     exercise ex1 = new exercise();
                     ex1.MakeTitle();
+                    startActivity(HeavyChosen);
                 }
             });
         } else if (ButtonCalisthetics) {
             final Button Calisthetics = (Button) findViewById(R.id.third_exercise);
+        }
+        else if(type_of_ex == "cali")
+        {
+            final ImageButton Calisthetics = (ImageButton) findViewById(R.id.third_exercise);
             Calisthetics.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View caller) {
                     Intent CaliChosen = new Intent(Categories.this, exercise.class);
                     startActivity(CaliChosen);
                     exercise ex1 = new exercise();
                     ex1.MakeTitle();
+                    startActivity(CaliChosen);
                 }
             });
-        } else if (ButtonEndurance) {
-            final Button Endurance = (Button) findViewById(R.id.fourth_exercise);
-            Endurance.setOnClickListener(new View.OnClickListener() {
-                public void onClick(View caller) {
-                    Intent EndurChosen = new Intent(Categories.this, exercise.class);
-                    startActivity(EndurChosen);
-                    exercise ex1 = new exercise();
-                    ex1.MakeTitle();
-                }
-            });
-        } else if (ButtonStretches) {
-            final Button Stretches = (Button) findViewById(R.id.fifth_exercise);
+        }
+
+        else if (type_of_ex == "stret")
+        {
+            final ImageButton Stretches = (ImageButton) findViewById(R.id.fifth_exercise);
             Stretches.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View caller) {
                     Intent StretChosen = new Intent(Categories.this, exercise.class);
                     startActivity(StretChosen);
                     exercise ex1 = new exercise();
                     ex1.MakeTitle();
+                    startActivity(StretChosen);
                 }
             });
         }
@@ -131,4 +139,8 @@ public class Categories extends AppCompatActivity {
         onExerciseClicked();
     }
 
+    public String getType_of_ex()
+    {
+        return type_of_ex;
+    }
 }
