@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FitnessApp">
         <activity
-            android:name=".classes.ActivityC.exercise"
+            android:name=".classes.ActivityC.Exercise"
             android:exported="false" />
         <activity
             android:name=".classes.ActivityC.SignUpScreen"

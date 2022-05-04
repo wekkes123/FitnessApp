@@ -57,14 +57,14 @@ public class Categories extends AppCompatActivity {
     {
         if (ButtonCardio) {
             final ImageButton Cardio = (ImageButton) findViewById(R.id.first_exercise);
-            Intent CardIntent = new Intent(this, exercise.class);
+            Intent CardIntent = new Intent(this, Exercise.class);
             CardIntent.putExtra(title, "Cardio");
             startActivity(CardIntent);
         }
 
         else if (ButtonHeavyLift) {
             final ImageButton Heavy_lifting = (ImageButton) findViewById(R.id.second_exercise);
-            Intent LiftIntent = new Intent(this, exercise.class);
+            Intent LiftIntent = new Intent(this, Exercise.class);
             LiftIntent.putExtra(title, "Heavy Lifting");
             startActivity(LiftIntent);
 
@@ -73,14 +73,14 @@ public class Categories extends AppCompatActivity {
         else if(ButtonCalisthenics)
         {
             final ImageButton Calisthenics = (ImageButton) findViewById(R.id.third_exercise);
-            Intent CaliIntent = new Intent(this, exercise.class);
+            Intent CaliIntent = new Intent(this, Exercise.class);
             CaliIntent.putExtra(title, "Calisthenics");
             startActivity(CaliIntent);
         }
 
         else if (ButtonStretches) {
             final ImageButton Stretches = (ImageButton) findViewById(R.id.fourth_exercise);
-            Intent StretIntent = new Intent(this, exercise.class);
+            Intent StretIntent = new Intent(this, Exercise.class);
             StretIntent.putExtra(title, "Stretches");
             startActivity(StretIntent);
         }
