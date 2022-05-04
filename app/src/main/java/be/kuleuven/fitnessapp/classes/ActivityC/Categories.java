@@ -20,6 +20,7 @@ public class Categories extends AppCompatActivity {
     private ImageButton Calesthetics;
     private ImageButton Stretches;
     private TextView welcomeTxt;
+    private Bundle extras;
 
     private boolean ButtonCardio;
     private boolean ButtonHeavyLift;
@@ -40,7 +41,7 @@ public class Categories extends AppCompatActivity {
         //end
         setContentView(R.layout.activity_categories);
         welcomeTxt = (TextView) findViewById(R.id.welcomeTxt);
-        Bundle extras = getIntent().getExtras();
+        extras = getIntent().getExtras();
         welcomeTxt.setText("Hello " + extras.get("Username").toString() + " !");
         ButtonCalisthenics = false;
         ButtonCardio = false;
@@ -59,6 +60,7 @@ public class Categories extends AppCompatActivity {
             final ImageButton Cardio = (ImageButton) findViewById(R.id.first_exercise);
             Intent CardIntent = new Intent(this, Exercise.class);
             CardIntent.putExtra(title, "Cardio");
+            CardIntent.putExtra("Username", extras.get("Username").toString());
             startActivity(CardIntent);
         }
 
@@ -66,6 +68,7 @@ public class Categories extends AppCompatActivity {
             final ImageButton Heavy_lifting = (ImageButton) findViewById(R.id.second_exercise);
             Intent LiftIntent = new Intent(this, Exercise.class);
             LiftIntent.putExtra(title, "Heavy Lifting");
+            LiftIntent.putExtra("Username", extras.get("Username").toString());
             startActivity(LiftIntent);
 
         }
@@ -75,6 +78,7 @@ public class Categories extends AppCompatActivity {
             final ImageButton Calisthenics = (ImageButton) findViewById(R.id.third_exercise);
             Intent CaliIntent = new Intent(this, Exercise.class);
             CaliIntent.putExtra(title, "Calisthenics");
+            CaliIntent.putExtra("Username", extras.get("Username").toString());
             startActivity(CaliIntent);
         }
 
