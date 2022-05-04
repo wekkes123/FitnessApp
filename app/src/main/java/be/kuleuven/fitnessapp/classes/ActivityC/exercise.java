@@ -9,7 +9,6 @@ import be.kuleuven.fitnessapp.R;
 
 public class exercise extends AppCompatActivity {
 
-    public String type_of_ex = "nothingATM";
     public String title;
     public String info;
     public int PR;
@@ -19,6 +18,8 @@ public class exercise extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_exercise);
+        tv1 = (TextView) findViewById(R.id.title_exercise);
+        tv1.setText((String)getIntent().getExtras().get("title"));
     }
 
 
@@ -26,6 +27,7 @@ public class exercise extends AppCompatActivity {
     {
         Categories Object1 = new Categories();
         title = Object1.getType_of_ex();
+
         tv1 = (TextView)findViewById(R.id.title_exercise);
         tv1.setText(title);
     }
