@@ -7,12 +7,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import be.kuleuven.fitnessapp.R;
-
-
 
 
 
@@ -23,6 +24,7 @@ public class Categories extends AppCompatActivity {
     private ImageButton Stretches;
     private TextView welcomeTxt;
     private Bundle extras;
+    public String exercise;
 
     private boolean ButtonCardio;
     private boolean ButtonHeavyLift;
@@ -30,7 +32,7 @@ public class Categories extends AppCompatActivity {
     private boolean ButtonStretches;
 
 
-    public String title;
+    private String title;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +61,7 @@ public class Categories extends AppCompatActivity {
     public void onExerciseClicked ()
     {
         if (ButtonCardio) {
+            ButtonCardio = false;
             final ImageButton Cardio = (ImageButton) findViewById(R.id.first_exercise);
             Intent CardIntent = new Intent(this, Exercise.class);
             CardIntent.putExtra(title, "Cardio");
@@ -67,6 +70,7 @@ public class Categories extends AppCompatActivity {
         }
 
         else if (ButtonHeavyLift) {
+            ButtonHeavyLift = false;
             final ImageButton Heavy_lifting = (ImageButton) findViewById(R.id.second_exercise);
             Intent LiftIntent = new Intent(this, Exercise.class);
             LiftIntent.putExtra(title, "Heavy Lifting");
@@ -77,6 +81,7 @@ public class Categories extends AppCompatActivity {
 
         else if(ButtonCalisthenics)
         {
+            ButtonCalisthenics = false;
             final ImageButton Calisthenics = (ImageButton) findViewById(R.id.third_exercise);
             Intent CaliIntent = new Intent(this, Exercise.class);
             CaliIntent.putExtra(title, "Calisthenics");
@@ -85,6 +90,7 @@ public class Categories extends AppCompatActivity {
         }
 
         else if (ButtonStretches) {
+            ButtonStretches = false;
             final ImageButton Stretches = (ImageButton) findViewById(R.id.fourth_exercise);
             Intent StretIntent = new Intent(this, Exercise.class);
             StretIntent.putExtra(title, "Stretches");

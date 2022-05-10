@@ -20,7 +20,7 @@
 
 
     <Spinner
-        android:id="@+id/planets_spinner"
+        android:id="@+id/spinner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -746,7 +746,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/editTextNumberDecimal2"
-        app:layout_constraintTop_toBottomOf="@+id/planets_spinner" />
+        app:layout_constraintTop_toBottomOf="@+id/spinner" />
 
     <EditText
         android:id="@+id/editTextNumberDecimal"
@@ -757,7 +757,7 @@
         app:layout_constraintEnd_toStartOf="@+id/editTextNumberDecimal2"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/planets_spinner" />
+        app:layout_constraintTop_toBottomOf="@+id/spinner" />
 
     <EditText
         android:id="@+id/editTextNumberDecimal2"
@@ -768,7 +768,7 @@
         app:layout_constraintEnd_toStartOf="@+id/button2"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/editTextNumberDecimal"
-        app:layout_constraintTop_toBottomOf="@+id/planets_spinner" />
+        app:layout_constraintTop_toBottomOf="@+id/spinner" />
 
 
 
