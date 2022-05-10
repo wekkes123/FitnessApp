@@ -47,8 +47,6 @@ public class Exercise extends AppCompatActivity implements
     Action = new ExersizeAction(Username, title, this,this);
     //initiate tables
     initiateTables();
-    //
-    System.out.println(title);
     // set spinner
     spinner(WhatArToUse());
 
@@ -57,15 +55,20 @@ public class Exercise extends AppCompatActivity implements
     public String[] WhatArToUse()
     {
         String[] ArToUse = new String[] {};
-        if (title.equals("Heavy Lifting"))
-           ArToUse = Heav;
-        else if (title.equals( "Cardio"))
-            ArToUse = Card;
-        else if (title.equals("Stretches"))
-           ArToUse = Stret;
-        else if (title.equals("Calisthenics"))
-            ArToUse = Cali;
-
+        switch(title) {
+            case "Heavy Lifting" :{
+            ArToUse = Heav;
+            break;}
+            case "Cardio":{
+                ArToUse = Card;
+                break;}
+            case "Stretches" :{
+                ArToUse = Stret;
+                break;}
+            case "Calisthenics" :{
+                ArToUse = Cali;
+                break;}
+        }
         return ArToUse;
     }
 

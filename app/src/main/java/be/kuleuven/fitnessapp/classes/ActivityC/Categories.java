@@ -26,12 +26,6 @@ public class Categories extends AppCompatActivity {
     private Bundle extras;
     public String exercise;
 
-    private boolean ButtonCardio;
-    private boolean ButtonHeavyLift;
-    private boolean ButtonCalisthenics;
-    private boolean ButtonStretches;
-
-
     private String title;
 
     @Override
@@ -47,10 +41,6 @@ public class Categories extends AppCompatActivity {
         welcomeTxt = (TextView) findViewById(R.id.welcomeTxt);
         extras = getIntent().getExtras();
         welcomeTxt.setText("Hello " + extras.get("Username").toString() + " !");
-        ButtonCalisthenics = false;
-        ButtonCardio = false;
-        ButtonStretches = false;
-        ButtonHeavyLift = false;
         Cardio = (ImageButton) findViewById(R.id.first_exercise);
         Heavy_lifting = (ImageButton) findViewById(R.id.second_exercise);
         Calesthetics = (ImageButton)findViewById(R.id.third_exercise);
@@ -60,61 +50,61 @@ public class Categories extends AppCompatActivity {
 
     public void onExerciseClicked ()
     {
-        if (ButtonCardio) {
-            ButtonCardio = false;
-            final ImageButton Cardio = (ImageButton) findViewById(R.id.first_exercise);
-            Intent CardIntent = new Intent(this, Exercise.class);
-            CardIntent.putExtra(title, "Cardio");
-            CardIntent.putExtra("Username", extras.get("Username").toString());
-            startActivity(CardIntent);
-        }
+        switch (exercise) {
+            case "Cardio" : {
+                final ImageButton Cardio = (ImageButton) findViewById(R.id.first_exercise);
+                Intent CardIntent = new Intent(this, Exercise.class);
+                CardIntent.putExtra(title, "Cardio");
+                CardIntent.putExtra("Username", extras.get("Username").toString());
+                startActivity(CardIntent);
+                break;
+            }
 
-        else if (ButtonHeavyLift) {
-            ButtonHeavyLift = false;
-            final ImageButton Heavy_lifting = (ImageButton) findViewById(R.id.second_exercise);
-            Intent LiftIntent = new Intent(this, Exercise.class);
-            LiftIntent.putExtra(title, "Heavy Lifting");
-            LiftIntent.putExtra("Username", extras.get("Username").toString());
-            startActivity(LiftIntent);
+            case "HeavyLift" : {
+                final ImageButton Heavy_lifting = (ImageButton) findViewById(R.id.second_exercise);
+                Intent LiftIntent = new Intent(this, Exercise.class);
+                LiftIntent.putExtra(title, "Heavy Lifting");
+                LiftIntent.putExtra("Username", extras.get("Username").toString());
+                startActivity(LiftIntent);
+                break;
+            }
 
-        }
+            case "Calisthenics" : {
+                final ImageButton Calisthenics = (ImageButton) findViewById(R.id.third_exercise);
+                Intent CaliIntent = new Intent(this, Exercise.class);
+                CaliIntent.putExtra(title, "Calisthenics");
+                CaliIntent.putExtra("Username", extras.get("Username").toString());
+                startActivity(CaliIntent);
+                break;
+            }
 
-        else if(ButtonCalisthenics)
-        {
-            ButtonCalisthenics = false;
-            final ImageButton Calisthenics = (ImageButton) findViewById(R.id.third_exercise);
-            Intent CaliIntent = new Intent(this, Exercise.class);
-            CaliIntent.putExtra(title, "Calisthenics");
-            CaliIntent.putExtra("Username", extras.get("Username").toString());
-            startActivity(CaliIntent);
-        }
-
-        else if (ButtonStretches) {
-            ButtonStretches = false;
-            final ImageButton Stretches = (ImageButton) findViewById(R.id.fourth_exercise);
-            Intent StretIntent = new Intent(this, Exercise.class);
-            StretIntent.putExtra(title, "Stretches");
-            startActivity(StretIntent);
+            case "Stretches" :{
+                final ImageButton Stretches = (ImageButton) findViewById(R.id.fourth_exercise);
+                Intent StretIntent = new Intent(this, Exercise.class);
+                StretIntent.putExtra(title, "Stretches");
+                startActivity(StretIntent);
+                break;
+            }
         }
     }
 
     public void onCardioClicked(View caller) {
-        ButtonCardio = true;
+        exercise = "Cardio";
         onExerciseClicked();
     }
 
     public void onHeavyLiftingClicked(View caller) {
-        ButtonHeavyLift = true;
+        exercise = "HeavyLift";
         onExerciseClicked();
     }
 
     public void onCalistheticsClicked(View caller) {
-        ButtonCalisthenics = true;
+        exercise = "Calisthenics";
         onExerciseClicked();
     }
 
     public void onStretchesClicked(View caller) {
-        ButtonStretches = true;
+        exercise = "Stretches";
         onExerciseClicked();
     }
 
