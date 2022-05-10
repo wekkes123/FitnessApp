@@ -7,10 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.Spinner;
 import android.widget.TextView;
 
 import be.kuleuven.fitnessapp.R;
@@ -82,6 +79,7 @@ public class Categories extends AppCompatActivity {
                 final ImageButton Stretches = (ImageButton) findViewById(R.id.fourth_exercise);
                 Intent StretIntent = new Intent(this, Exercise.class);
                 StretIntent.putExtra(title, "Stretches");
+                StretIntent.putExtra("Username", extras.get("Username").toString());
                 startActivity(StretIntent);
                 break;
             }

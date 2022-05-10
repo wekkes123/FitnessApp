@@ -21,7 +21,7 @@ public class Exercise extends AppCompatActivity implements
     String[] Card = {"Running" , "Swimming", "Biking", "Rowing"};
     String[] Heav = {"Bench", "Squad" , "Deadlift"};
     String[] Cali = {"pushups" , "pullups"};
-    String[] Stret ={"back", "triceps", "biceps"};
+    String[] Stret ={"back", "triceps"};
 
 
     public String title;
