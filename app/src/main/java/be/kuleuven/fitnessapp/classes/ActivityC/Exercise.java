@@ -45,7 +45,6 @@ public class Exercise extends AppCompatActivity implements
         extras = getIntent().getExtras();
         this.Username = extras.get("Username").toString();
         Action = new ExersizeAction(Username, title,this, this);
-        Action = new ExersizeAction(Username, title, this);
         //initiate tables
         System.out.println("yes");
         initiateTables();
@@ -104,7 +103,4 @@ public class Exercise extends AppCompatActivity implements
         Action.initializeTables();
     }
 
-    public void initiateTables() {
-            Action.initializeTables();
-        }
 }
