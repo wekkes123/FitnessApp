@@ -44,8 +44,10 @@ public class Exercise extends AppCompatActivity implements
         //initiate variables
         extras = getIntent().getExtras();
         this.Username = extras.get("Username").toString();
+        Action = new ExersizeAction(Username, title,this, this);
         Action = new ExersizeAction(Username, title, this);
         //initiate tables
+        System.out.println("yes");
         initiateTables();
         //
     System.out.println(title);
@@ -88,6 +90,18 @@ public class Exercise extends AppCompatActivity implements
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {
         // TODO Auto-generated method stub
+    }
+
+    public void ShowLoadingPopup(){
+        //nog maken
+    }
+
+    public void StopLoadingPopup(){
+        //nog maken
+    }
+
+    public void initiateTables(){
+        Action.initializeTables();
     }
 
     public void initiateTables() {
