@@ -32,38 +32,38 @@ public class Exercise extends AppCompatActivity implements
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        //
-        setContentView(R.layout.activity_exercise);
-        Bundle extras = getIntent().getExtras();
-        title = (String) extras.get(title);
-        tv1 = (TextView) findViewById(R.id.title_exercise);
-        tv1.setText(title);
-        //
+    super.onCreate(savedInstanceState);
+    //
+    setContentView(R.layout.activity_exercise);
+    Bundle extras = getIntent().getExtras();
+    title = (String) extras.get(title);
+    tv1 = (TextView) findViewById(R.id.title_exercise);
+    tv1.setText(title);
+    //
 
-        //initiate variables
-        extras = getIntent().getExtras();
-        this.Username = extras.get("Username").toString();
-        Action = new ExersizeAction(Username, title,this, this);
-        //initiate tables
-        System.out.println("yes");
-        initiateTables();
-        //
+    //initiate variables
+    extras = getIntent().getExtras();
+    this.Username = extras.get("Username").toString();
+    Action = new ExersizeAction(Username, title, this,this);
+    //initiate tables
+    initiateTables();
+    //
     System.out.println(title);
-       spinner(WhatArToUse());
+    // set spinner
+    spinner(WhatArToUse());
 
     }
 
     public String[] WhatArToUse()
     {
         String[] ArToUse = new String[] {};
-        if (title == "Heavy Lifting")
+        if (title.equals("Heavy Lifting"))
            ArToUse = Heav;
-        else if (title == "Cardio")
+        else if (title.equals( "Cardio"))
             ArToUse = Card;
-        else if (title == "Stretches")
+        else if (title.equals("Stretches"))
            ArToUse = Stret;
-        else if (title == "Calisthenics")
+        else if (title.equals("Calisthenics"))
             ArToUse = Cali;
 
         return ArToUse;
@@ -81,26 +81,18 @@ public class Exercise extends AppCompatActivity implements
         spin.setAdapter(aa);
 
     }
-    @Override
+
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-        Toast.makeText(getApplicationContext(), Card[i], Toast.LENGTH_LONG).show();
+        String[] ex = WhatArToUse();
+        Toast.makeText(getApplicationContext(), ex[i], Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {
-        // TODO Auto-generated method stub
+        // Auto-generated method stub
     }
 
-    public void ShowLoadingPopup(){
-        //nog maken
-    }
-
-    public void StopLoadingPopup(){
-        //nog maken
-    }
-
-    public void initiateTables(){
-        Action.initializeTables();
-    }
-
+    public void initiateTables() {
+            Action.initializeTables();
+        }
 }
