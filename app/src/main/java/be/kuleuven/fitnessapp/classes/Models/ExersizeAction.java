@@ -130,7 +130,7 @@ public class ExersizeAction {
                     public void onResponse(String response) {
                         try {
                             JSONArray responseArray = new JSONArray(response);
-                            //maak tables met info
+
                             callBack.onSucces();
                         }
                         catch( JSONException e ){

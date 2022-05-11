@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -13,6 +14,7 @@ import android.widget.Toast;
 import org.json.JSONArray;
 
 import java.lang.reflect.Array;
+import java.util.Arrays;
 
 import be.kuleuven.fitnessapp.R;
 import be.kuleuven.fitnessapp.classes.Models.ExersizeAction;
@@ -33,10 +35,22 @@ public class Exercise extends AppCompatActivity implements
     private Bundle extras;
     private String Username;
     private ExersizeAction Action;
+    private EditText insert1;
+    private EditText insert2;
     private String ID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    //
+    setContentView(R.layout.activity_exercise);
+    Bundle extras = getIntent().getExtras();
+    title = (String) extras.get(title);
+    tv1 = (TextView) findViewById(R.id.title_exercise);
+    tv1.setText(title);
+    this.insert1 = (EditText) findViewById(R.id.insert1);
+    this.insert2 = (EditText) findViewById(R.id.insert2);
+        //
         super.onCreate(savedInstanceState);
         //
         setContentView(R.layout.activity_exercise);
@@ -60,29 +74,29 @@ public class Exercise extends AppCompatActivity implements
         return "Running";
     }
 
-    public String[] WhatArToUse() {
-        String[] ArToUse = new String[]{};
-        switch (title) {
-            case "Heavy Lifting": {
-                ArToUse = Heav;
-                break;
-            }
-            case "Cardio": {
+    public String[] WhatArToUse()
+    {
+        String[] ArToUse = new String[] {};
+        switch(title) {
+            case "Heavy Lifting" :{
+            ArToUse = Heav;
+            break;}
+            case "Cardio":{
                 ArToUse = Card;
-                break;
-            }
-            case "Stretches": {
+                break;}
+            case "Stretches" :{
                 ArToUse = Stret;
-                break;
-            }
-            case "Calisthenics": {
+                break;}
+            case "Calisthenics" :{
                 ArToUse = Cali;
-                break;
-            }
+                break;}
         }
         return ArToUse;
     }
 
+
+    public void spinner(String[] Ex)
+    {
     public void spinner(String[] Ex) {
         Spinner spin = (Spinner) findViewById(R.id.spinner);
         spin.setOnItemSelectedListener(this);
@@ -92,17 +106,33 @@ public class Exercise extends AppCompatActivity implements
         aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         //Setting the ArrayAdapter data on the Spinner
         spin.setAdapter(aa);
-
+        setInserts();
     }
 
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
         String[] ex = WhatArToUse();
         Toast.makeText(getApplicationContext(), ex[i], Toast.LENGTH_SHORT).show();
+        setInserts();
     }
 
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {
         // Auto-generated method stub
+    }
+
+    public void setInserts(){
+        Spinner spin = (Spinner) findViewById(R.id.spinner);
+        String exer = spin.getSelectedItem().toString();
+        if(exer.equals("Running") || exer.equals("Biking")){
+            insert2.setHint("distance(km)");
+        }
+        else if(exer.equals("Swimming") || exer.equals("Rowing")){
+            insert2.setHint("distance(m)");
+        }
+        else if(Arrays.asList(Heav).contains(exer)){
+            insert1.setHint("Weight(Kg)");
+            insert2.setHint("Reps");
+        }
     }
 
     public void initiateTables() {
@@ -113,5 +143,14 @@ public class Exercise extends AppCompatActivity implements
     public String getID(int row, int column) {
         ID = StringNumbers[IntNumbers[column]] + "_" + StringNumbers[IntNumbers[row]];
         return ID;
+    }
+            Action.initializeTables();
+        }
+
+    public void onUpdateButtonClicked(View caller){
+        Spinner spin = (Spinner) findViewById(R.id.spinner);
+        String exer = spin.getSelectedItem().toString();
+        if(insert2.)
+
     }
 }
