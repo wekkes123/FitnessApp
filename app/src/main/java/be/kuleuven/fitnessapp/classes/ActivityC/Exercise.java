@@ -6,11 +6,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.lang.reflect.Array;
+import java.util.Arrays;
 
 import be.kuleuven.fitnessapp.R;
 import be.kuleuven.fitnessapp.classes.Models.ExersizeAction;
@@ -29,6 +31,8 @@ public class Exercise extends AppCompatActivity implements
     private Bundle extras;
     private String Username;
     private ExersizeAction Action;
+    private EditText insert1;
+    private EditText insert2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +43,9 @@ public class Exercise extends AppCompatActivity implements
     title = (String) extras.get(title);
     tv1 = (TextView) findViewById(R.id.title_exercise);
     tv1.setText(title);
-    //
+    this.insert1 = (EditText) findViewById(R.id.insert1);
+    this.insert2 = (EditText) findViewById(R.id.insert2);
+        //
 
     //initiate variables
     extras = getIntent().getExtras();
@@ -75,6 +81,7 @@ public class Exercise extends AppCompatActivity implements
         return ArToUse;
     }
 
+
     public void spinner(String[] Ex)
     {
         Spinner spin = (Spinner) findViewById(R.id.spinner);
@@ -85,17 +92,33 @@ public class Exercise extends AppCompatActivity implements
         aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         //Setting the ArrayAdapter data on the Spinner
         spin.setAdapter(aa);
-
+        setInserts();
     }
 
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
         String[] ex = WhatArToUse();
         Toast.makeText(getApplicationContext(), ex[i], Toast.LENGTH_SHORT).show();
+        setInserts();
     }
 
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {
         // Auto-generated method stub
+    }
+
+    public void setInserts(){
+        Spinner spin = (Spinner) findViewById(R.id.spinner);
+        String exer = spin.getSelectedItem().toString();
+        if(exer.equals("Running") || exer.equals("Biking")){
+            insert2.setHint("distance(km)");
+        }
+        else if(exer.equals("Swimming") || exer.equals("Rowing")){
+            insert2.setHint("distance(m)");
+        }
+        else if(Arrays.asList(Heav).contains(exer)){
+            insert1.setHint("Weight(Kg)");
+            insert2.setHint("Reps");
+        }
     }
 
     public void initiateTables() {
