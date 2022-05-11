@@ -49,7 +49,10 @@ public class Exercise extends AppCompatActivity implements
     initiateTables();
     // set spinner
     spinner(WhatArToUse());
+    }
 
+    public String getEX(){
+        return "Running";
     }
 
     public String[] WhatArToUse()
