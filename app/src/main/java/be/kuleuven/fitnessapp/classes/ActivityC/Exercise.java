@@ -12,6 +12,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.lang.reflect.Array;
 import java.util.Arrays;
@@ -30,6 +32,7 @@ public class Exercise extends AppCompatActivity implements
     int[] IntNumbers = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20};
 
 
+
     public String title;
     private TextView tv1;
     private Bundle extras;
@@ -38,6 +41,7 @@ public class Exercise extends AppCompatActivity implements
     private EditText insert1;
     private EditText insert2;
     private String ID;
+    private JSONArray response = ExersizeAction.ResponseArray;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,24 +54,23 @@ public class Exercise extends AppCompatActivity implements
     tv1.setText(title);
     this.insert1 = (EditText) findViewById(R.id.insert1);
     this.insert2 = (EditText) findViewById(R.id.insert2);
-        //
-        super.onCreate(savedInstanceState);
-        //
-        setContentView(R.layout.activity_exercise);
-        Bundle extras = getIntent().getExtras();
-        title = (String) extras.get(title);
-        tv1 = (TextView) findViewById(R.id.title_exercise);
-        tv1.setText(title);
-        //
+    //
+    //
+    setContentView(R.layout.activity_exercise);
+    Bundle extra_s = getIntent().getExtras();
+    title = (String) extra_s.get(title);
+    tv1 = (TextView) findViewById(R.id.title_exercise);
+    tv1.setText(title);
+    //
 
-        //initiate variables
-        extras = getIntent().getExtras();
-        this.Username = extras.get("Username").toString();
-        Action = new ExersizeAction(Username, title, this, this);
-        //initiate tables
-        initiateTables();
-        // set spinner
-        spinner(WhatArToUse());
+    //initiate variables
+    extras = getIntent().getExtras();
+    this.Username = extras.get("Username").toString();
+    Action = new ExersizeAction(Username, title, this, this);
+    //initiate tables
+    initiateTables();
+    // set spinner
+    spinner(WhatArToUse());
     }
 
     public String getEX() {
@@ -95,8 +98,7 @@ public class Exercise extends AppCompatActivity implements
     }
 
 
-    public void spinner(String[] Ex)
-    {
+
     public void spinner(String[] Ex) {
         Spinner spin = (Spinner) findViewById(R.id.spinner);
         spin.setOnItemSelectedListener(this);
@@ -115,7 +117,6 @@ public class Exercise extends AppCompatActivity implements
         setInserts();
     }
 
-    @Override
     public void onNothingSelected(AdapterView<?> adapterView) {
         // Auto-generated method stub
     }
@@ -144,13 +145,26 @@ public class Exercise extends AppCompatActivity implements
         ID = StringNumbers[IntNumbers[column]] + "_" + StringNumbers[IntNumbers[row]];
         return ID;
     }
-            Action.initializeTables();
+
+    public void FillTables(JSONArray response){
+        try {
+            JSONObject RespObj = response.getJSONObject(0);
+
+        switch (title) {
+            case "Cardio":{
+                String reps = RespObj.getString("Reps");
+
+                break;
+            }
+            case "Heavy Lifting":{
+                break;
+            }
+            case "Calisthenics":{
+                break;
+            }
         }
-
-    public void onUpdateButtonClicked(View caller){
-        Spinner spin = (Spinner) findViewById(R.id.spinner);
-        String exer = spin.getSelectedItem().toString();
-        if(insert2.)
-
+    } catch (JSONException e) {}
     }
+
 }
+

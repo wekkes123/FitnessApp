@@ -101,6 +101,7 @@ public class ExersizeAction {
                     public void onResponse(String response) {
                         try {
                             JSONArray responseArray = new JSONArray(response);
+
                             callBack.onSucces();
                         }
                         catch( JSONException e ){
@@ -130,6 +131,7 @@ public class ExersizeAction {
                     public void onResponse(String response) {
                         try {
                             JSONArray responseArray = new JSONArray(response);
+                            ResponseArray = responseArray;
 
                             callBack.onSucces();
                         }
