@@ -42,6 +42,7 @@ public class Exercise extends AppCompatActivity implements
     private EditText insert1;
     private EditText insert2;
     private String ID;
+    private String exercise;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -108,6 +109,7 @@ public class Exercise extends AppCompatActivity implements
         Toast.makeText(getApplicationContext(), ex[i], Toast.LENGTH_SHORT).show();
         setInserts();
         Action.initializeTables();
+        exercise = ex[i];
     }
 
     public void onNothingSelected(AdapterView<?> adapterView) {
@@ -177,23 +179,52 @@ public class Exercise extends AppCompatActivity implements
 
         switch (title) {
             case "Cardio":{
-                tv1 = (TextView) findViewById(R.id.one_one);
+                tv1 = (TextView) findViewById(R.id.two_one);
                 tv1.setText("Total distance(km)");
-                Spinner spin = (Spinner) findViewById(R.id.spinner);
-                String exer = spin.getSelectedItem().toString();
-                if(exer.equals("Swimming") || exer.equals("Rowing")){
-                    tv1.setText("Total distance(m)");
-                }
-                tv1 = (TextView) findViewById(R.id.one_two);
+                if(exercise.equals("Swimming") || exercise.equals("Rowing")){
+                    tv1.setText("Total distance(m)"); }
+                tv1 = (TextView) findViewById(R.id.two_two);
                 tv1.setText(RespObj.getString("Reps"));
                 break;
             }
             case "Heavy Lifting":{
                 String reps = RespObj.getString("Reps");
-                tv1 = (TextView) findViewById(R.id.one_one);
-                tv1.setText("weight");
-                tv1 = (TextView) findViewById(R.id.one_two);
-                tv1.setText("reps");
+                tv1 = (TextView) findViewById(R.id.two_one);
+                tv1.setText("30");
+                tv1 = (TextView) findViewById(R.id.three_one);
+                tv1.setText("35");
+                tv1 = (TextView) findViewById(R.id.four_one);
+                tv1.setText("40");
+                tv1 = (TextView) findViewById(R.id.five_one);
+                tv1.setText("45");
+                tv1 = (TextView) findViewById(R.id.six_one);
+                tv1.setText("50");
+                tv1 = (TextView) findViewById(R.id.seven_one);
+                tv1.setText("55");
+                tv1 = (TextView) findViewById(R.id.eight_one);
+                tv1.setText("60");
+                tv1 = (TextView) findViewById(R.id.ten_one);
+                tv1.setText("65");
+                tv1 = (TextView) findViewById(R.id.eleven_one);
+                tv1.setText("70");
+                tv1 = (TextView) findViewById(R.id.twelve_one);
+                tv1.setText("75");
+                tv1 = (TextView) findViewById(R.id.thirtheen_one);
+                tv1.setText("80");
+                tv1 = (TextView) findViewById(R.id.fourtheen_one);
+                tv1.setText("85");
+                tv1 = (TextView) findViewById(R.id.fiftheen_one);
+                tv1.setText("90");
+                tv1 = (TextView) findViewById(R.id.sixteen_one);
+                tv1.setText("95");
+                tv1 = (TextView) findViewById(R.id.seventeen_one);
+                tv1.setText("100");
+                tv1 = (TextView) findViewById(R.id.eighteen_one);
+                tv1.setText("105");
+                tv1 = (TextView) findViewById(R.id.nineteen_one);
+                tv1.setText("110");
+
+                
                 break;
             }
             case "Calisthenics":{
