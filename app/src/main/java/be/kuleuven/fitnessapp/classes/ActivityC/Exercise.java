@@ -140,16 +140,17 @@ public class Exercise extends AppCompatActivity implements
 
     }
 
-    public void onUpdateButtonClicked(View caller){
+    public void onUpdateButtonClicked(View caller) {
         Spinner spin = (Spinner) findViewById(R.id.spinner);
         String exer = spin.getSelectedItem().toString();
-        if(insert2.getText().toString().equals(null)){
+        if (insert2.getText().toString().equals(null)) {
             return;
         }
 
-        if(Arrays.asList(Heav).contains(exer)){
+        if (Arrays.asList(Heav).contains(exer)) {
             int currentReps = getReps(insert2.getText().toString());
         }
+    }
 
     public String getID(int row, int column) {
         ID = StringNumbers[IntNumbers[column]] + "_" + StringNumbers[IntNumbers[row]];
