@@ -52,7 +52,7 @@ public class Exercise extends AppCompatActivity implements
     this.Username = extras.get("Username").toString();
     Action = new ExersizeAction(Username, title, this,this);
     //initiate tables
-    initiateTables();
+    Action.initializeTables();
     // set spinner
     spinner(WhatArToUse());
     }
@@ -121,14 +121,26 @@ public class Exercise extends AppCompatActivity implements
         }
     }
 
-    public void initiateTables() {
-            Action.initializeTables();
+    public int getReps(String weight){
+        try{
+            int gewicht = Integer.parseInt(weight);
         }
+
+        catch (NumberFormatException ex){
+        }
+
+    }
 
     public void onUpdateButtonClicked(View caller){
         Spinner spin = (Spinner) findViewById(R.id.spinner);
         String exer = spin.getSelectedItem().toString();
-        if(insert2.)
+        if(insert2.getText().toString().equals(null)){
+            return;
+        }
+
+        if(Arrays.asList(Heav).contains(exer)){
+            int currentReps = getReps(insert2.getText().toString());
+        }
 
     }
 }
