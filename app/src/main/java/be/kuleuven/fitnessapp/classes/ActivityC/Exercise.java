@@ -93,8 +93,6 @@ public class Exercise extends AppCompatActivity implements
         return ArToUse;
     }
 
-
-
     public void spinner(String[] Ex)
     {
         Spinner spin = (Spinner) findViewById(R.id.spinner);
