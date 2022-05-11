@@ -55,7 +55,8 @@ public class Exercise extends AppCompatActivity implements
     tv1.setText(title);
     this.insert1 = (EditText) findViewById(R.id.insert1);
     this.insert2 = (EditText) findViewById(R.id.insert2);
-        //
+    //s
+    String test = "R.id.insert1";
 
     //initiate variables
     extras = getIntent().getExtras();
@@ -136,6 +137,7 @@ public class Exercise extends AppCompatActivity implements
         }
 
         catch (NumberFormatException ex){
+            return 0;
         }
         return 0;
     }
@@ -148,7 +150,21 @@ public class Exercise extends AppCompatActivity implements
         }
 
         if (Arrays.asList(Heav).contains(exer)) {
-            int currentReps = getReps(insert2.getText().toString());
+            int w2 = 0;
+            try{
+                w2 = Integer.parseInt(insert2.getText().toString());
+            }
+
+            catch (NumberFormatException ex){
+            }
+            int newReps = getReps(insert1.getText().toString()) + w2;
+            Action.setExactReps(new ExersizeAction.ECallback2() {
+                @Override
+                public void onSucces() {
+
+                }
+            }, exer,insert1.getText().toString(), newReps);
+
         }
     }
 
@@ -174,7 +190,8 @@ public class Exercise extends AppCompatActivity implements
                 break;
             }
         }
-    } catch (JSONException e) {}
+        } catch (JSONException e) {}
+
     }
 
 }
