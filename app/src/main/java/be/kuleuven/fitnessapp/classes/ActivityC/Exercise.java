@@ -42,7 +42,6 @@ public class Exercise extends AppCompatActivity implements
     private EditText insert1;
     private EditText insert2;
     private String ID;
-    private JSONArray response = ExersizeAction.ResponseArray;
 
 
     @Override
@@ -64,8 +63,6 @@ public class Exercise extends AppCompatActivity implements
     Action = new ExersizeAction(Username, title, this,this);
     //initiate tables
     Action.initializeTables();
-    //fill tables
-    FillTables(response);
     // set spinner
     spinner(WhatArToUse());
 
@@ -167,15 +164,26 @@ public class Exercise extends AppCompatActivity implements
 
         switch (title) {
             case "Cardio":{
-                String reps = RespObj.getString("Reps");
-
-
+                tv1 = (TextView) findViewById(R.id.one_one);
+                tv1.setText("total");
+                tv1 = (TextView) findViewById(R.id.one_two);
+                tv1.setText("amount");
                 break;
             }
             case "Heavy Lifting":{
+                String reps = RespObj.getString("Reps");
+                tv1 = (TextView) findViewById(R.id.one_one);
+                tv1.setText("total");
+                tv1 = (TextView) findViewById(R.id.one_two);
+                tv1.setText("amount " + reps);
                 break;
             }
             case "Calisthenics":{
+
+                tv1 = (TextView) findViewById(R.id.one_one);
+                tv1.setText("total");
+                tv1 = (TextView) findViewById(R.id.one_two);
+                tv1.setText("amount");
                 break;
             }
         }

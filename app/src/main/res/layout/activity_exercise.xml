@@ -43,39 +43,23 @@
             tools:layout_editor_absoluteX="117dp"
             tools:layout_editor_absoluteY="6dp">
 
-            <TableRow>
+            <TableRow android:layout_width="match_parent">
 
                 <TextView
                     android:id="@+id/one_one"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="first column \t"
-                    tools:layout_editor_absoluteX="134dp"
-                    tools:layout_editor_absoluteY="11dp" />
+                    android:layout_weight="1"
+                    android:baselineAligned="false"
+                    android:text="first column \t" />
 
                 <TextView
                     android:id="@+id/one_two"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="second column \t"
-                    tools:layout_editor_absoluteX="177dp"
-                    tools:layout_editor_absoluteY="4dp" />
-
-                <TextView
-                    android:id="@+id/one_three"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="third column \t"
-                    tools:layout_editor_absoluteX="177dp"
-                    tools:layout_editor_absoluteY="4dp" />
-
-                <TextView
-                    android:id="@+id/one_four"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="fourth column \t"
-                    tools:layout_editor_absoluteX="177dp"
-                    tools:layout_editor_absoluteY="4dp" />
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:baselineAligned="false"
+                    android:text="second column \t" />
 
             </TableRow>
 

@@ -20,7 +20,6 @@ public class ExersizeAction {
     private String Username;
     private String Title;
     private Exercise exercise;
-    public static JSONArray ResponseArray;
 
     public ExersizeAction(String Username,String Title,Context context, Exercise exercise){
         this.Username = Username;
@@ -131,8 +130,7 @@ public class ExersizeAction {
                     public void onResponse(String response) {
                         try {
                             JSONArray responseArray = new JSONArray(response);
-                            ResponseArray = responseArray;
-
+                            exercise.FillTables(responseArray);
                             callBack.onSucces();
                         }
                         catch( JSONException e ){
