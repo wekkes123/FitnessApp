@@ -25,7 +25,7 @@ public class ExersizeAction {
     public ExersizeAction(String Username,String Title,Context context, Exercise exercise){
         this.Username = Username;
         this.Title = Title;
-        this.exercise = exercise;
+        this.Exercise = exercise;
         ExersizeC = context;
     }
 
@@ -34,24 +34,13 @@ public class ExersizeAction {
         if(Title.equals("Streches")){
             return;
         }
-        checkForTables(new ExersizeAction.ECallback() {
+        String exs = Exercise.getEX();
+        selectExercise(new ECallback2() {
             @Override
             public void onSucces() {
-
+                //exercise.StopLoadingPopup();
             }
-
-            @Override
-            public void onFail() {
-                switch(Title) {
-                    case "Cardio":
-                        System.out.println("yes2");
-                        makeCardio();
-                    case "Heavy Lifting":
-
-                    case "Calisthenics":
-                }
-            }
-        });
+        }, exs);
     }
 
     public interface ECallback{
@@ -100,10 +89,10 @@ public class ExersizeAction {
         requestqueue.add(submitRequest);
     }
 
-    public void InsertWeight(final ExersizeAction.ECallback2 callBack,String oef, String Weight){
+    public void InsertWeight(final ExersizeAction.ECallback2 callBack,String oef, String Weight, int Reps){
         RequestQueue requestqueue = Volley.newRequestQueue(ExersizeC);
 
-        String requestURL = "https://studev.groept.be/api/a21pt213/ExInsertNewCardio/" + Username + "/" + oef + "/" + Weight;
+        String requestURL = "https://studev.groept.be/api/a21pt213/InsertWeigth/" + Username + "/" + oef + "/" + Weight + "/" + Reps;
 
         StringRequest submitRequest = new StringRequest(Request.Method.GET, requestURL,
 
@@ -112,7 +101,6 @@ public class ExersizeAction {
                     public void onResponse(String response) {
                         try {
                             JSONArray responseArray = new JSONArray(response);
-                            ResponseArray = responseArray;
                             callBack.onSucces();
                         }
                         catch( JSONException e ){
@@ -131,42 +119,34 @@ public class ExersizeAction {
         requestqueue.add(submitRequest);
     }
 
+    public void selectExercise(final ExersizeAction.ECallback2 callBack, String Ex){
+        RequestQueue requestqueue = Volley.newRequestQueue(ExersizeC);
+        String requestURL = "https://studev.groept.be/api/a21pt213/SelectUserEx/" + Username + "/" + Ex;
 
-    public void makeCardio(){
-        InsertWeight(new ECallback2() {
-            @Override
-            public void onSucces() {
+        StringRequest submitRequest = new StringRequest(Request.Method.GET, requestURL,
 
-            }
-        },"Lopen", "Total_km");
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            JSONArray responseArray = new JSONArray(response);
+                            //maak tables met info
+                            callBack.onSucces();
+                        }
+                        catch( JSONException e ){
+                            //display error message
+                        }
+                    }
+                },
 
-        InsertWeight(new ECallback2() {
-            @Override
-            public void onSucces() {
-
-            }
-        },"Fietsen", "Total_km");
-        InsertWeight(new ECallback2() {
-            @Override
-            public void onSucces() {
-
-            }
-        },"Roeien", "Total_km");
-        InsertWeight(new ECallback2() {
-            @Override
-            public void onSucces() {
-
-            }
-        },"Roeien", "Total_km");
-    }
-
-    public void makeHL(){
-
-
-    }
-
-    public void makeCal(){
-
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        System.out.print("error");
+                    }
+                }
+        );
+        requestqueue.add(submitRequest);
     }
 
 }
