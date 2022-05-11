@@ -137,7 +137,7 @@ public class Exercise extends AppCompatActivity implements
 
         catch (NumberFormatException ex){
         }
-
+        return 0;
     }
 
     public void onUpdateButtonClicked(View caller) {
