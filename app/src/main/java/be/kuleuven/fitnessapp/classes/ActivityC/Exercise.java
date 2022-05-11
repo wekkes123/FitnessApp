@@ -10,6 +10,8 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.json.JSONArray;
+
 import java.lang.reflect.Array;
 
 import be.kuleuven.fitnessapp.R;
@@ -18,62 +20,67 @@ import be.kuleuven.fitnessapp.classes.Models.ExersizeAction;
 public class Exercise extends AppCompatActivity implements
         AdapterView.OnItemSelectedListener {
 
-    String[] Card = {"Running" , "Swimming", "Biking", "Rowing"};
-    String[] Heav = {"Bench", "Squad" , "Deadlift"};
-    String[] Cali = {"pushups" , "pullups"};
-    String[] Stret ={"back", "triceps"};
+    String[] Card = {"Running", "Swimming", "Biking", "Rowing"};
+    String[] Heav = {"Bench", "Squad", "Deadlift"};
+    String[] Cali = {"pushups", "pullups"};
+    String[] Stret = {"back", "triceps"};
+    String[] StringNumbers = {"zero","one","two","three","four", "five","six","seven","eight","nine","ten", "eleven","twelve","thirteen","fourteen","fifteen","sixteen","seventeen","eighteen","nineteen", "twenty"};
+    int[] IntNumbers = {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20} ;
 
 
     public String title;
     private TextView tv1;
-    private Bundle extras;
     private String Username;
     private ExersizeAction Action;
+    private String ID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
-    //
-    setContentView(R.layout.activity_exercise);
-    Bundle extras = getIntent().getExtras();
-    title = (String) extras.get(title);
-    tv1 = (TextView) findViewById(R.id.title_exercise);
-    tv1.setText(title);
-    //
+        super.onCreate(savedInstanceState);
+        //
+        setContentView(R.layout.activity_exercise);
+        Bundle extras = getIntent().getExtras();
+        title = (String) extras.get(title);
+        tv1 = (TextView) findViewById(R.id.title_exercise);
+        tv1.setText(title);
+        //
 
-    //initiate variables
-    extras = getIntent().getExtras();
-    this.Username = extras.get("Username").toString();
-    Action = new ExersizeAction(Username, title, this,this);
-    //initiate tables
-    initiateTables();
-    // set spinner
-    spinner(WhatArToUse());
+        //initiate variables
+        extras = getIntent().getExtras();
+        this.Username = extras.get("Username").toString();
+        Action = new ExersizeAction(Username, title, this, this);
+        //initiate tables
+        initiateTables();
+        // set spinner
+        spinner(WhatArToUse());
+
 
     }
 
-    public String[] WhatArToUse()
-    {
-        String[] ArToUse = new String[] {};
-        switch(title) {
-            case "Heavy Lifting" :{
-            ArToUse = Heav;
-            break;}
-            case "Cardio":{
+    public String[] WhatArToUse() {
+        String[] ArToUse = new String[]{};
+        switch (title) {
+            case "Heavy Lifting": {
+                ArToUse = Heav;
+                break;
+            }
+            case "Cardio": {
                 ArToUse = Card;
-                break;}
-            case "Stretches" :{
+                break;
+            }
+            case "Stretches": {
                 ArToUse = Stret;
-                break;}
-            case "Calisthenics" :{
+                break;
+            }
+            case "Calisthenics": {
                 ArToUse = Cali;
-                break;}
+                break;
+            }
         }
         return ArToUse;
     }
 
-    public void spinner(String[] Ex)
-    {
+    public void spinner(String[] Ex) {
         Spinner spin = (Spinner) findViewById(R.id.spinner);
         spin.setOnItemSelectedListener(this);
 
@@ -96,6 +103,14 @@ public class Exercise extends AppCompatActivity implements
     }
 
     public void initiateTables() {
-            Action.initializeTables();
-        }
+        Action.initializeTables();
+    }
+
+
+    public String getID(int row, int column){
+        ID = StringNumbers[IntNumbers[column]] + "_" + StringNumbers[IntNumbers[row]];
+        return ID;
+    }
+
+
 }
