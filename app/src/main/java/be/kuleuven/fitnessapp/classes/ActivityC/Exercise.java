@@ -107,6 +107,7 @@ public class Exercise extends AppCompatActivity implements
         String[] ex = WhatArToUse();
         Toast.makeText(getApplicationContext(), ex[i], Toast.LENGTH_SHORT).show();
         setInserts();
+        Action.initializeTables();
     }
 
     public void onNothingSelected(AdapterView<?> adapterView) {
@@ -177,9 +178,14 @@ public class Exercise extends AppCompatActivity implements
         switch (title) {
             case "Cardio":{
                 tv1 = (TextView) findViewById(R.id.one_one);
-                tv1.setText("total");
+                tv1.setText("Total distance(km)");
+                Spinner spin = (Spinner) findViewById(R.id.spinner);
+                String exer = spin.getSelectedItem().toString();
+                if(exer.equals("Swimming") || exer.equals("Rowing")){
+                    tv1.setText("Total distance(m)");
+                }
                 tv1 = (TextView) findViewById(R.id.one_two);
-                tv1.setText("amount");
+                tv1.setText(RespObj.getString("Reps"));
                 break;
             }
             case "Heavy Lifting":{
