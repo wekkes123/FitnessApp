@@ -94,6 +94,7 @@ public class Exercise extends AppCompatActivity implements
     }
 
 
+
     public void spinner(String[] Ex)
     {
         Spinner spin = (Spinner) findViewById(R.id.spinner);
