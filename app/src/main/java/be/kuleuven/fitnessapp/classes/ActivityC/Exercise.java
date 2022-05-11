@@ -124,4 +124,11 @@ public class Exercise extends AppCompatActivity implements
     public void initiateTables() {
             Action.initializeTables();
         }
+
+    public void onUpdateButtonClicked(View caller){
+        Spinner spin = (Spinner) findViewById(R.id.spinner);
+        String exer = spin.getSelectedItem().toString();
+        if(insert2.)
+
+    }
 }
