@@ -55,8 +55,7 @@ public class Exercise extends AppCompatActivity implements
     tv1.setText(title);
     this.insert1 = (EditText) findViewById(R.id.insert1);
     this.insert2 = (EditText) findViewById(R.id.insert2);
-    //s
-    String test = "R.id.insert1";
+        //
 
     //initiate variables
     extras = getIntent().getExtras();
@@ -64,6 +63,8 @@ public class Exercise extends AppCompatActivity implements
     Action = new ExersizeAction(Username, title, this,this);
     //initiate tables
     Action.initializeTables();
+    //fill tables
+    FillTables(response);
     // set spinner
     spinner(WhatArToUse());
     }
@@ -169,17 +170,18 @@ public class Exercise extends AppCompatActivity implements
     }
 
     public String getID(int row, int column) {
-        ID = StringNumbers[IntNumbers[column]] + "_" + StringNumbers[IntNumbers[row]];
+        ID = StringNumbers[IntNumbers[row]] + "_" + StringNumbers[IntNumbers[column]];
         return ID;
     }
 
-    public void FillTables(JSONArray response){
+    public void FillTables(JSONArray resp){
         try {
-            JSONObject RespObj = response.getJSONObject(0);
+            JSONObject RespObj = resp.getJSONObject(0);
 
         switch (title) {
             case "Cardio":{
                 String reps = RespObj.getString("Reps");
+
 
                 break;
             }
