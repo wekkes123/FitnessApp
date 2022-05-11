@@ -185,9 +185,9 @@ public class Exercise extends AppCompatActivity implements
             case "Heavy Lifting":{
                 String reps = RespObj.getString("Reps");
                 tv1 = (TextView) findViewById(R.id.one_one);
-                tv1.setText("total");
+                tv1.setText("weight");
                 tv1 = (TextView) findViewById(R.id.one_two);
-                tv1.setText("amount " + reps);
+                tv1.setText("reps");
                 break;
             }
             case "Calisthenics":{

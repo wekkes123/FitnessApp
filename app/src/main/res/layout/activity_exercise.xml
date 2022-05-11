@@ -50,14 +50,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="first column \t" />
+                    android:text="\t" />
 
                 <TextView
                     android:id="@+id/one_two"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="second column \t" />
+                    android:text="\t" />
 
             </TableRow>
 
@@ -68,14 +68,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="first column \t" />
+                    android:text="\t" />
 
                 <TextView
                     android:id="@+id/two_two"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="second column \t" />
+                    android:text="\t" />
 
             </TableRow>
 
@@ -86,14 +86,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="first column \t" />
+                    android:text="\t" />
 
                 <TextView
                     android:id="@+id/three_two"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="second column \t" />
+                    android:text="\t" />
 
             </TableRow>
 
@@ -104,14 +104,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="first column \t" />
+                    android:text="\t" />
 
                 <TextView
                     android:id="@+id/four_two"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="second column \t" />
+                    android:text="\t" />
 
             </TableRow>
 
@@ -122,14 +122,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="first column \t" />
+                    android:text="\t" />
 
                 <TextView
                     android:id="@+id/five_two"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="second column \t" />
+                    android:text="\t" />
 
             </TableRow>
 
@@ -141,14 +141,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="first column \t" />
+                    android:text="\t" />
 
                 <TextView
                     android:id="@+id/six_two"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="second column \t" />
+                    android:text="\t" />
 
             </TableRow>
 
@@ -159,14 +159,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="first column \t" />
+                    android:text="\t" />
 
                 <TextView
                     android:id="@+id/seven_two"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="second column \t" />
+                    android:text="\t" />
 
             </TableRow>
 
@@ -177,14 +177,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="first column \t" />
+                    android:text="\t" />
 
                 <TextView
                     android:id="@+id/eight_two"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="second column \t" />
+                    android:text="\t" />
 
             </TableRow>
 
@@ -195,14 +195,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="first column \t" />
+                    android:text="\t" />
 
                 <TextView
                     android:id="@+id/ten_two"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="second column \t" />
+                    android:text="\t" />
 
             </TableRow>
 
@@ -213,14 +213,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="first column \t" />
+                    android:text="\t" />
 
                 <TextView
                     android:id="@+id/eleven_two"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="second column \t" />
+                    android:text="\t" />
 
             </TableRow>
 
@@ -231,14 +231,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="first column \t" />
+                    android:text="\t" />
 
                 <TextView
                     android:id="@+id/twelve_two"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="second column \t" />
+                    android:text="\t" />
 
             </TableRow>
 
@@ -249,14 +249,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="first column \t" />
+                    android:text="\t" />
 
                 <TextView
                     android:id="@+id/thirtheen_two"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="second column \t" />
+                    android:text="\t" />
 
             </TableRow>
 
@@ -267,14 +267,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="first column \t" />
+                    android:text="\t" />
 
                 <TextView
                     android:id="@+id/fourtheen_two"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="second column \t" />
+                    android:text="\t" />
 
             </TableRow>
 
@@ -285,14 +285,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="first column \t" />
+                    android:text="\t" />
 
                 <TextView
                     android:id="@+id/fiftheen_two"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="second column \t" />
+                    android:text="\t" />
 
             </TableRow>
 
@@ -303,14 +303,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="first column \t" />
+                    android:text="\t" />
 
                 <TextView
                     android:id="@+id/sixteen_two"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="second column \t" />
+                    android:text="\t" />
 
             </TableRow>
 
@@ -321,14 +321,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="first column \t" />
+                    android:text="\t" />
 
                 <TextView
                     android:id="@+id/seventeen_two"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="second column \t" />
+                    android:text="\t" />
 
             </TableRow>
 
@@ -339,14 +339,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="first column \t" />
+                    android:text="\t" />
 
                 <TextView
                     android:id="@+id/eighteen_two"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="second column \t" />
+                    android:text="\t" />
 
             </TableRow>
 
@@ -357,14 +357,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="first column \t" />
+                    android:text="\t" />
 
                 <TextView
                     android:id="@+id/nineteen_two"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="second column \t" />
+                    android:text="\t" />
 
             </TableRow>
 
@@ -375,14 +375,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="first column \t" />
+                    android:text="\t" />
 
                 <TextView
                     android:id="@+id/twenty_two"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="second column \t" />
+                    android:text="\t" />
 
             </TableRow>
 
