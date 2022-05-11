@@ -24,8 +24,8 @@ public class Exercise extends AppCompatActivity implements
     String[] Heav = {"Bench", "Squad", "Deadlift"};
     String[] Cali = {"pushups", "pullups"};
     String[] Stret = {"back", "triceps"};
-    String[] StringNumbers = {"zero","one","two","three","four", "five","six","seven","eight","nine","ten", "eleven","twelve","thirteen","fourteen","fifteen","sixteen","seventeen","eighteen","nineteen", "twenty"};
-    int[] IntNumbers = {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20} ;
+    String[] StringNumbers = {"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen", "twenty"};
+    int[] IntNumbers = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20};
 
 
     public String title;
@@ -37,51 +37,53 @@ public class Exercise extends AppCompatActivity implements
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
-    //
-    setContentView(R.layout.activity_exercise);
-    Bundle extras = getIntent().getExtras();
-    title = (String) extras.get(title);
-    tv1 = (TextView) findViewById(R.id.title_exercise);
-    tv1.setText(title);
-    //
+        super.onCreate(savedInstanceState);
+        //
+        setContentView(R.layout.activity_exercise);
+        Bundle extras = getIntent().getExtras();
+        title = (String) extras.get(title);
+        tv1 = (TextView) findViewById(R.id.title_exercise);
+        tv1.setText(title);
+        //
 
-    //initiate variables
-    extras = getIntent().getExtras();
-    this.Username = extras.get("Username").toString();
-    Action = new ExersizeAction(Username, title, this,this);
-    //initiate tables
-    initiateTables();
-    // set spinner
-    spinner(WhatArToUse());
+        //initiate variables
+        extras = getIntent().getExtras();
+        this.Username = extras.get("Username").toString();
+        Action = new ExersizeAction(Username, title, this, this);
+        //initiate tables
+        initiateTables();
+        // set spinner
+        spinner(WhatArToUse());
     }
 
-    public String getEX(){
+    public String getEX() {
         return "Running";
     }
 
-    public String[] WhatArToUse()
-    {
-        String[] ArToUse = new String[] {};
-        switch(title) {
-            case "Heavy Lifting" :{
-            ArToUse = Heav;
-            break;}
-            case "Cardio":{
+    public String[] WhatArToUse() {
+        String[] ArToUse = new String[]{};
+        switch (title) {
+            case "Heavy Lifting": {
+                ArToUse = Heav;
+                break;
+            }
+            case "Cardio": {
                 ArToUse = Card;
-                break;}
-            case "Stretches" :{
+                break;
+            }
+            case "Stretches": {
                 ArToUse = Stret;
-                break;}
-            case "Calisthenics" :{
+                break;
+            }
+            case "Calisthenics": {
                 ArToUse = Cali;
-                break;}
+                break;
+            }
         }
         return ArToUse;
     }
 
-    public void spinner(String[] Ex)
-    {
+    public void spinner(String[] Ex) {
         Spinner spin = (Spinner) findViewById(R.id.spinner);
         spin.setOnItemSelectedListener(this);
 
@@ -108,7 +110,8 @@ public class Exercise extends AppCompatActivity implements
     }
 
 
-    public String getID(int row, int column){
+    public String getID(int row, int column) {
         ID = StringNumbers[IntNumbers[column]] + "_" + StringNumbers[IntNumbers[row]];
         return ID;
     }
+}

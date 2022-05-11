@@ -25,7 +25,7 @@ public class ExersizeAction {
     public ExersizeAction(String Username,String Title,Context context, Exercise exercise){
         this.Username = Username;
         this.Title = Title;
-        this.Exercise = exercise;
+        this.exercise = exercise;
         ExersizeC = context;
     }
 
@@ -34,7 +34,7 @@ public class ExersizeAction {
         if(Title.equals("Streches")){
             return;
         }
-        String exs = Exercise.getEX();
+        String exs = exercise.getEX();
         selectExercise(new ECallback2() {
             @Override
             public void onSucces() {
