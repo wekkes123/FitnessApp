@@ -54,26 +54,19 @@ public class Exercise extends AppCompatActivity implements
     tv1.setText(title);
     this.insert1 = (EditText) findViewById(R.id.insert1);
     this.insert2 = (EditText) findViewById(R.id.insert2);
-    //
-    //
-    setContentView(R.layout.activity_exercise);
-    Bundle extra_s = getIntent().getExtras();
-    title = (String) extra_s.get(title);
-    tv1 = (TextView) findViewById(R.id.title_exercise);
-    tv1.setText(title);
-    //
+        //
 
     //initiate variables
     extras = getIntent().getExtras();
     this.Username = extras.get("Username").toString();
-    Action = new ExersizeAction(Username, title, this, this);
+    Action = new ExersizeAction(Username, title, this,this);
     //initiate tables
-    initiateTables();
+    Action.initializeTables();
     // set spinner
     spinner(WhatArToUse());
     }
 
-    public String getEX() {
+    public String getEX(){
         return "Running";
     }
 
@@ -98,8 +91,8 @@ public class Exercise extends AppCompatActivity implements
     }
 
 
-
-    public void spinner(String[] Ex) {
+    public void spinner(String[] Ex)
+    {
         Spinner spin = (Spinner) findViewById(R.id.spinner);
         spin.setOnItemSelectedListener(this);
 
@@ -136,10 +129,26 @@ public class Exercise extends AppCompatActivity implements
         }
     }
 
-    public void initiateTables() {
-        Action.initializeTables();
+    public int getReps(String weight){
+        try{
+            int gewicht = Integer.parseInt(weight);
+        }
+
+        catch (NumberFormatException ex){
+        }
+
     }
 
+    public void onUpdateButtonClicked(View caller){
+        Spinner spin = (Spinner) findViewById(R.id.spinner);
+        String exer = spin.getSelectedItem().toString();
+        if(insert2.getText().toString().equals(null)){
+            return;
+        }
+
+        if(Arrays.asList(Heav).contains(exer)){
+            int currentReps = getReps(insert2.getText().toString());
+        }
 
     public String getID(int row, int column) {
         ID = StringNumbers[IntNumbers[column]] + "_" + StringNumbers[IntNumbers[row]];
