@@ -179,4 +179,34 @@ public class ExersizeAction {
         requestqueue.add(submitRequest);
     }
 
+    public void setExactReps(final ExersizeAction.ECallback2 callBack, String Ex, String Weight, int rep){
+        RequestQueue requestqueue = Volley.newRequestQueue(ExersizeC);
+        String requestURL = "https://studev.groept.be/api/a21pt213/SetExactReps/"+ rep + "/" + Username + "/" + Ex + "/" + Weight;
+
+        StringRequest submitRequest = new StringRequest(Request.Method.GET, requestURL,
+
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            JSONArray responseArray = new JSONArray(response);
+                            callBack.onSucces();
+                        }
+                        catch( JSONException e ){
+                            //display error message
+                        }
+                    }
+                },
+
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        System.out.print("error");
+                    }
+                }
+        );
+        requestqueue.add(submitRequest);
+    }
+
+
 }
