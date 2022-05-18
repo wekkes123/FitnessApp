@@ -141,8 +141,7 @@ public class Exercise extends AppCompatActivity implements
         }
 
         int row = (gewicht - 30) / 5;
-        //String ID = "R" + "." + "id" + "." +getID(row, 2);
-        //tv1 = (TextView) findViewById(ID);\
+
 
         return 0;
     }
@@ -205,9 +204,7 @@ public class Exercise extends AppCompatActivity implements
                         tv1.setText(Integer.toString(standardWeight));
                     }
                     standardWeight += 5;
-
                 }
-
                 break;
             }
             case "Calisthenics":{
