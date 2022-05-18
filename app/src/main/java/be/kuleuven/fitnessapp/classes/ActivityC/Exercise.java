@@ -43,6 +43,7 @@ public class Exercise extends AppCompatActivity implements
     private EditText insert2;
     private String ID;
     private String exercise;
+    private String weight;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -131,16 +132,21 @@ public class Exercise extends AppCompatActivity implements
         }
     }
 
-    public int getReps(String weight){
-        try{
-            int gewicht = Integer.parseInt(weight);
-        }
-
-        catch (NumberFormatException ex){
+    public int getReps(String weight) {
+        int gewicht;
+        try {
+            gewicht = Integer.parseInt(weight);
+        } catch (NumberFormatException ex) {
             return 0;
         }
+
+        int row = (gewicht - 30) / 5;
+        //String ID = "R" + "." + "id" + "." +getID(row, 2);
+        //tv1 = (TextView) findViewById(ID);\
+
         return 0;
     }
+
 
     public void onUpdateButtonClicked(View caller) {
         Spinner spin = (Spinner) findViewById(R.id.spinner);
@@ -189,42 +195,19 @@ public class Exercise extends AppCompatActivity implements
             }
             case "Heavy Lifting":{
                 String reps = RespObj.getString("Reps");
-                tv1 = (TextView) findViewById(R.id.two_one);
-                tv1.setText("30");
-                tv1 = (TextView) findViewById(R.id.three_one);
-                tv1.setText("35");
-                tv1 = (TextView) findViewById(R.id.four_one);
-                tv1.setText("40");
-                tv1 = (TextView) findViewById(R.id.five_one);
-                tv1.setText("45");
-                tv1 = (TextView) findViewById(R.id.six_one);
-                tv1.setText("50");
-                tv1 = (TextView) findViewById(R.id.seven_one);
-                tv1.setText("55");
-                tv1 = (TextView) findViewById(R.id.eight_one);
-                tv1.setText("60");
-                tv1 = (TextView) findViewById(R.id.ten_one);
-                tv1.setText("65");
-                tv1 = (TextView) findViewById(R.id.eleven_one);
-                tv1.setText("70");
-                tv1 = (TextView) findViewById(R.id.twelve_one);
-                tv1.setText("75");
-                tv1 = (TextView) findViewById(R.id.thirtheen_one);
-                tv1.setText("80");
-                tv1 = (TextView) findViewById(R.id.fourtheen_one);
-                tv1.setText("85");
-                tv1 = (TextView) findViewById(R.id.fiftheen_one);
-                tv1.setText("90");
-                tv1 = (TextView) findViewById(R.id.sixteen_one);
-                tv1.setText("95");
-                tv1 = (TextView) findViewById(R.id.seventeen_one);
-                tv1.setText("100");
-                tv1 = (TextView) findViewById(R.id.eighteen_one);
-                tv1.setText("105");
-                tv1 = (TextView) findViewById(R.id.nineteen_one);
-                tv1.setText("110");
+                int standardWeight = 20;
+                for(int i = 2 ; i <=20 ; i++) {
 
-                
+                    String name = getID(i, 1);
+                    int id = getResources().getIdentifier(name, "id", this.getPackageName());
+                    if (id != 0){
+                        tv1 = (TextView) findViewById(id);
+                        tv1.setText(Integer.toString(standardWeight));
+                    }
+                    standardWeight += 5;
+
+                }
+
                 break;
             }
             case "Calisthenics":{

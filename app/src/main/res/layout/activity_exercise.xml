@@ -191,6 +191,24 @@
             <TableRow>
 
                 <TextView
+                    android:id="@+id/nine_one"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="\t" />
+
+                <TextView
+                    android:id="@+id/nine_two"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="\t" />
+
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
                     android:id="@+id/ten_one"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -245,32 +263,14 @@
             <TableRow>
 
                 <TextView
-                    android:id="@+id/thirtheen_one"
+                    android:id="@+id/thirteen_one"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="\t" />
 
                 <TextView
-                    android:id="@+id/thirtheen_two"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="\t" />
-
-            </TableRow>
-
-            <TableRow>
-
-                <TextView
-                    android:id="@+id/fourtheen_one"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="\t" />
-
-                <TextView
-                    android:id="@+id/fourtheen_two"
+                    android:id="@+id/thirteen_two"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -281,14 +281,32 @@
             <TableRow>
 
                 <TextView
-                    android:id="@+id/fiftheen_one"
+                    android:id="@+id/fourteen_one"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="\t" />
 
                 <TextView
-                    android:id="@+id/fiftheen_two"
+                    android:id="@+id/fourteen_two"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="\t" />
+
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/fifteen_one"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="\t" />
+
+                <TextView
+                    android:id="@+id/fifteen_two"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -361,24 +379,6 @@
 
                 <TextView
                     android:id="@+id/nineteen_two"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="\t" />
-
-            </TableRow>
-
-            <TableRow>
-
-                <TextView
-                    android:id="@+id/twenty_one"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="\t" />
-
-                <TextView
-                    android:id="@+id/twenty_two"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
