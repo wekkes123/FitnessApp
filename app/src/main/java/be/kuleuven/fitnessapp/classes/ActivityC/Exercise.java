@@ -147,7 +147,34 @@ public class Exercise extends AppCompatActivity implements
             return;
         }
 
-        if (Arrays.asList(Heav).contains(exer)) {
+
+        if (Arrays.asList(Card).contains(exer)) {
+            int km = 0;
+            int km2 = 0;
+            try{
+                km = Integer.parseInt(insert2.getText().toString());
+            }
+            catch (NumberFormatException ex){
+            }
+            tv1 = (TextView) findViewById(R.id.one_two);
+            String CurrentReps = tv1.getText().toString();
+            try{
+                km2 = Integer.parseInt(CurrentReps);
+            }
+
+            catch (NumberFormatException ex){
+            }
+            int newKm = km + km2;
+            Action.setExactReps(new ExersizeAction.ECallback2() {
+                @Override
+                public void onSucces() {
+                    Action.initializeTables();
+                }
+            }, exer,"Total_km", newKm);
+        }
+
+
+        else if (Arrays.asList(Heav).contains(exer)) {
             int w2 = 0;
             try{
                 w2 = Integer.parseInt(insert2.getText().toString());

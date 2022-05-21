@@ -34,10 +34,10 @@ public class ExersizeAction {
             return;
         }
         String exs = exercise.getEX();
-        selectExercise(new ECallback2() {
+        selectExercise(new ECallback3() {
             @Override
             public void onSucces() {
-                //exercise.StopLoadingPopup();
+
             }
         }, exs);
     }
@@ -48,6 +48,10 @@ public class ExersizeAction {
     }
 
     public interface ECallback2{
+        void onSucces();
+    }
+
+    public interface ECallback3{
         void onSucces();
     }
 
@@ -119,7 +123,7 @@ public class ExersizeAction {
         requestqueue.add(submitRequest);
     }
 
-    public void selectExercise(final ExersizeAction.ECallback2 callBack, String Ex){
+    public void selectExercise(final ExersizeAction.ECallback3 callBack, String Ex){
         RequestQueue requestqueue = Volley.newRequestQueue(ExersizeC);
         String requestURL = "https://studev.groept.be/api/a21pt213/SelectUserEx/" + Username + "/" + Ex;
 
@@ -181,7 +185,7 @@ public class ExersizeAction {
 
     public void setExactReps(final ExersizeAction.ECallback2 callBack, String Ex, String Weight, int rep){
         RequestQueue requestqueue = Volley.newRequestQueue(ExersizeC);
-        String requestURL = "https://studev.groept.be/api/a21pt213/SetExactReps/"+ rep + "/" + Username + "/" + Ex + "/" + Weight;
+        String requestURL = "https://studev.groept.be/api/a21pt213/SetExactReps/"+ rep + "/" + Username + "/" + Ex; /*+ "/" + Weight;*/
 
         StringRequest submitRequest = new StringRequest(Request.Method.GET, requestURL,
 
