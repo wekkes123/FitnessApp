@@ -163,13 +163,13 @@ public class Exercise extends AppCompatActivity implements
             }
             catch (NumberFormatException ex){
             }
-            tv1 = (TextView) findViewById(R.id.one_two);
+            tv1 = (TextView) findViewById(R.id.two_two);
             String CurrentReps = tv1.getText().toString();
             try{
                 km2 = Integer.parseInt(CurrentReps);
             }
 
-            catch (NumberFormatException ex){
+            catch (NumberFormatException ex){ System.out.println("km2 error");
             }
             int newKm = km + km2;
             Action.setExactReps(new ExersizeAction.ECallback2() {
@@ -242,6 +242,7 @@ public class Exercise extends AppCompatActivity implements
                 tv1.setText("amount");
                 break;
             }
+
         }
         } catch (JSONException e) {}
 
