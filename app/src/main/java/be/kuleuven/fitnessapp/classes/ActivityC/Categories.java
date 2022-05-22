@@ -15,6 +15,9 @@ import be.kuleuven.fitnessapp.R;
 
 
 public class Categories extends AppCompatActivity {
+
+    String[] Card = {"Always use the full range of motion of your exercise", "Always look up the correct form of an exercise before you attempt it", "Try minimizing the use of momentum when lifting any weight", "Always take 2-3 minute breaks between heavy lifting sets","Its ok to lower your weights sometimes, not every day can be your best","For every push exercise of a muscle you should try to have a pull exercise"};
+
     private ImageButton Cardio;
     private ImageButton Heavy_lifting;
     private ImageButton Calesthetics;

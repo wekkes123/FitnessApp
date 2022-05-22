@@ -88,7 +88,7 @@ public class Exercise extends AppCompatActivity implements
     }
 
     public String getEX(){
-        return "Running";
+        return exercise;
     }
 
     public String[] WhatArToUse()
@@ -151,12 +151,15 @@ public class Exercise extends AppCompatActivity implements
             insert1.setHint("Weight(Kg)");
             insert2.setHint("Reps");
         }
+        else if(Arrays.asList(Cali).contains(exer)){
+            Action.initializeTables();
+            insert2.setHint("Reps");
+        }
         else if(title.equals("Stretches")){
             titleText.setText(exer);
             insert1.setVisibility(View.INVISIBLE);
             insert2.setVisibility(View.INVISIBLE);
             update.setVisibility(View.INVISIBLE);
-            System.out.println(exer);
             switch(exer){
                 case "Why strech?":{
                     strechText.setText(getResources().getString(R.string.Strech3));
@@ -235,6 +238,7 @@ public class Exercise extends AppCompatActivity implements
             catch (NumberFormatException ex){ System.out.println("km2 error");
             }
             int newKm = km + km2;
+            if(newKm<0){newKm = 0;};
             Action.setExactReps(new ExersizeAction.ECallback2() {
                 @Override
                 public void onSucces() {
@@ -242,8 +246,6 @@ public class Exercise extends AppCompatActivity implements
                 }
             }, exer,"Total_km", newKm);
         }
-
-
         else if (Arrays.asList(Heav).contains(exer)) {
             int w2 = 0;
             try{
@@ -260,6 +262,31 @@ public class Exercise extends AppCompatActivity implements
                 }
             }, exer,insert1.getText().toString(), newReps);
 
+        }
+        else if (Arrays.asList(Cali).contains(exer)) {
+            int rep = 0;
+            int rep2 = 0;
+            try{
+                rep = Integer.parseInt(insert2.getText().toString());
+            }
+            catch (NumberFormatException ex){
+            }
+            tv1 = (TextView) findViewById(R.id.two_two);
+            String CurrentReps = tv1.getText().toString();
+            try{
+                rep2 = Integer.parseInt(CurrentReps);
+            }
+
+            catch (NumberFormatException ex){ System.out.println("rep2 error");
+            }
+            int newKm = rep + rep2;
+            if(newKm<0){newKm = 0;};
+            Action.setExactReps(new ExersizeAction.ECallback2() {
+                @Override
+                public void onSucces() {
+                    Action.initializeTables();
+                }
+            }, exer,"reps", newKm);
         }
     }
 
@@ -298,11 +325,10 @@ public class Exercise extends AppCompatActivity implements
                 break;
             }
             case "Calisthenics":{
-
-                tv1 = (TextView) findViewById(R.id.one_one);
-                tv1.setText("total");
-                tv1 = (TextView) findViewById(R.id.one_two);
-                tv1.setText("amount");
+                tv1 = (TextView) findViewById(R.id.two_one);
+                tv1.setText("Total reps");
+                tv1 = (TextView) findViewById(R.id.two_two);
+                tv1.setText(RespObj.getString("Reps"));
                 break;
             }
 
