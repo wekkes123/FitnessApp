@@ -213,7 +213,6 @@ public class Exercise extends AppCompatActivity implements
             return;
         }
 
-
         if (Arrays.asList(Card).contains(exer)) {
             int km = 0;
             int km2 = 0;
