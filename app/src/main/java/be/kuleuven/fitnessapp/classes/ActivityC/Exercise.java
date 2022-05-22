@@ -4,9 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -28,7 +32,7 @@ public class Exercise extends AppCompatActivity implements
     String[] Card = {"Running", "Swimming", "Biking", "Rowing"};
     String[] Heav = {"Bench", "Squad", "Deadlift"};
     String[] Cali = {"pushups", "pullups"};
-    String[] Stret = {"back", "triceps"};
+    String[] Stret = {"Why strech?","Lower back", "Triceps","Biceps","Shoulders","Hamstrings","Quads and Glutes","","",""};
     String[] StringNumbers = {"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen", "twenty"};
     int[] IntNumbers = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20};
 
@@ -36,6 +40,8 @@ public class Exercise extends AppCompatActivity implements
 
     public String title;
     private TextView tv1;
+    private TextView titleText;
+    private TextView strechText;
     private Bundle extras;
     private String Username;
     private ExersizeAction Action;
@@ -43,11 +49,18 @@ public class Exercise extends AppCompatActivity implements
     private EditText insert2;
     private String ID;
     private String exercise;
+    private Button update;
+    private ImageView showcase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    //
+    //zorgt voor fullscreen
+    requestWindowFeature(Window.FEATURE_NO_TITLE);
+    getSupportActionBar().hide();
+    this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+    WindowManager.LayoutParams.FLAG_FULLSCREEN);
+    //end
     setContentView(R.layout.activity_exercise);
     Bundle extras = getIntent().getExtras();
     title = (String) extras.get(title);
@@ -55,7 +68,10 @@ public class Exercise extends AppCompatActivity implements
     tv1.setText(title);
     this.insert1 = (EditText) findViewById(R.id.insert1);
     this.insert2 = (EditText) findViewById(R.id.insert2);
-        //
+    this.titleText = (TextView) findViewById(R.id.Title);
+    this.strechText = (TextView) findViewById(R.id.strechText);
+    this.update = (Button) findViewById(R.id.button2);
+    this.showcase = (ImageView) findViewById(R.id.showcase);
 
     //initiate variables
     extras = getIntent().getExtras();
@@ -128,6 +144,49 @@ public class Exercise extends AppCompatActivity implements
         else if(Arrays.asList(Heav).contains(exer)){
             insert1.setHint("Weight(Kg)");
             insert2.setHint("Reps");
+        }
+        else if(title.equals("Stretches")){
+            titleText.setText(exer);
+            insert1.setVisibility(View.INVISIBLE);
+            insert2.setVisibility(View.INVISIBLE);
+            update.setVisibility(View.INVISIBLE);
+            System.out.println(exer);
+            switch(exer){
+                case "Why strech?":{
+                    strechText.setText(getResources().getString(R.string.Strech3));
+                    break;
+                }
+                case "Hamstrings":{
+                    strechText.setText(getResources().getString(R.string.Strech1));
+                    showcase.setImageResource(R.drawable.hamstrings);
+                    break;
+                }
+                case "Lower back":{
+                    strechText.setText(getResources().getString(R.string.Strech2));
+                    showcase.setImageResource(R.drawable.lower_back);
+                    break;
+                }
+                case "Triceps":{
+                    strechText.setText(getResources().getString(R.string.Strech4));
+                    showcase.setImageResource(R.drawable.triceps);
+                    break;
+                }
+                case "Biceps":{
+                    strechText.setText(getResources().getString(R.string.Strech6));
+                    showcase.setImageResource(R.drawable.biceps);
+                    break;
+                }
+                case "Shoulders":{
+                    strechText.setText(getResources().getString(R.string.Strech5));
+                    showcase.setImageResource(R.drawable.shoulders);
+                    break;
+                }
+                case "Quads and Glutes":{
+                    strechText.setText(getResources().getString(R.string.Strech7));
+                    showcase.setImageResource(R.drawable.quads_and_glutes);
+                    break;
+                }
+            }
         }
     }
 
