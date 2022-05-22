@@ -32,7 +32,7 @@ public class Exercise extends AppCompatActivity implements
     String[] Card = {"Running", "Swimming", "Biking", "Rowing"};
     String[] Heav = {"Bench", "Squad", "Deadlift"};
     String[] Cali = {"Pushups", "Pullups", "Planking","Muscle up", "Handstand Push-Ups","Box Jumps", "1 Legged Squads"};
-    String[] Stret = {"Why strech?","Lower back", "Triceps","Biceps","Shoulders","Hamstrings","Quads and Glutes","","",""};
+    String[] Stret = {"Why strech?","Lower back", "Triceps","Biceps","Shoulders","Hamstrings","Quads and Glutes"};
     String[] StringNumbers = {"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen", "twenty"};
     int[] IntNumbers = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20};
 
