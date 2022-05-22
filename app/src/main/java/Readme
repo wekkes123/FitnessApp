@@ -26,3 +26,21 @@ Cardio
 
 
 Heavy lifting
+insert into Weight (Username, Oefening, Gewicht, Reps)
+values (:uu, "Bench", "20", "0"),
+    (:uu, "Bench", "25", "0"),
+    (:uu, "Bench", "30", "0"),
+    (:uu, "Bench", "35", "0"),
+    (:uu, "Bench", "40", "0"),
+    (:uu, "Bench", "45", "0"),
+    (:uu, "Bench", "50", "0"),
+    (:uu, "Bench", "55", "0"),
+    (:uu, "Bench", "60", "0"),
+    (:uu, "Bench", "65", "0"),
+    (:uu, "Bench", "70", "0"),
+    (:uu, "Bench", "75", "0"),
+    (:uu, "Bench", "80", "0"),
+    (:uu, "Bench", "85", "0"),
+    (:uu, "Bench", "90", "0"),
+    (:uu, "Bench", "95", "0"),
+    (:uu, "Bench", "100", "0")

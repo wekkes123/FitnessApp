@@ -49,6 +49,7 @@ public class SignUpScreen extends AppCompatActivity {
                 signup.requestSignUpToDB(new SignUpAction.SignUpToDB() {
                     @Override
                     public void Succes() {
+                        signup.makeEmptytables();
                         showPopupWindow(caller, false);
                     }
                 });

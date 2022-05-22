@@ -53,7 +53,7 @@ public class LoginAction {
 
     public void requestLogin(final LoginCallBack callBack){
         RequestQueue requestqueue = Volley.newRequestQueue(LoginContext);
-        String requestURL = "https://studev.groept.be/api/a21pt213/SelectAll";
+        String requestURL = "https://studev.groept.be/api/a21pt213/SelectAllLogin";
 
         StringRequest submitRequest = new StringRequest(Request.Method.GET, requestURL,
 

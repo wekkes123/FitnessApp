@@ -137,12 +137,15 @@ public class Exercise extends AppCompatActivity implements
         Spinner spin = (Spinner) findViewById(R.id.spinner);
         String exer = spin.getSelectedItem().toString();
         if(exer.equals("Running") || exer.equals("Biking")){
+            Action.initializeTables();
             insert2.setHint("distance(km)");
         }
         else if(exer.equals("Swimming") || exer.equals("Rowing")){
+            Action.initializeTables();
             insert2.setHint("distance(m)");
         }
         else if(Arrays.asList(Heav).contains(exer)){
+            Action.initializeTables();
             insert1.setHint("Weight(Kg)");
             insert2.setHint("Reps");
         }

@@ -57,9 +57,9 @@ public class ExersizeAction {
 
     public interface EmptyCallback{}
 
-    public void checkForTables(final ExersizeAction.ECallback callBack){
+    public void checkForTables(final ExersizeAction.ECallback callBack, String exr){
         RequestQueue requestqueue = Volley.newRequestQueue(ExersizeC);
-        String requestURL = "https://studev.groept.be/api/a21pt213/SelectExersizeUsernames";
+        String requestURL = "https://studev.groept.be/api/a21pt213/SelectExersizeUsernames/" + exr;
 
         StringRequest submitRequest = new StringRequest(Request.Method.GET, requestURL,
 

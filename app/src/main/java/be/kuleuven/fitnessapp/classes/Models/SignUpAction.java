@@ -49,6 +49,19 @@ public class SignUpAction {
         void Succes();
     }
 
+    public interface cardio{
+        void Succes();
+    }
+
+    public interface heavy{
+        void Succes();
+    }
+
+    public interface cali{
+        void Succes();
+    }
+
+
 
 
     public void requestSignUpValidation(final SignUpAction.SignUpCallBack callBack){
@@ -125,5 +138,184 @@ public class SignUpAction {
                 }
         );
         requestqueue.add(submitRequest);
+    }
+
+    public void makeEmptyCardio(final SignUpAction.cardio callBack){
+        RequestQueue requestqueue = Volley.newRequestQueue(SignUpContext);
+        String requestURL = "https://studev.groept.be/api/a21pt213/makeEmptyCardio/" + username + "/" + username + "/" + username + "/" + username;
+
+        StringRequest submitRequest = new StringRequest(Request.Method.GET, requestURL,
+
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            JSONArray responseArray = new JSONArray(response);
+                            callBack.Succes();
+                        }
+
+                        catch( JSONException e ){
+                            //display error message
+                        }
+                    }
+                },
+
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        System.out.print("error");
+                    }
+                }
+        );
+        requestqueue.add(submitRequest);
+    }
+
+    public void makeEmptyHeavyBench(final SignUpAction.heavy callBack){
+        RequestQueue requestqueue = Volley.newRequestQueue(SignUpContext);
+        String requestURL = "https://studev.groept.be/api/a21pt213/makeEmptyWeightBench/" + username + "/" + username + "/" + username + "/" + username + "/" + username + "/" + username + "/" + username + "/" + username + "/" + username + "/" + username + "/" + username + "/" + username + "/" + username + "/" + username + "/" + username + "/" + username + "/" + username + "/";
+
+        StringRequest submitRequest = new StringRequest(Request.Method.GET, requestURL,
+
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            JSONArray responseArray = new JSONArray(response);
+                            callBack.Succes();
+                        }
+
+                        catch( JSONException e ){
+                            //display error message
+                        }
+                    }
+                },
+
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        System.out.print("error");
+                    }
+                }
+        );
+        requestqueue.add(submitRequest);
+    }
+
+    public void makeEmptyHeavyDeadlift(final SignUpAction.heavy callBack){
+        RequestQueue requestqueue = Volley.newRequestQueue(SignUpContext);
+        String requestURL = "https://studev.groept.be/api/a21pt213/makeEmptyWeightDeadlift/" + username + "/" + username + "/" + username + "/" + username + "/" + username + "/" + username + "/" + username + "/" + username + "/" + username + "/" + username + "/" + username + "/" + username + "/" + username + "/" + username + "/" + username + "/" + username + "/" + username + "/";
+
+        StringRequest submitRequest = new StringRequest(Request.Method.GET, requestURL,
+
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            JSONArray responseArray = new JSONArray(response);
+                            callBack.Succes();
+                        }
+
+                        catch( JSONException e ){
+                            //display error message
+                        }
+                    }
+                },
+
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        System.out.print("error");
+                    }
+                }
+        );
+        requestqueue.add(submitRequest);
+    }
+
+    public void makeEmptyHeavyCali(final SignUpAction.cali callBack){
+        RequestQueue requestqueue = Volley.newRequestQueue(SignUpContext);
+        String requestURL = "https://studev.groept.be/api/a21pt213/makeEmptyCali/" + username + "/" + username + "/" + username + "/" + username + "/" + username + "/" + username + "/" + username;
+
+        StringRequest submitRequest = new StringRequest(Request.Method.GET, requestURL,
+
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            JSONArray responseArray = new JSONArray(response);
+                            callBack.Succes();
+                        }
+
+                        catch( JSONException e ){
+                            //display error message
+                        }
+                    }
+                },
+
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        System.out.print("error");
+                    }
+                }
+        );
+        requestqueue.add(submitRequest);
+    }
+
+    public void makeEmptyHeavySquad(final SignUpAction.heavy callBack){
+        RequestQueue requestqueue = Volley.newRequestQueue(SignUpContext);
+        String requestURL = "https://studev.groept.be/api/a21pt213/makeEmptyWeightSquad/" + username + "/" + username + "/" + username + "/" + username + "/" + username + "/" + username + "/" + username + "/" + username + "/" + username + "/" + username + "/" + username + "/" + username + "/" + username + "/" + username + "/" + username + "/" + username + "/" + username + "/";
+
+        StringRequest submitRequest = new StringRequest(Request.Method.GET, requestURL,
+
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            JSONArray responseArray = new JSONArray(response);
+                            callBack.Succes();
+                        }
+
+                        catch( JSONException e ){
+                            //display error message
+                        }
+                    }
+                },
+
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        System.out.print("error");
+                    }
+                }
+        );
+        requestqueue.add(submitRequest);
+    }
+
+    public void makeEmptytables(){
+        makeEmptyCardio(new cardio() {
+            @Override
+            public void Succes() {
+                makeEmptyHeavyBench(new heavy() {
+                    @Override
+                    public void Succes() {
+                        makeEmptyHeavySquad(new heavy() {
+                            @Override
+                            public void Succes() {
+                                makeEmptyHeavyDeadlift(new heavy() {
+                                    @Override
+                                    public void Succes() {
+                                        makeEmptyHeavyCali(new cali() {
+                                            @Override
+                                            public void Succes() {
+
+                                            }
+                                        });
+                                    }
+                                });
+                            }
+                        });
+                    }
+                });
+            }
+        });
     }
 }
