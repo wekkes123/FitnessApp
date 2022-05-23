@@ -31,7 +31,7 @@ public class Exercise extends AppCompatActivity implements
 
     String[] Card = {"Running", "Swimming", "Biking", "Rowing"};
     String[] Heav = {"Bench", "Squad", "Deadlift"};
-    String[] Cali = {"pushups", "pullups"};
+    String[] Cali = {"Pushups", "Pullups", "Planking","Muscle up", "Handstand Push-Ups","Box Jumps", "1 Legged Squads"};
     String[] Stret = {"Why strech?","Lower back", "Triceps","Biceps","Shoulders","Hamstrings","Quads and Glutes"};
     String[] StringNumbers = {"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen", "twenty"};
     int[] IntNumbers = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20};
@@ -73,7 +73,11 @@ public class Exercise extends AppCompatActivity implements
     this.strechText = (TextView) findViewById(R.id.strechText);
     this.update = (Button) findViewById(R.id.button2);
     this.showcase = (ImageView) findViewById(R.id.showcase);
-
+    this.showcase2 = (ImageView) findViewById(R.id.showcase2);
+    //Als dit hier niet staat dan kan de app crashen bij het initalizeren van de cardio tables omdat de variable niet snel genoeg
+    //wordt aangemaak door dit hier early te zetten gebeurt dit nooit
+    exercise = "Running";
+    //
     //initiate variables
     extras = getIntent().getExtras();
     this.Username = extras.get("Username").toString();
@@ -85,7 +89,7 @@ public class Exercise extends AppCompatActivity implements
     }
 
     public String getEX(){
-        return "Running";
+        return exercise;
     }
 
     public String[] WhatArToUse()
@@ -118,15 +122,14 @@ public class Exercise extends AppCompatActivity implements
         aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         //Setting the ArrayAdapter data on the Spinner
         spin.setAdapter(aa);
-        setInserts();
+        //setInserts();
     }
 
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
         String[] ex = WhatArToUse();
         Toast.makeText(getApplicationContext(), ex[i], Toast.LENGTH_SHORT).show();
-        setInserts();
-        Action.initializeTables();
         exercise = ex[i];
+        setInserts();
     }
 
     public void onNothingSelected(AdapterView<?> adapterView) {
@@ -137,13 +140,24 @@ public class Exercise extends AppCompatActivity implements
         Spinner spin = (Spinner) findViewById(R.id.spinner);
         String exer = spin.getSelectedItem().toString();
         if(exer.equals("Running") || exer.equals("Biking")){
+            showcase2.setImageResource(R.drawable.spotify_logo_without_text);
+            Action.initializeTables();
             insert2.setHint("distance(km)");
         }
         else if(exer.equals("Swimming") || exer.equals("Rowing")){
+            showcase2.setImageResource(R.drawable.spotify_logo_without_text);
+            Action.initializeTables();
             insert2.setHint("distance(m)");
         }
         else if(Arrays.asList(Heav).contains(exer)){
+            showcase2.setImageResource(R.drawable.spotify_logo_without_text);
+            Action.initializeTables();
             insert1.setHint("Weight(Kg)");
+            insert2.setHint("Reps");
+        }
+        else if(Arrays.asList(Cali).contains(exer)){
+            showcase2.setImageResource(R.drawable.spotify_logo_without_text);
+            Action.initializeTables();
             insert2.setHint("Reps");
         }
         else if(title.equals("Stretches")){
@@ -230,6 +244,7 @@ public class Exercise extends AppCompatActivity implements
             catch (NumberFormatException ex){ System.out.println("km2 error");
             }
             int newKm = km + km2;
+            if(newKm<0){newKm = 0;};
             Action.setExactReps(new ExersizeAction.ECallback2() {
                 @Override
                 public void onSucces() {
@@ -251,6 +266,32 @@ public class Exercise extends AppCompatActivity implements
                 @Override
                 public void onSucces() {}
             }, exer,insert1.getText().toString(), newReps);
+
+        }
+        else if (Arrays.asList(Cali).contains(exer)) {
+            int rep = 0;
+            int rep2 = 0;
+            try{
+                rep = Integer.parseInt(insert2.getText().toString());
+            }
+            catch (NumberFormatException ex){
+            }
+            tv1 = (TextView) findViewById(R.id.two_two);
+            String CurrentReps = tv1.getText().toString();
+            try{
+                rep2 = Integer.parseInt(CurrentReps);
+            }
+
+            catch (NumberFormatException ex){ System.out.println("rep2 error");
+            }
+            int newKm = rep + rep2;
+            if(newKm<0){newKm = 0;};
+            Action.setExactReps(new ExersizeAction.ECallback2() {
+                @Override
+                public void onSucces() {
+                    Action.initializeTables();
+                }
+            }, exer,"reps", newKm);
         }
     }
 
@@ -301,16 +342,17 @@ public class Exercise extends AppCompatActivity implements
                 break;
             }
             case "Calisthenics":{
-
-                tv1 = (TextView) findViewById(R.id.one_one);
-                tv1.setText("total");
-                tv1 = (TextView) findViewById(R.id.one_two);
-                tv1.setText("amount");
+                tv1 = (TextView) findViewById(R.id.two_one);
+                tv1.setText("Total reps");
+                tv1 = (TextView) findViewById(R.id.two_two);
+                tv1.setText(RespObj.getString("Reps"));
                 break;
             }
 
         }
         } catch (JSONException e) {}
+
     }
+
 }
 

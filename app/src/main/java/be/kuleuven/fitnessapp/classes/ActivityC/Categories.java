@@ -10,16 +10,22 @@ import android.view.WindowManager;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import java.util.concurrent.ThreadLocalRandom;
+
 import be.kuleuven.fitnessapp.R;
 
 
 
 public class Categories extends AppCompatActivity {
+
+    String[] tip = {"Tip: Always use the full range of motion of your exercise", "Tip: Always look up the correct form of an exercise before you attempt it", "Tip: Try minimizing the use of momentum when lifting any weight", "Tip: Always take 2-3 minute breaks between heavy lifting sets","Tip: Its ok to lower your weights sometimes, not every day can be your best","Tip: For every push exercise of a muscle you should try to have a pull exercise"};
+
     private ImageButton Cardio;
     private ImageButton Heavy_lifting;
     private ImageButton Calesthetics;
     private ImageButton Stretches;
     private TextView welcomeTxt;
+    private TextView tips;
     private Bundle extras;
     public String exercise;
 
@@ -36,12 +42,15 @@ public class Categories extends AppCompatActivity {
         //end
         setContentView(R.layout.activity_categories);
         welcomeTxt = (TextView) findViewById(R.id.welcomeTxt);
+        this.tips = (TextView) findViewById(R.id.tips);
         extras = getIntent().getExtras();
         welcomeTxt.setText("Hello " + extras.get("Username").toString() + " !");
         Cardio = (ImageButton) findViewById(R.id.first_exercise);
         Heavy_lifting = (ImageButton) findViewById(R.id.second_exercise);
         Calesthetics = (ImageButton)findViewById(R.id.third_exercise);
         Stretches = (ImageButton) findViewById(R.id.fourth_exercise);
+        int i = ThreadLocalRandom.current().nextInt(0, tip.length + 1);
+        tips.setText(tip[i]);
     }
 
 
