@@ -18,6 +18,7 @@ import android.widget.Toast;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.w3c.dom.Text;
 
 import java.lang.reflect.Array;
 import java.util.Arrays;
@@ -213,8 +214,20 @@ public class Exercise extends AppCompatActivity implements
             return 0;
         }
 
-        int row = (gewicht - 30) / 5;
+        for(int i = 2 ; i <=20 ; i++) {
+            String nameWei = getID(i, 1);
+            int Weightid = getResources().getIdentifier(nameWei, "id", this.getPackageName());
+            if (Weightid != 0) {
+                tv1 = (TextView) findViewById(Weightid);
+                if (tv1.getText() == "20"){
+                    String nameRep = getID(i, 2);
+                    int repID = getResources().getIdentifier(nameRep, "id", this.getPackageName());
+                    tv1 = (TextView) findViewById(repID);
+                    tv1.setText(Integer.toString(gewicht));
+                }
 
+            }
+        }
 
         return 0;
     }
@@ -314,6 +327,7 @@ public class Exercise extends AppCompatActivity implements
             }
             case "Heavy Lifting":{
                 String reps = RespObj.getString("Reps");
+                String gewicht = RespObj.getString("Gewicht");
                 int standardWeight = 20;
                 tv1 = (TextView) findViewById(R.id.one_one);
                 tv1.setText("Weight");
@@ -329,9 +343,10 @@ public class Exercise extends AppCompatActivity implements
                     }
                     standardWeight += 5;
                 }
-                    for(int j = 2 ; j <=20 ; j++) {
-                        String AmountOfReps = getID(j, 2);
-                        int Theid = getResources().getIdentifier(AmountOfReps, "Theid", this.getPackageName());
+
+                for(int j = 2 ; j <=20 ; j++) {
+                        String Reps = getID(j, 2);
+                        int Theid = getResources().getIdentifier(Reps, "id", this.getPackageName());
                         if (Theid != 0) {
                             tv1 = (TextView) findViewById(Theid);
                             tv1.setText(reps);
