@@ -2,6 +2,7 @@ package be.kuleuven.fitnessapp.classes.ActivityC;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.icu.text.CaseMap;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
@@ -42,12 +43,14 @@ public class Exercise extends AppCompatActivity implements
     public String title;
     private TextView tv1;
     private TextView titleText;
+    private TextView uitleg;
     private TextView strechText;
     private Bundle extras;
     private String Username;
     private ExersizeAction Action;
     private EditText insert1;
     private EditText insert2;
+    private EditText linkText;
     private String ID;
     private String exercise;
     private Button update;
@@ -71,6 +74,8 @@ public class Exercise extends AppCompatActivity implements
     tv1.setText(title);
     this.insert1 = (EditText) findViewById(R.id.insert1);
     this.insert2 = (EditText) findViewById(R.id.insert2);
+    this.linkText = (EditText) findViewById(R.id.linkText);
+    this.uitleg = (TextView) findViewById(R.id.uitleg);
     this.titleText = (TextView) findViewById(R.id.Title);
     this.strechText = (TextView) findViewById(R.id.strechText);
     this.update = (Button) findViewById(R.id.button2);
@@ -139,6 +144,7 @@ public class Exercise extends AppCompatActivity implements
     }
 
     public void setInserts(){
+        uitleg.setText("Add your favorite " + title + " playlist");
         Spinner spin = (Spinner) findViewById(R.id.spinner);
         String exer = spin.getSelectedItem().toString();
         if(exer.equals("Running") || exer.equals("Biking")){
@@ -164,6 +170,8 @@ public class Exercise extends AppCompatActivity implements
         }
         else if(title.equals("Stretches")){
             titleText.setText(exer);
+            uitleg.setVisibility(View.INVISIBLE);
+            linkText.setVisibility(View.INVISIBLE);
             insert1.setVisibility(View.INVISIBLE);
             insert2.setVisibility(View.INVISIBLE);
             update.setVisibility(View.INVISIBLE);
@@ -272,10 +280,9 @@ public class Exercise extends AppCompatActivity implements
             try{
                 w2 = Integer.parseInt(insert2.getText().toString());
             }
-
             catch (NumberFormatException ex){}
             int newReps = getReps(insert1.getText().toString()) + w2;
-            Action.setExactReps(new ExersizeAction.ECallback2() {
+            Action.setReps(new ExersizeAction.ECallback2() {
                 @Override
                 public void onSucces() {}
             }, exer,insert1.getText().toString(), newReps);
