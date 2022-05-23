@@ -332,7 +332,12 @@ public class Exercise extends AppCompatActivity implements
                 tv1.setText(RespObj.getString("Reps"));
                 break;
             }
+
             case "Heavy Lifting":{
+                for(int i = 0; i < resp.length(); i++) {
+                    JSONObject curObject = resp.getJSONObject(i);
+
+                }
                 int standardWeight = 20;
                 tv1 = (TextView) findViewById(R.id.one_one);
                 tv1.setText("Weight");
@@ -343,8 +348,10 @@ public class Exercise extends AppCompatActivity implements
                     String name = getID(i, 1);
                     int id = getResources().getIdentifier(name, "id", this.getPackageName());
                     if (id != 0) {
-                        tv1 = (TextView) findViewById(id);
-                        tv1.setText(Integer.toString(standardWeight));
+                        System.out.println(id);
+
+                        TextView test = (TextView) findViewById(id);
+                        test.setText(Integer.toString(standardWeight));
                     }
                     standardWeight += 5;
                 }
