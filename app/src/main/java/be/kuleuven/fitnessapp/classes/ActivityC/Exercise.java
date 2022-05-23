@@ -216,29 +216,26 @@ public class Exercise extends AppCompatActivity implements
     }
 
     public int getReps(String weight) {
-        int gewicht;
-        try {
-            gewicht = Integer.parseInt(weight);
-        } catch (NumberFormatException ex) {
-            return 0;
-        }
-
+        String reps = "";
+        int amount = 0;
         for(int i = 2 ; i <=20 ; i++) {
-            String nameWei = getID(i, 1);
-            int Weightid = getResources().getIdentifier(nameWei, "id", this.getPackageName());
+            String WeightIdName = getID(i, 1);
+            int Weightid = getResources().getIdentifier(WeightIdName, "id", this.getPackageName());
             if (Weightid != 0) {
                 tv1 = (TextView) findViewById(Weightid);
-                if (tv1.getText() == "20"){
+                if (tv1.getText().toString().equals(weight)){
                     String nameRep = getID(i, 2);
                     int repID = getResources().getIdentifier(nameRep, "id", this.getPackageName());
                     tv1 = (TextView) findViewById(repID);
-                    tv1.setText(Integer.toString(gewicht));
+                    reps = tv1.getText().toString();
+                    try{
+                        amount = Integer.parseInt(reps);
+                    }
+                    catch (NumberFormatException ex){}
                 }
-
             }
         }
-
-        return 0;
+        return amount;
     }
 
 
@@ -334,15 +331,13 @@ public class Exercise extends AppCompatActivity implements
                 break;
             }
             case "Heavy Lifting":{
-                String reps = RespObj.getString("Reps");
-                String gewicht = RespObj.getString("Gewicht");
                 int standardWeight = 20;
                 tv1 = (TextView) findViewById(R.id.one_one);
                 tv1.setText("Weight");
                 tv1 = (TextView) findViewById(R.id.one_two);
                 tv1.setText("Reps");
 
-                for(int i = 2 ; i <=20 ; i++) {
+                for(int i = 2 ; i <=18 ; i++) {
                     String name = getID(i, 1);
                     int id = getResources().getIdentifier(name, "id", this.getPackageName());
                     if (id != 0) {
@@ -352,7 +347,8 @@ public class Exercise extends AppCompatActivity implements
                     standardWeight += 5;
                 }
 
-                for(int j = 2 ; j <=20 ; j++) {
+                for(int j = 2 ; j <=18 ; j++) {
+                    String reps = RespObj.getString("Reps");
                         String Reps = getID(j, 2);
                         int Theid = getResources().getIdentifier(Reps, "id", this.getPackageName());
                         if (Theid != 0) {
