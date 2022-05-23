@@ -166,7 +166,6 @@ public class Exercise extends AppCompatActivity implements
             insert1.setVisibility(View.INVISIBLE);
             insert2.setVisibility(View.INVISIBLE);
             update.setVisibility(View.INVISIBLE);
-            System.out.println(exer);
             switch(exer){
                 case "Why strech?":{
                     strechText.setText(getResources().getString(R.string.Strech3));
@@ -303,9 +302,7 @@ public class Exercise extends AppCompatActivity implements
 
     public void FillTables(JSONArray resp){
         try {
-            JSONObject RespObj = resp.getJSONObject(0);
-
-        switch (title) {
+            JSONObject RespObj = resp.getJSONObject(0);switch (title) {
             case "Cardio":{
                 tv1 = (TextView) findViewById(R.id.two_one);
                 tv1.setText("Total distance(km)");
@@ -351,7 +348,7 @@ public class Exercise extends AppCompatActivity implements
             }
 
         }
-        } catch (JSONException e) {}
+        } catch (JSONException e) {System.out.println("56456456546546");}
 
     }
 

@@ -425,6 +425,16 @@
         app:layout_constraintTop_toBottomOf="@+id/spinner" />
 
     <EditText
+        android:id="@+id/insert"
+        android:layout_width="291dp"
+        android:layout_height="51dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toBottomOf="@+id/showcase2"
+        app:layout_constraintStart_toEndOf="@+id/showcase2"
+        app:layout_constraintTop_toTopOf="@+id/showcase2" />
+
+    <EditText
         android:id="@+id/insert2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
