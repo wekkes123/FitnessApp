@@ -28,6 +28,7 @@ import be.kuleuven.fitnessapp.R;
 import be.kuleuven.fitnessapp.classes.Models.ExersizeAction;
 
 
+
 public class Exercise extends AppCompatActivity implements
         AdapterView.OnItemSelectedListener {
 
