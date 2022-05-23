@@ -52,6 +52,7 @@ public class Exercise extends AppCompatActivity implements
     private Button update;
     private ImageView showcase;
     private String weight;
+    private ImageView showcase2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
