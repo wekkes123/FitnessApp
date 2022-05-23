@@ -226,12 +226,14 @@ public class Exercise extends AppCompatActivity implements
                 if (tv1.getText().toString().equals(weight)){
                     String nameRep = getID(i, 2);
                     int repID = getResources().getIdentifier(nameRep, "id", this.getPackageName());
-                    tv1 = (TextView) findViewById(repID);
-                    reps = tv1.getText().toString();
-                    try{
-                        amount = Integer.parseInt(reps);
+                    if(repID !=0){
+                        tv1 = (TextView) findViewById(repID);
+                        reps = tv1.getText().toString();
+                        try{
+                            amount = Integer.parseInt(reps);
+                        }
+                        catch (NumberFormatException ex){}
                     }
-                    catch (NumberFormatException ex){}
                 }
             }
         }
