@@ -32,7 +32,7 @@ public class Exercise extends AppCompatActivity implements
     String[] Card = {"Running", "Swimming", "Biking", "Rowing"};
     String[] Heav = {"Bench", "Squad", "Deadlift"};
     String[] Cali = {"pushups", "pullups"};
-    String[] Stret = {"Why strech?","Lower back", "Triceps","Biceps","Shoulders","Hamstrings","Quads and Glutes","","",""};
+    String[] Stret = {"Why strech?","Lower back", "Triceps","Biceps","Shoulders","Hamstrings","Quads and Glutes"};
     String[] StringNumbers = {"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen", "twenty"};
     int[] IntNumbers = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20};
 
@@ -245,16 +245,12 @@ public class Exercise extends AppCompatActivity implements
                 w2 = Integer.parseInt(insert2.getText().toString());
             }
 
-            catch (NumberFormatException ex){
-            }
+            catch (NumberFormatException ex){}
             int newReps = getReps(insert1.getText().toString()) + w2;
             Action.setExactReps(new ExersizeAction.ECallback2() {
                 @Override
-                public void onSucces() {
-
-                }
+                public void onSucces() {}
             }, exer,insert1.getText().toString(), newReps);
-
         }
     }
 
@@ -280,16 +276,28 @@ public class Exercise extends AppCompatActivity implements
             case "Heavy Lifting":{
                 String reps = RespObj.getString("Reps");
                 int standardWeight = 20;
-                for(int i = 2 ; i <=20 ; i++) {
+                tv1 = (TextView) findViewById(R.id.one_one);
+                tv1.setText("Weight");
+                tv1 = (TextView) findViewById(R.id.one_two);
+                tv1.setText("Reps");
 
+                for(int i = 2 ; i <=20 ; i++) {
                     String name = getID(i, 1);
                     int id = getResources().getIdentifier(name, "id", this.getPackageName());
-                    if (id != 0){
+                    if (id != 0) {
                         tv1 = (TextView) findViewById(id);
                         tv1.setText(Integer.toString(standardWeight));
                     }
                     standardWeight += 5;
                 }
+                    for(int j = 2 ; j <=20 ; j++) {
+                        String AmountOfReps = getID(j, 2);
+                        int Theid = getResources().getIdentifier(AmountOfReps, "Theid", this.getPackageName());
+                        if (Theid != 0) {
+                            tv1 = (TextView) findViewById(Theid);
+                            tv1.setText(reps);
+                        }
+                    }
                 break;
             }
             case "Calisthenics":{
@@ -303,8 +311,6 @@ public class Exercise extends AppCompatActivity implements
 
         }
         } catch (JSONException e) {}
-
     }
-
 }
 
