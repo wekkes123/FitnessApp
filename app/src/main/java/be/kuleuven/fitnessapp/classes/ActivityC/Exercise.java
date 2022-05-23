@@ -330,6 +330,7 @@ public class Exercise extends AppCompatActivity implements
                 tv1.setText(RespObj.getString("Reps"));
                 break;
             }
+
             case "Heavy Lifting":{
                 for(int i = 0; i < resp.length(); i++) {
                     JSONObject curObject = resp.getJSONObject(i);
