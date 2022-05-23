@@ -51,6 +51,7 @@ public class Exercise extends AppCompatActivity implements
     private String exercise;
     private Button update;
     private ImageView showcase;
+    private ImageView showcase2;
     private String weight;
 
     @Override
@@ -73,6 +74,7 @@ public class Exercise extends AppCompatActivity implements
     this.strechText = (TextView) findViewById(R.id.strechText);
     this.update = (Button) findViewById(R.id.button2);
     this.showcase = (ImageView) findViewById(R.id.showcase);
+    this.showcase2 = (ImageView) findViewById(R.id.showcase2);
     //Als dit hier niet staat dan kan de app crashen bij het initalizeren van de cardio tables omdat de variable niet snel genoeg
     //wordt aangemaak door dit hier early te zetten gebeurt dit nooit
     exercise = "Running";
@@ -139,19 +141,23 @@ public class Exercise extends AppCompatActivity implements
         Spinner spin = (Spinner) findViewById(R.id.spinner);
         String exer = spin.getSelectedItem().toString();
         if(exer.equals("Running") || exer.equals("Biking")){
+            showcase2.setImageResource(R.drawable.spotify_logo_without_text);
             Action.initializeTables();
             insert2.setHint("distance(km)");
         }
         else if(exer.equals("Swimming") || exer.equals("Rowing")){
+            showcase2.setImageResource(R.drawable.spotify_logo_without_text);
             Action.initializeTables();
             insert2.setHint("distance(m)");
         }
         else if(Arrays.asList(Heav).contains(exer)){
+            showcase2.setImageResource(R.drawable.spotify_logo_without_text);
             Action.initializeTables();
             insert1.setHint("Weight(Kg)");
             insert2.setHint("Reps");
         }
         else if(Arrays.asList(Cali).contains(exer)){
+            showcase2.setImageResource(R.drawable.spotify_logo_without_text);
             Action.initializeTables();
             insert2.setHint("Reps");
         }
