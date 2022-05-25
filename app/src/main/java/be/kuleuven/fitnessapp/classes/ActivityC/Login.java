@@ -55,7 +55,6 @@ public class Login extends AppCompatActivity {
     }
 
     public void onLoginButtonClicked(View caller){
-        System.out.println("dsfdsdfsdf");
         LoginAction logindata = new LoginAction(Username.getText().toString(), Password.getText().toString(), this);
         logindata.requestLogin(new LoginAction.LoginCallBack() {
             @Override

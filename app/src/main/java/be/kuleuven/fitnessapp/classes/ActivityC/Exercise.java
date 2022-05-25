@@ -44,20 +44,15 @@ public class Exercise extends AppCompatActivity implements
     public String title;
     private TextView tv1;
     private TextView titleText;
-    private TextView uitleg;
     private TextView strechText;
-    private Bundle extras;
     private String Username;
     private ExersizeAction Action;
     private EditText insert1;
     private EditText insert2;
-    private EditText linkText;
     private String ID;
     private String exercise;
     private Button update;
     private ImageView showcase;
-    private String weight;
-    private ImageView showcase2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,13 +70,10 @@ public class Exercise extends AppCompatActivity implements
     tv1.setText(title);
     this.insert1 = (EditText) findViewById(R.id.insert1);
     this.insert2 = (EditText) findViewById(R.id.insert2);
-    this.linkText = (EditText) findViewById(R.id.linkText);
-    this.uitleg = (TextView) findViewById(R.id.uitleg);
     this.titleText = (TextView) findViewById(R.id.Title);
     this.strechText = (TextView) findViewById(R.id.strechText);
     this.update = (Button) findViewById(R.id.button2);
     this.showcase = (ImageView) findViewById(R.id.showcase);
-    this.showcase2 = (ImageView) findViewById(R.id.showcase2);
     //Als dit hier niet staat dan kan de app crashen bij het initalizeren van de cardio tables omdat de variable niet snel genoeg
     //wordt aangemaak door dit hier early te zetten gebeurt dit nooit
     exercise = "Running";
@@ -91,7 +83,6 @@ public class Exercise extends AppCompatActivity implements
     this.Username = extras.get("Username").toString();
     Action = new ExersizeAction(Username, title, this,this);
     //initiate tables
-    Action.initializeTables();
     // set spinner
     spinner(WhatArToUse());
     }
@@ -145,34 +136,27 @@ public class Exercise extends AppCompatActivity implements
     }
 
     public void setInserts(){
-        uitleg.setText("Add your favorite " + title + " playlist");
         Spinner spin = (Spinner) findViewById(R.id.spinner);
         String exer = spin.getSelectedItem().toString();
         if(exer.equals("Running") || exer.equals("Biking")){
-            showcase2.setImageResource(R.drawable.spotify_logo_without_text);
             Action.initializeTables();
             insert2.setHint("distance(km)");
         }
         else if(exer.equals("Swimming") || exer.equals("Rowing")){
-            showcase2.setImageResource(R.drawable.spotify_logo_without_text);
             Action.initializeTables();
             insert2.setHint("distance(m)");
         }
         else if(Arrays.asList(Heav).contains(exer)){
-            showcase2.setImageResource(R.drawable.spotify_logo_without_text);
             Action.initializeTables();
             insert1.setHint("Weight(Kg)");
             insert2.setHint("Reps");
         }
         else if(Arrays.asList(Cali).contains(exer)){
-            showcase2.setImageResource(R.drawable.spotify_logo_without_text);
             Action.initializeTables();
             insert2.setHint("Reps");
         }
         else if(title.equals("Stretches")){
             titleText.setText(exer);
-            uitleg.setVisibility(View.INVISIBLE);
-            linkText.setVisibility(View.INVISIBLE);
             insert1.setVisibility(View.INVISIBLE);
             insert2.setVisibility(View.INVISIBLE);
             update.setVisibility(View.INVISIBLE);
