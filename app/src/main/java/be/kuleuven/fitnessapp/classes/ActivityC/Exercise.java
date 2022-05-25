@@ -229,11 +229,10 @@ public class Exercise extends AppCompatActivity implements
                     if(repID !=0){
                         tv1 = (TextView) findViewById(repID);
                         reps = tv1.getText().toString();
-                        try{
-                            amount = Integer.parseInt(reps);
-                        }
+                        try{amount = Integer.parseInt(reps);}
                         catch (NumberFormatException ex){}
                     }
+
                 }
             }
         }
@@ -333,38 +332,37 @@ public class Exercise extends AppCompatActivity implements
                 break;
             }
 
-            case "Heavy Lifting":{
-                for(int i = 0; i < resp.length(); i++) {
-                    JSONObject curObject = resp.getJSONObject(i);
-
-                }
+            case "Heavy Lifting": {
                 int standardWeight = 20;
                 tv1 = (TextView) findViewById(R.id.one_one);
                 tv1.setText("Weight");
                 tv1 = (TextView) findViewById(R.id.one_two);
                 tv1.setText("Reps");
 
-                for(int i = 2 ; i <=18 ; i++) {
+                for (int i = 2; i <= 18; i++) {
                     String name = getID(i, 1);
                     int id = getResources().getIdentifier(name, "id", this.getPackageName());
                     if (id != 0) {
-                        System.out.println(id);
-
                         TextView test = (TextView) findViewById(id);
                         test.setText(Integer.toString(standardWeight));
+                        System.out.println(getReps("50") + "get reps on weight" + 50);
                     }
                     standardWeight += 5;
                 }
 
-                for(int j = 2 ; j <=18 ; j++) {
-                    String reps = RespObj.getString("Reps");
-                        String Reps = getID(j, 2);
-                        int Theid = getResources().getIdentifier(Reps, "id", this.getPackageName());
+
+                try {
+                    for (int i = 1; i <= resp.length(); i++) {
+                        JSONObject curObject = resp.getJSONObject(i);
+                        String reps = curObject.getString("Reps");
+                        String Repsid = getID(i+1, 2);
+                        int Theid = getResources().getIdentifier(Repsid, "id", this.getPackageName());
                         if (Theid != 0) {
                             tv1 = (TextView) findViewById(Theid);
-                            tv1.setText(reps);
-                        }
+                            tv1.setText(reps);}
                     }
+                } catch (JSONException e) {}
+
                 break;
             }
             case "Calisthenics":{
