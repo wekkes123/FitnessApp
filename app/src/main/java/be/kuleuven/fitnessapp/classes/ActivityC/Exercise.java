@@ -318,6 +318,7 @@ public class Exercise extends AppCompatActivity implements
                 break;
             }
 
+
             case "Heavy Lifting": {
                     int standardWeight = 20;
                     tv1 = (TextView) findViewById(R.id.one_one);
