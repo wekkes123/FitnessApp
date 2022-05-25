@@ -362,7 +362,7 @@ public class Exercise extends AppCompatActivity implements
                             tv1.setText(reps);}
                     }
                 } catch (JSONException e) {}
-
+                Action.initializeTables();
                 break;
             }
             case "Calisthenics":{
