@@ -326,15 +326,14 @@ public class Exercise extends AppCompatActivity implements
 
                 for (int i = 2; i <= 18; i++) {
                     String name = getID(i, 1);
+                    String Repsid = getID(i , 2);
                     int id = getResources().getIdentifier(name, "id", this.getPackageName());
                     if (id != 0) {
                         TextView test = (TextView) findViewById(id);
                         test.setText(Integer.toString(standardWeight));
                         try {
-                            JSONObject curObject = response.getJSONObject(i-2);
+                            JSONObject curObject = response.getJSONObject(i-1);
                             String reps = curObject.getString("Reps");
-                            String Repsid = getID(i , 2);
-                            System.out.println(standardWeight + "       "+ Repsid + i + "           " + reps);
                             int Theid = getResources().getIdentifier(Repsid, "id", this.getPackageName());
                             if (Theid != 0) {
                                 tv1 = (TextView) findViewById(Theid);
