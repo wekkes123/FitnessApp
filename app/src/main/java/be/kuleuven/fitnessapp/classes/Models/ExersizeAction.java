@@ -213,7 +213,6 @@ public class ExersizeAction {
     }
 
     public void setReps(final ExersizeAction.ECallback2 callBack, String Ex, String Weight, int rep){
-        System.out.println("yo");
         RequestQueue requestqueue = Volley.newRequestQueue(ExersizeC);
         String requestURL = "https://studev.groept.be/api/a21pt213/SetReps/"+ rep + "/" + Username + "/" + Ex + "/" + Weight;
 
