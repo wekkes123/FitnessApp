@@ -319,34 +319,42 @@ public class Exercise extends AppCompatActivity implements
             }
 
             case "Heavy Lifting": {
-                int standardWeight = 20;
-                tv1 = (TextView) findViewById(R.id.one_one);
-                tv1.setText("Weight");
-                tv1 = (TextView) findViewById(R.id.one_two);
-                tv1.setText("Reps");
+                    int standardWeight = 20;
+                    tv1 = (TextView) findViewById(R.id.one_one);
+                    tv1.setText("Weight");
+                    tv1 = (TextView) findViewById(R.id.one_two);
+                    tv1.setText("Reps");
 
-                for (int i = 2; i <= 17; i++) {
-                    String name = getID(i, 1);
-                    String Repsid = getID(i , 2);
-                    int id = getResources().getIdentifier(name, "id", this.getPackageName());
-                    if (id != 0) {
-                        TextView test = (TextView) findViewById(id);
-                        test.setText(Integer.toString(standardWeight));
-                        try {
-                            JSONObject curObject = response.getJSONObject(i-1);
+                    for (int i = 2; i <= 18; i++) {
+                        String name = getID(i, 1);
+                        int id = getResources().getIdentifier(name, "id", this.getPackageName());
+                        if (id != 0) {
+                            TextView test = (TextView) findViewById(id);
+                            test.setText(Integer.toString(standardWeight));
+                        }
+                        standardWeight += 5;
+                    }
+                    try {
+                        for (int i = 1; i <= response.length(); i++) {
+                            if(i == response.length()){
+                                i=0;
+                            }
+                            JSONObject curObject = response.getJSONObject(i);
                             String reps = curObject.getString("Reps");
+                            if(i == 0){
+                                i=response.length();
+                            }
+                            String Repsid = getID(i+1, 2);
                             int Theid = getResources().getIdentifier(Repsid, "id", this.getPackageName());
                             if (Theid != 0) {
                                 tv1 = (TextView) findViewById(Theid);
                                 tv1.setText(reps);
                             }
+
                         }
-                        catch (JSONException e) {}
-                    }
-                    standardWeight += 5;
+                    } catch (JSONException e) {}
+                    break;
                 }
-                break;
-            }
             case "Calisthenics":{
                 tv1 = (TextView) findViewById(R.id.two_one);
                 tv1.setText("Total reps");
