@@ -363,7 +363,7 @@ public class Exercise extends AppCompatActivity implements
                         System.out.println(Repsid);
                     }
                 } catch (JSONException e) {}
-
+                Action.initializeTables();
                 break;
             }
             case "Calisthenics":{
@@ -375,7 +375,7 @@ public class Exercise extends AppCompatActivity implements
             }
 
         }
-        } catch (JSONException e) {System.out.println("56456456546546");}
+        } catch (JSONException e) {System.out.println("error e");}
 
     }
 
