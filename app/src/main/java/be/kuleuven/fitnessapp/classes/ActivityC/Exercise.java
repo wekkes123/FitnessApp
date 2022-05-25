@@ -283,7 +283,7 @@ public class Exercise extends AppCompatActivity implements
             int newReps = getReps(insert1.getText().toString()) + w2;
             Action.setReps(new ExersizeAction.ECallback2() {
                 @Override
-                public void onSucces() {}
+                public void onSucces() {Action.initializeTables();}
             }, exer,insert1.getText().toString(), newReps);
 
         }
@@ -349,12 +349,11 @@ public class Exercise extends AppCompatActivity implements
                     }
                     standardWeight += 5;
                 }
-
-
                 try {
                     for (int i = 1; i <= resp.length(); i++) {
                         JSONObject curObject = resp.getJSONObject(i);
                         String reps = curObject.getString("Reps");
+                        System.out.println(reps);
                         String Repsid = getID(i+1, 2);
                         int Theid = getResources().getIdentifier(Repsid, "id", this.getPackageName());
                         if (Theid != 0) {
@@ -362,7 +361,6 @@ public class Exercise extends AppCompatActivity implements
                             tv1.setText(reps);}
                     }
                 } catch (JSONException e) {}
-                Action.initializeTables();
                 break;
             }
             case "Calisthenics":{
