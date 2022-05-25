@@ -2,6 +2,7 @@ package be.kuleuven.fitnessapp.classes.ActivityC;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.icu.text.CaseMap;
 import android.os.Bundle;
 import android.view.View;
@@ -26,6 +27,7 @@ import java.util.Arrays;
 
 import be.kuleuven.fitnessapp.R;
 import be.kuleuven.fitnessapp.classes.Models.ExersizeAction;
+import android.os.Vibrator;
 
 
 
@@ -139,20 +141,23 @@ public class Exercise extends AppCompatActivity implements
         Spinner spin = (Spinner) findViewById(R.id.spinner);
         String exer = spin.getSelectedItem().toString();
         if(exer.equals("Running") || exer.equals("Biking")){
+            insert1.setVisibility(View.INVISIBLE);
             Action.initializeTables();
             insert2.setHint("distance(km)");
         }
         else if(exer.equals("Swimming") || exer.equals("Rowing")){
+            insert1.setVisibility(View.INVISIBLE);
             Action.initializeTables();
             insert2.setHint("distance(m)");
         }
         else if(Arrays.asList(Heav).contains(exer)){
             Action.initializeTables();
-            insert1.setHint("Weight(Kg)");
+            insert1.setHint("Weight(kg)");
             insert2.setHint("Reps to add");
         }
         else if(Arrays.asList(Cali).contains(exer)){
             Action.initializeTables();
+            insert1.setVisibility(View.INVISIBLE);
             insert2.setHint("Reps to add");
         }
         else if(title.equals("Stretches")){
@@ -225,6 +230,8 @@ public class Exercise extends AppCompatActivity implements
 
 
     public void onUpdateButtonClicked(View caller) {
+        Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+        v.vibrate(50);
         Spinner spin = (Spinner) findViewById(R.id.spinner);
         String exer = spin.getSelectedItem().toString();
         if (insert2.getText().toString().equals(null)) {
@@ -323,14 +330,14 @@ public class Exercise extends AppCompatActivity implements
                     tv1 = (TextView) findViewById(R.id.one_one);
                     tv1.setText("Weight");
                     tv1 = (TextView) findViewById(R.id.one_two);
-                    tv1.setText("Reps");
+                    tv1.setText("Reps that you have done");
 
                     for (int i = 2; i <= 18; i++) {
                         String name = getID(i, 1);
                         int id = getResources().getIdentifier(name, "id", this.getPackageName());
                         if (id != 0) {
                             TextView test = (TextView) findViewById(id);
-                            test.setText(Integer.toString(standardWeight));
+                            test.setText(Integer.toString(standardWeight) + " kg");
                         }
                         standardWeight += 5;
                     }
@@ -359,16 +366,12 @@ public class Exercise extends AppCompatActivity implements
                 tv1 = (TextView) findViewById(R.id.two_one);
                 tv1.setText("Total reps");
                 tv1 = (TextView) findViewById(R.id.two_two);
-                tv1.setText(RespObj.getString("Reps"));
+                tv1.setText(RespObj.getString("Reps that you have done"));
                 break;
             }
 
         }
         } catch (JSONException e) {System.out.println("error e");}
-
     }
-
-
-
 }
 
