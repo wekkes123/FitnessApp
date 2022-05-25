@@ -324,7 +324,7 @@ public class Exercise extends AppCompatActivity implements
                 tv1 = (TextView) findViewById(R.id.one_two);
                 tv1.setText("Reps");
 
-                for (int i = 2; i <= 18; i++) {
+                for (int i = 2; i <= 17; i++) {
                     String name = getID(i, 1);
                     String Repsid = getID(i , 2);
                     int id = getResources().getIdentifier(name, "id", this.getPackageName());
@@ -358,6 +358,8 @@ public class Exercise extends AppCompatActivity implements
         } catch (JSONException e) {System.out.println("error e");}
 
     }
+
+
 
 }
 
