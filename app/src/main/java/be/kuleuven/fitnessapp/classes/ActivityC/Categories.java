@@ -49,10 +49,14 @@ public class Categories extends AppCompatActivity {
         Heavy_lifting = (ImageButton) findViewById(R.id.second_exercise);
         Calesthetics = (ImageButton)findViewById(R.id.third_exercise);
         Stretches = (ImageButton) findViewById(R.id.fourth_exercise);
+        randomTip();
+    }
+
+
+    public void randomTip(){
         int i = ThreadLocalRandom.current().nextInt(0, tip.length);
         tips.setText(tip[i]);
     }
-
 
     public void onExerciseClicked ()
     {

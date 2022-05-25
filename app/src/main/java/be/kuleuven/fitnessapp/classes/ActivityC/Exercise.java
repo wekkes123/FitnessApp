@@ -149,11 +149,11 @@ public class Exercise extends AppCompatActivity implements
         else if(Arrays.asList(Heav).contains(exer)){
             Action.initializeTables();
             insert1.setHint("Weight(Kg)");
-            insert2.setHint("Reps");
+            insert2.setHint("Reps to add");
         }
         else if(Arrays.asList(Cali).contains(exer)){
             Action.initializeTables();
-            insert2.setHint("Reps");
+            insert2.setHint("Reps to add");
         }
         else if(title.equals("Stretches")){
             titleText.setText(exer);
