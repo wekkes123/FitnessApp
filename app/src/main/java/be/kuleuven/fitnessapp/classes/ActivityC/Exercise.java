@@ -299,6 +299,8 @@ public class Exercise extends AppCompatActivity implements
     }
 
 
+
+
     public String getID(int row, int column) {
         ID = StringNumbers[IntNumbers[row]] + "_" + StringNumbers[IntNumbers[column]];
         return ID;
