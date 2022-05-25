@@ -321,7 +321,8 @@ public class Exercise extends AppCompatActivity implements
 
     public void FillTables(JSONArray resp){
         try {
-            JSONObject RespObj = resp.getJSONObject(0);switch (title) {
+            JSONObject RespObj = resp.getJSONObject(0);
+            switch (title) {
             case "Cardio":{
                 tv1 = (TextView) findViewById(R.id.two_one);
                 tv1.setText("Total distance(km)");
@@ -345,7 +346,6 @@ public class Exercise extends AppCompatActivity implements
                     if (id != 0) {
                         TextView test = (TextView) findViewById(id);
                         test.setText(Integer.toString(standardWeight));
-                        System.out.println(getReps("50") + "get reps on weight" + 50);
                     }
                     standardWeight += 5;
                 }
@@ -360,6 +360,7 @@ public class Exercise extends AppCompatActivity implements
                         if (Theid != 0) {
                             tv1 = (TextView) findViewById(Theid);
                             tv1.setText(reps);}
+                        System.out.println(Repsid);
                     }
                 } catch (JSONException e) {}
 
