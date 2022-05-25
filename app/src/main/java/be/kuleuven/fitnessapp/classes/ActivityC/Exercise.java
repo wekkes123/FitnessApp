@@ -319,9 +319,9 @@ public class Exercise extends AppCompatActivity implements
         return ID;
     }
 
-    public void FillTables(JSONArray resp){
+    public void FillTables(JSONArray response){
         try {
-            JSONObject RespObj = resp.getJSONObject(0);
+            JSONObject RespObj = response.getJSONObject(0);
             switch (title) {
             case "Cardio":{
                 tv1 = (TextView) findViewById(R.id.two_one);
@@ -346,22 +346,21 @@ public class Exercise extends AppCompatActivity implements
                     if (id != 0) {
                         TextView test = (TextView) findViewById(id);
                         test.setText(Integer.toString(standardWeight));
+                        try {
+                            JSONObject curObject = response.getJSONObject(i-2);
+                            String reps = curObject.getString("Reps");
+                            String Repsid = getID(i , 2);
+                            System.out.println(standardWeight + "       "+ Repsid + i + "           " + reps);
+                            int Theid = getResources().getIdentifier(Repsid, "id", this.getPackageName());
+                            if (Theid != 0) {
+                                tv1 = (TextView) findViewById(Theid);
+                                tv1.setText(reps);
+                            }
+                        }
+                        catch (JSONException e) {}
                     }
                     standardWeight += 5;
                 }
-                try {
-                    for (int i = 1; i <= resp.length(); i++) {
-                        JSONObject curObject = resp.getJSONObject(i);
-                        String reps = curObject.getString("Reps");
-                        System.out.println(reps);
-                        String Repsid = getID(i+1, 2);
-                        int Theid = getResources().getIdentifier(Repsid, "id", this.getPackageName());
-                        if (Theid != 0) {
-                            tv1 = (TextView) findViewById(Theid);
-                            tv1.setText(reps);}
-                        System.out.println(Repsid);
-                    }
-                } catch (JSONException e) {}
                 break;
             }
             case "Calisthenics":{
