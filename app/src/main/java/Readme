@@ -8,6 +8,8 @@ spinner en koppeling op activity exercise
 
 wout: fix da de lege tabel er voledig ingezet wordt
 
+Heavy lifting ui beter maken
+
 
 
 Table sizes
@@ -44,3 +46,99 @@ values (:uu, "Bench", "20", "0"),
     (:uu, "Bench", "90", "0"),
     (:uu, "Bench", "95", "0"),
     (:uu, "Bench", "100", "0")
+
+public void checkForTables(final ExersizeAction.ECallback callBack, String exr){
+        RequestQueue requestqueue = Volley.newRequestQueue(ExersizeC);
+        String requestURL = "https://studev.groept.be/api/a21pt213/SelectExersizeUsernames/" + exr;
+
+        StringRequest submitRequest = new StringRequest(Request.Method.GET, requestURL,
+
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            JSONArray responseArray = new JSONArray(response);
+                            for(int i = 0; i < responseArray.length(); i++) {
+                                JSONObject curObject = responseArray.getJSONObject(i);
+                                if (curObject.getString("Username").equals(Username)) {
+                                    callBack.onSucces();
+                                }
+                            }
+                            callBack.onFail();
+                        }
+                        catch( JSONException e ){
+                            //display error message
+                        }
+                    }
+                },
+
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        System.out.print("error");
+                    }
+                }
+        );
+        requestqueue.add(submitRequest);
+    }
+
+    public void InsertWeight(final ExersizeAction.ECallback2 callBack,String oef, String Weight, int Reps){
+        RequestQueue requestqueue = Volley.newRequestQueue(ExersizeC);
+
+        String requestURL = "https://studev.groept.be/api/a21pt213/InsertWeigth/" + Username + "/" + oef + "/" + Weight + "/" + Reps;
+
+        StringRequest submitRequest = new StringRequest(Request.Method.GET, requestURL,
+
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            JSONArray responseArray = new JSONArray(response);
+
+                            callBack.onSucces();
+                        }
+                        catch( JSONException e ){
+                            //display error message
+                        }
+                    }
+                },
+
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        System.out.print("error");
+                    }
+                }
+        );
+        requestqueue.add(submitRequest);
+    }
+
+    public void getExactReps(final ExersizeAction.ECallback2 callBack, String Ex, String Weight){
+            RequestQueue requestqueue = Volley.newRequestQueue(ExersizeC);
+            String requestURL = "https://studev.groept.be/api/a21pt213/getExactReps/" + Username + "/" + Ex + "/" + Weight;
+
+            StringRequest submitRequest = new StringRequest(Request.Method.GET, requestURL,
+
+                    new Response.Listener<String>() {
+                        @Override
+                        public void onResponse(String response) {
+                            try {
+                                JSONArray responseArray = new JSONArray(response);
+
+                                callBack.onSucces();
+                            }
+                            catch( JSONException e ){
+                                //display error message
+                            }
+                        }
+                    },
+
+                    new Response.ErrorListener() {
+                        @Override
+                        public void onErrorResponse(VolleyError error) {
+                            System.out.print("error");
+                        }
+                    }
+            );
+            requestqueue.add(submitRequest);
+        }

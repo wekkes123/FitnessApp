@@ -18,7 +18,9 @@ import java.lang.reflect.Array;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 
-public class SignUpAction {
+import be.kuleuven.fitnessapp.classes.Abstract.ASign;
+
+public class SignUpAction extends ASign {
     private String username;
     private String password;
     private Context SignUpContext;
@@ -29,12 +31,13 @@ public class SignUpAction {
         SignUpContext = context;
     }
 
+    @Override
     public String encryptPassword(String pw){
         String sha256hex = Hashing.sha256().hashString(pw, StandardCharsets.UTF_8).toString();
         System.out.println(sha256hex);
         return sha256hex;
     }
-
+    @Override
     public String getURL(){
         String URL = "https://studev.groept.be/api/a21pt213/InsertSUinfo/" + username + "/" + password + "/";
         return URL;
@@ -61,9 +64,7 @@ public class SignUpAction {
         void Succes();
     }
 
-
-
-
+    @Override
     public void requestSignUpValidation(final SignUpAction.SignUpCallBack callBack){
         if(!username.matches("[a-zA-Z0-9]*")){
             callBack.onFail();
@@ -82,7 +83,9 @@ public class SignUpAction {
                             boolean a = false;
                             for(int i = 0; i < responseArray.length(); i++){
                                 JSONObject curObject = responseArray.getJSONObject(i);
-                                if(curObject.getString("Username").equals(username)){
+                                System.out.println(curObject.getString("Username").toLowerCase() + username.toLowerCase());
+                                if(curObject.getString("Username").toLowerCase().equals(username.toLowerCase())){
+                                    System.out.println("yo");
                                     a = true;
                                     callBack.onFail();
                                     return;
@@ -90,7 +93,7 @@ public class SignUpAction {
                             }
                             //extra veiligheid met if kan later weg worden gehaald?
                             if(!a){
-
+                                System.out.println("yoo");
                                 callBack.onSucces();
                             }
                         }
@@ -109,7 +112,7 @@ public class SignUpAction {
         );
         requestqueue.add(submitRequest);
     }
-
+    @Override
     public void requestSignUpToDB(final SignUpAction.SignUpToDB callBack){
         RequestQueue requestqueue = Volley.newRequestQueue(SignUpContext);
         String requestURL = getURL();
@@ -139,7 +142,7 @@ public class SignUpAction {
         );
         requestqueue.add(submitRequest);
     }
-
+    @Override
     public void makeEmptyCardio(final SignUpAction.cardio callBack){
         RequestQueue requestqueue = Volley.newRequestQueue(SignUpContext);
         String requestURL = "https://studev.groept.be/api/a21pt213/makeEmptyCardio/" + username + "/" + username + "/" + username + "/" + username;
@@ -169,7 +172,7 @@ public class SignUpAction {
         );
         requestqueue.add(submitRequest);
     }
-
+    @Override
     public void makeEmptyHeavyBench(final SignUpAction.heavy callBack){
         RequestQueue requestqueue = Volley.newRequestQueue(SignUpContext);
         String requestURL = "https://studev.groept.be/api/a21pt213/makeEmptyWeightBench/" + username + "/" + username + "/" + username + "/" + username + "/" + username + "/" + username + "/" + username + "/" + username + "/" + username + "/" + username + "/" + username + "/" + username + "/" + username + "/" + username + "/" + username + "/" + username + "/" + username + "/";
@@ -199,7 +202,7 @@ public class SignUpAction {
         );
         requestqueue.add(submitRequest);
     }
-
+    @Override
     public void makeEmptyHeavyDeadlift(final SignUpAction.heavy callBack){
         RequestQueue requestqueue = Volley.newRequestQueue(SignUpContext);
         String requestURL = "https://studev.groept.be/api/a21pt213/makeEmptyWeightDeadlift/" + username + "/" + username + "/" + username + "/" + username + "/" + username + "/" + username + "/" + username + "/" + username + "/" + username + "/" + username + "/" + username + "/" + username + "/" + username + "/" + username + "/" + username + "/" + username + "/" + username + "/";
@@ -229,7 +232,7 @@ public class SignUpAction {
         );
         requestqueue.add(submitRequest);
     }
-
+    @Override
     public void makeEmptyHeavyCali(final SignUpAction.cali callBack){
         RequestQueue requestqueue = Volley.newRequestQueue(SignUpContext);
         String requestURL = "https://studev.groept.be/api/a21pt213/makeEmptyCali/" + username + "/" + username + "/" + username + "/" + username + "/" + username + "/" + username + "/" + username;
@@ -259,7 +262,7 @@ public class SignUpAction {
         );
         requestqueue.add(submitRequest);
     }
-
+    @Override
     public void makeEmptyHeavySquad(final SignUpAction.heavy callBack){
         RequestQueue requestqueue = Volley.newRequestQueue(SignUpContext);
         String requestURL = "https://studev.groept.be/api/a21pt213/makeEmptyWeightSquad/" + username + "/" + username + "/" + username + "/" + username + "/" + username + "/" + username + "/" + username + "/" + username + "/" + username + "/" + username + "/" + username + "/" + username + "/" + username + "/" + username + "/" + username + "/" + username + "/" + username + "/";
@@ -289,7 +292,7 @@ public class SignUpAction {
         );
         requestqueue.add(submitRequest);
     }
-
+    @Override
     public void makeEmptytables(){
         makeEmptyCardio(new cardio() {
             @Override

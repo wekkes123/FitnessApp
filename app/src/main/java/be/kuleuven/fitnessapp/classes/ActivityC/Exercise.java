@@ -140,9 +140,11 @@ public class Exercise extends AppCompatActivity implements
         String exer = spin.getSelectedItem().toString();
         if(exer.equals("Running") || exer.equals("Biking")){
             Action.initializeTables();
+            insert1.setVisibility(View.INVISIBLE);
             insert2.setHint("distance(km)");
         }
         else if(exer.equals("Swimming") || exer.equals("Rowing")){
+            insert1.setVisibility(View.INVISIBLE);
             Action.initializeTables();
             insert2.setHint("distance(m)");
         }
@@ -152,6 +154,7 @@ public class Exercise extends AppCompatActivity implements
             insert2.setHint("Reps to add");
         }
         else if(Arrays.asList(Cali).contains(exer)){
+            insert1.setVisibility(View.INVISIBLE);
             Action.initializeTables();
             insert2.setHint("Reps to add");
         }

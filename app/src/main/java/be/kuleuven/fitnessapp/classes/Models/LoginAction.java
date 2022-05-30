@@ -23,15 +23,15 @@ import org.json.JSONObject;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 
+import be.kuleuven.fitnessapp.classes.Abstract.ALog;
 import be.kuleuven.fitnessapp.classes.ActivityC.Login;
 
-public class LoginAction {
+public class LoginAction extends ALog{
     private String Username;
     private String Password;
     private Context LoginContext;
     private RequestQueue requestqueue;
     private boolean LoginInDB;
-
 
     public LoginAction(String username, String password, Context context){
         Username = username;
@@ -40,7 +40,7 @@ public class LoginAction {
         LoginContext = context;
         LoginInDB = false;
     }
-
+    @Override
     public String encryptPassword(String pw){
         String sha256hex = Hashing.sha256().hashString(pw, StandardCharsets.UTF_8).toString();
         System.out.println(sha256hex);
@@ -49,8 +49,9 @@ public class LoginAction {
 
     public interface LoginCallBack{
         void onSucces();
+        void onFail();
     }
-
+    @Override
     public void requestLogin(final LoginCallBack callBack){
         RequestQueue requestqueue = Volley.newRequestQueue(LoginContext);
         String requestURL = "https://studev.groept.be/api/a21pt213/SelectAllLogin";
@@ -70,7 +71,7 @@ public class LoginAction {
                                     return;
                                 }
                             }
-
+                            callBack.onFail();
                         }
                         catch( JSONException e ){
                             //display error message
