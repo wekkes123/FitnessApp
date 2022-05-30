@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -52,6 +53,12 @@ public class Categories extends AppCompatActivity {
         randomTip();
     }
 
+
+    public void logOut(View view){
+        Intent main = new Intent(this, Login.class);
+        startActivity(main);
+
+    }
 
     public void randomTip(){
         int i = ThreadLocalRandom.current().nextInt(0, tip.length);

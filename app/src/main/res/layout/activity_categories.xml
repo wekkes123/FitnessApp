@@ -166,8 +166,8 @@
         android:id="@+id/tips"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
         android:maxWidth="274dp"
+        app:layout_constraintBottom_toTopOf="@+id/button3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView8" />
@@ -203,5 +203,16 @@
         app:layout_constraintEnd_toEndOf="@+id/fourth_exercise"
         app:layout_constraintStart_toStartOf="@+id/fourth_exercise"
         app:layout_constraintTop_toBottomOf="@+id/fourth_exercise" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="4dp"
+        android:onClick="logOut"
+        android:text="@string/log_out"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

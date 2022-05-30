@@ -11,10 +11,10 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
+        android:gravity="center"
         android:text="@string/title"
         android:textSize="34sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintEnd_toStartOf="@+id/button"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"></TextView>
 
@@ -22,8 +22,8 @@
     <Spinner
         android:id="@+id/spinner"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="5dp"
         android:popupBackground="#3F4045"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/title_exercise" />
@@ -32,7 +32,7 @@
         android:id="@+id/scrollView2"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -439,7 +439,7 @@
     <Button
         android:id="@+id/button2"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:onClick="onUpdateButtonClicked"
         android:text="@string/update"
         app:layout_constraintEnd_toEndOf="parent"
@@ -450,8 +450,11 @@
     <EditText
         android:id="@+id/insert1"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginEnd="4dp"
+        android:background="@drawable/dashed"
         android:ems="10"
+        android:gravity="bottom|center_horizontal"
         android:inputType="numberDecimal"
         app:layout_constraintEnd_toStartOf="@+id/insert2"
         app:layout_constraintHorizontal_bias="0.5"
@@ -461,13 +464,16 @@
     <EditText
         android:id="@+id/insert2"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
+        android:background="@drawable/dashed"
         android:ems="10"
+        android:gravity="bottom|center_horizontal"
         android:inputType="numberDecimal|numberSigned"
         app:layout_constraintEnd_toStartOf="@+id/button2"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/insert1"
         app:layout_constraintTop_toBottomOf="@+id/spinner" />
+
 
     <TextView
         android:id="@+id/Title"
@@ -497,6 +503,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/placeholder" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:onClick="onGoBackClicked"
+        android:text="@string/go_back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -2,8 +2,11 @@ package be.kuleuven.fitnessapp.classes.ActivityC;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
+import android.content.Intent;
 import android.icu.text.CaseMap;
 import android.os.Bundle;
+import android.os.Vibrator;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -111,6 +114,12 @@ public class Exercise extends AppCompatActivity implements
         return ArToUse;
     }
 
+    public void onGoBackClicked(View view){
+        Intent Cat = new Intent(this, Categories.class);
+        startActivity(Cat);
+
+    }
+
     public void spinner(String[] Ex)
     {
         Spinner spin = (Spinner) findViewById(R.id.spinner);
@@ -150,8 +159,8 @@ public class Exercise extends AppCompatActivity implements
         }
         else if(Arrays.asList(Heav).contains(exer)){
             Action.initializeTables();
-            insert1.setHint("Weight(Kg)");
-            insert2.setHint("Reps to add");
+            insert1.setHint("Add Weight");
+            insert2.setHint("Add Reps");
         }
         else if(Arrays.asList(Cali).contains(exer)){
             insert1.setVisibility(View.INVISIBLE);
@@ -228,6 +237,8 @@ public class Exercise extends AppCompatActivity implements
 
 
     public void onUpdateButtonClicked(View caller) {
+        Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+        v.vibrate(50);
         Spinner spin = (Spinner) findViewById(R.id.spinner);
         String exer = spin.getSelectedItem().toString();
         if (insert2.getText().toString().equals(null)) {
@@ -327,7 +338,7 @@ public class Exercise extends AppCompatActivity implements
             case "Heavy Lifting": {
                     int standardWeight = 20;
                     tv1 = (TextView) findViewById(R.id.one_one);
-                    tv1.setText("Weight");
+                    tv1.setText("Weight(kg)");
                     tv1 = (TextView) findViewById(R.id.one_two);
                     tv1.setText("Reps");
 

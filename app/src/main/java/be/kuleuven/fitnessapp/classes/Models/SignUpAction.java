@@ -83,17 +83,13 @@ public class SignUpAction extends ASign {
                             boolean a = false;
                             for(int i = 0; i < responseArray.length(); i++){
                                 JSONObject curObject = responseArray.getJSONObject(i);
-                                System.out.println(curObject.getString("Username").toLowerCase() + username.toLowerCase());
                                 if(curObject.getString("Username").toLowerCase().equals(username.toLowerCase())){
-                                    System.out.println("yo");
                                     a = true;
                                     callBack.onFail();
                                     return;
                                 }
                             }
-                            //extra veiligheid met if kan later weg worden gehaald?
                             if(!a){
-                                System.out.println("yoo");
                                 callBack.onSucces();
                             }
                         }
