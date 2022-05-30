@@ -96,7 +96,6 @@ public class SignUpAction extends ASign {
                                 System.out.println("yoo");
                                 callBack.onSucces();
                             }
-
                         }
                         catch( JSONException e ){
                             //display error message
