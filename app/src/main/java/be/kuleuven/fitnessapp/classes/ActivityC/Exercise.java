@@ -150,12 +150,12 @@ public class Exercise extends AppCompatActivity implements
         if(exer.equals("Running") || exer.equals("Biking")){
             Action.initializeTables();
             insert1.setVisibility(View.INVISIBLE);
-            insert2.setHint("distance(km)");
+            insert2.setHint("Add km's");
         }
         else if(exer.equals("Swimming") || exer.equals("Rowing")){
             insert1.setVisibility(View.INVISIBLE);
             Action.initializeTables();
-            insert2.setHint("distance(m)");
+            insert2.setHint("Add m's");
         }
         else if(Arrays.asList(Heav).contains(exer)){
             Action.initializeTables();
@@ -165,7 +165,7 @@ public class Exercise extends AppCompatActivity implements
         else if(Arrays.asList(Cali).contains(exer)){
             insert1.setVisibility(View.INVISIBLE);
             Action.initializeTables();
-            insert2.setHint("Reps to add");
+            insert2.setHint("Add Reps");
         }
         else if(title.equals("Stretches")){
             titleText.setText(exer);

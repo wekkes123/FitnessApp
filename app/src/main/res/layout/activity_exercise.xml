@@ -21,10 +21,14 @@
 
     <Spinner
         android:id="@+id/spinner"
-        android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:layout_marginTop="5dp"
+        android:layout_width="0dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="2dp"
+        android:gravity="center"
         android:popupBackground="#3F4045"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/title_exercise" />
 
@@ -440,6 +444,7 @@
         android:id="@+id/button2"
         android:layout_width="0dp"
         android:layout_height="40dp"
+        android:layout_marginTop="2dp"
         android:onClick="onUpdateButtonClicked"
         android:text="@string/update"
         app:layout_constraintEnd_toEndOf="parent"
@@ -451,10 +456,12 @@
         android:id="@+id/insert1"
         android:layout_width="0dp"
         android:layout_height="40dp"
-        android:layout_marginEnd="4dp"
-        android:background="@drawable/dashed"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="2dp"
+        android:background="@drawable/rect"
         android:ems="10"
-        android:gravity="bottom|center_horizontal"
+        android:gravity="center"
         android:inputType="numberDecimal"
         app:layout_constraintEnd_toStartOf="@+id/insert2"
         app:layout_constraintHorizontal_bias="0.5"
@@ -465,9 +472,11 @@
         android:id="@+id/insert2"
         android:layout_width="0dp"
         android:layout_height="40dp"
-        android:background="@drawable/dashed"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="2dp"
+        android:background="@drawable/rect"
         android:ems="10"
-        android:gravity="bottom|center_horizontal"
+        android:gravity="center"
         android:inputType="numberDecimal|numberSigned"
         app:layout_constraintEnd_toStartOf="@+id/button2"
         app:layout_constraintHorizontal_bias="0.5"
@@ -513,6 +522,16 @@
         android:text="@string/go_back"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/rect"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/rect"
+        app:layout_constraintBottom_toBottomOf="@+id/spinner"
+        app:layout_constraintEnd_toEndOf="@+id/spinner"
+        app:layout_constraintStart_toStartOf="@+id/spinner"
+        app:layout_constraintTop_toTopOf="@+id/spinner" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
