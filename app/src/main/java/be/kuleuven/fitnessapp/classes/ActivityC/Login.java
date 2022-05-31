@@ -61,6 +61,12 @@ public class Login extends AppCompatActivity {
             public void onSucces() {
                 LoginSuccesfull();
             }
+
+            @Override
+            public void onFail() {
+                TextView tv5 = (TextView) findViewById(R.id.textView9);
+                tv5.setVisibility(View.VISIBLE);
+            }
         });
     }
 

@@ -35,4 +35,8 @@
     <string name="Strech7">Kneel on your left knee. Place your right foot flat on the floor in front of you, knee bent.\n\nLean forward, stretching your left hip toward the floor.\n\nSqueeze your butt; this will allow you to stretch your hip flexor even more.\n\nHold for 30 seconds to 2 minutes.\n\nSwitch sides and repeat.</string>
     <string name="insert_playlist_link_and_update">Insert playlist link and Update!</string>
     <string name="click_one_of_the_catagories_to_update_your_data">Click one of the catagories to update your data!</string>
+    <string name="invalid_username_or_password"><b>Invalid username or password</b></string>
+    <string name="go_back">Go Back</string>
+    <string name="log_out">Log Out</string>
+    <string name="current_selection">Current selection:</string>
 </resources>

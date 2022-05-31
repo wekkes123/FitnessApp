@@ -13,9 +13,10 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import be.kuleuven.fitnessapp.classes.Abstract.AEx;
 import be.kuleuven.fitnessapp.classes.ActivityC.Exercise;
 
-public class ExersizeAction {
+public class ExersizeAction extends AEx {
     private Context ExersizeC;
     private String Username;
     private String Title;
@@ -28,6 +29,7 @@ public class ExersizeAction {
         ExersizeC = context;
     }
 
+    @Override
     public void initializeTables(){
         //exercise.ShowLoadingPopup();
         if(Title.equals("Streches")){
@@ -55,72 +57,7 @@ public class ExersizeAction {
         void onSucces();
     }
 
-    public void checkForTables(final ExersizeAction.ECallback callBack, String exr){
-        RequestQueue requestqueue = Volley.newRequestQueue(ExersizeC);
-        String requestURL = "https://studev.groept.be/api/a21pt213/SelectExersizeUsernames/" + exr;
-
-        StringRequest submitRequest = new StringRequest(Request.Method.GET, requestURL,
-
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        try {
-                            JSONArray responseArray = new JSONArray(response);
-                            for(int i = 0; i < responseArray.length(); i++) {
-                                JSONObject curObject = responseArray.getJSONObject(i);
-                                if (curObject.getString("Username").equals(Username)) {
-                                    callBack.onSucces();
-                                }
-                            }
-                            callBack.onFail();
-                        }
-                        catch( JSONException e ){
-                            //display error message
-                        }
-                    }
-                },
-
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        System.out.print("error");
-                    }
-                }
-        );
-        requestqueue.add(submitRequest);
-    }
-
-    public void InsertWeight(final ExersizeAction.ECallback2 callBack,String oef, String Weight, int Reps){
-        RequestQueue requestqueue = Volley.newRequestQueue(ExersizeC);
-
-        String requestURL = "https://studev.groept.be/api/a21pt213/InsertWeigth/" + Username + "/" + oef + "/" + Weight + "/" + Reps;
-
-        StringRequest submitRequest = new StringRequest(Request.Method.GET, requestURL,
-
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        try {
-                            JSONArray responseArray = new JSONArray(response);
-
-                            callBack.onSucces();
-                        }
-                        catch( JSONException e ){
-                            //display error message
-                        }
-                    }
-                },
-
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        System.out.print("error");
-                    }
-                }
-        );
-        requestqueue.add(submitRequest);
-    }
-
+    @Override
     public void selectExercise(final ExersizeAction.ECallback3 callBack, String Ex){
         RequestQueue requestqueue = Volley.newRequestQueue(ExersizeC);
         String requestURL = "https://studev.groept.be/api/a21pt213/SelectUserEx/" + Username + "/" + Ex;
@@ -151,36 +88,7 @@ public class ExersizeAction {
         requestqueue.add(submitRequest);
     }
 
-    public void getExactReps(final ExersizeAction.ECallback2 callBack, String Ex, String Weight){
-        RequestQueue requestqueue = Volley.newRequestQueue(ExersizeC);
-        String requestURL = "https://studev.groept.be/api/a21pt213/getExactReps/" + Username + "/" + Ex + "/" + Weight;
-
-        StringRequest submitRequest = new StringRequest(Request.Method.GET, requestURL,
-
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        try {
-                            JSONArray responseArray = new JSONArray(response);
-
-                            callBack.onSucces();
-                        }
-                        catch( JSONException e ){
-                            //display error message
-                        }
-                    }
-                },
-
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        System.out.print("error");
-                    }
-                }
-        );
-        requestqueue.add(submitRequest);
-    }
-
+    @Override
     public void setExactReps(final ExersizeAction.ECallback2 callBack, String Ex, String Weight, int rep){
         RequestQueue requestqueue = Volley.newRequestQueue(ExersizeC);
         String requestURL = "https://studev.groept.be/api/a21pt213/SetExactReps/"+ rep + "/" + Username + "/" + Ex; /*+ "/" + Weight;*/
@@ -210,6 +118,7 @@ public class ExersizeAction {
         requestqueue.add(submitRequest);
     }
 
+    @Override
     public void setReps(final ExersizeAction.ECallback2 callBack, String Ex, String Weight, int rep){
         RequestQueue requestqueue = Volley.newRequestQueue(ExersizeC);
         String requestURL = "https://studev.groept.be/api/a21pt213/SetReps/"+ rep + "/" + Username + "/" + Ex + "/" + Weight;
@@ -238,6 +147,4 @@ public class ExersizeAction {
         );
         requestqueue.add(submitRequest);
     }
-
-
 }
