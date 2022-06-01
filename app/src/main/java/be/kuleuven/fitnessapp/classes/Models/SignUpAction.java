@@ -66,7 +66,7 @@ public class SignUpAction extends ASign {
 
     @Override
     public void requestSignUpValidation(final SignUpAction.SignUpCallBack callBack){
-        if(!username.matches("[a-zA-Z0-9]*")){
+        if(!username.matches("[a-zA-Z0-9]*") || username.equals("")){
             callBack.onFail();
             return;
         }
