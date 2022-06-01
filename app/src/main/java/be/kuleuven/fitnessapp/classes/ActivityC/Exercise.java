@@ -85,8 +85,6 @@ public class Exercise extends AppCompatActivity implements
     this.strechText = (TextView) findViewById(R.id.strechText);
     this.update = (Button) findViewById(R.id.button2);
     this.showcase = (ImageView) findViewById(R.id.showcase);
-    //Als dit hier niet staat dan kan de app crashen bij het initalizeren van de cardio tables omdat de variable niet snel genoeg
-    //wordt aangemaak door dit hier early te zetten gebeurt dit nooit
     exercise = "Running";
     //
     //initiate variables
@@ -149,7 +147,6 @@ public class Exercise extends AppCompatActivity implements
     }
 
     public void onNothingSelected(AdapterView<?> adapterView) {
-        // Auto-generated method stub
     }
 
     public void setInserts(){

@@ -31,7 +31,6 @@ public class ExersizeAction extends AEx {
 
     @Override
     public void initializeTables(){
-        //exercise.ShowLoadingPopup();
         if(Title.equals("Streches")){
             return;
         }
@@ -78,7 +77,7 @@ public class ExersizeAction extends AEx {
     @Override
     public void setExactReps(final ExersizeAction.ECallback2 callBack, String Ex, String Weight, int rep){
         RequestQueue requestqueue = Volley.newRequestQueue(ExersizeC);
-        String requestURL = "https://studev.groept.be/api/a21pt213/SetExactReps/"+ rep + "/" + Username + "/" + Ex; /*+ "/" + Weight;*/
+        String requestURL = "https://studev.groept.be/api/a21pt213/SetExactReps/"+ rep + "/" + Username + "/" + Ex;
 
         StringRequest submitRequest = new StringRequest(Request.Method.GET, requestURL,
 

@@ -43,27 +43,6 @@ public class SignUpAction extends ASign {
         return URL;
     }
 
-    public interface SignUpCallBack{
-        void onSucces();
-        void onFail();
-    }
-
-    public interface SignUpToDB{
-        void Succes();
-    }
-
-    public interface cardio{
-        void Succes();
-    }
-
-    public interface heavy{
-        void Succes();
-    }
-
-    public interface cali{
-        void Succes();
-    }
-
     @Override
     public void requestSignUpValidation(final SignUpAction.SignUpCallBack callBack){
         if(!username.matches("[a-zA-Z0-9]*") || username.equals("")){
@@ -194,5 +173,26 @@ public class SignUpAction extends ASign {
                            -> makeEmptyHeavyDeadlift(()
                            -> makeEmptyHeavyCali(()
                            -> {})))));
+    }
+
+    public interface SignUpCallBack{
+        void onSucces();
+        void onFail();
+    }
+
+    public interface SignUpToDB{
+        void Succes();
+    }
+
+    public interface cardio{
+        void Succes();
+    }
+
+    public interface heavy{
+        void Succes();
+    }
+
+    public interface cali{
+        void Succes();
     }
 }
