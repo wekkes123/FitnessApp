@@ -70,6 +70,7 @@ public class SignUpAction extends ASign {
             callBack.onFail();
             return;
         }
+
         RequestQueue requestqueue = Volley.newRequestQueue(SignUpContext);
         String requestURL = "https://studev.groept.be/api/a21pt213/SelectAll";
 
