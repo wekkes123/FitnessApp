@@ -36,12 +36,7 @@ public class ExersizeAction extends AEx {
             return;
         }
         String exs = exercise.getEX();
-        selectExercise(new ECallback3() {
-            @Override
-            public void onSucces() {
-
-            }
-        }, exs);
+        selectExercise(() -> {}, exs);
     }
 
     public interface ECallback{
@@ -64,26 +59,18 @@ public class ExersizeAction extends AEx {
 
         StringRequest submitRequest = new StringRequest(Request.Method.GET, requestURL,
 
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        try {
-                            JSONArray responseArray = new JSONArray(response);
-                            exercise.FillTables(responseArray);
-                            callBack.onSucces();
-                        }
-                        catch( JSONException e ){
-                            //display error message
-                        }
+                response -> {
+                    try {
+                        JSONArray responseArray = new JSONArray(response);
+                        exercise.FillTables(responseArray);
+                        callBack.onSucces();
+                    }
+                    catch( JSONException e ){
+                        //display error message
                     }
                 },
 
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        System.out.print("error");
-                    }
-                }
+                error -> System.out.print("error")
         );
         requestqueue.add(submitRequest);
     }
@@ -95,25 +82,11 @@ public class ExersizeAction extends AEx {
 
         StringRequest submitRequest = new StringRequest(Request.Method.GET, requestURL,
 
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        try {
-                            JSONArray responseArray = new JSONArray(response);
-                            callBack.onSucces();
-                        }
-                        catch( JSONException e ){
-                            //display error message
-                        }
-                    }
+                response -> {
+                        callBack.onSucces();
                 },
 
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        System.out.print("error");
-                    }
-                }
+                error -> System.out.print("error")
         );
         requestqueue.add(submitRequest);
     }
@@ -125,25 +98,11 @@ public class ExersizeAction extends AEx {
 
         StringRequest submitRequest = new StringRequest(Request.Method.GET, requestURL,
 
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        try {
-                            JSONArray responseArray = new JSONArray(response);
-                            callBack.onSucces();
-                        }
-                        catch( JSONException e ){
-                            //display error message
-                        }
-                    }
+                response -> {
+                        callBack.onSucces();
                 },
 
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        System.out.print("error");
-                    }
-                }
+                error -> System.out.print("error")
         );
         requestqueue.add(submitRequest);
     }
