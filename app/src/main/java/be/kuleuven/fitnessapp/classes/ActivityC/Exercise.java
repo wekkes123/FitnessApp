@@ -1,10 +1,15 @@
 package be.kuleuven.fitnessapp.classes.ActivityC;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Person;
 import android.content.Context;
 import android.content.Intent;
 import android.icu.text.CaseMap;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Vibrator;
 import android.view.View;
@@ -25,7 +30,13 @@ import org.json.JSONObject;
 import org.w3c.dom.Text;
 
 import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
+import java.util.ListIterator;
+import java.util.stream.IntStream;
 
 import be.kuleuven.fitnessapp.R;
 import be.kuleuven.fitnessapp.classes.Models.ExersizeAction;
@@ -34,14 +45,12 @@ import be.kuleuven.fitnessapp.classes.Models.ExersizeAction;
 
 public class Exercise extends AppCompatActivity implements
         AdapterView.OnItemSelectedListener {
-
     String[] Card = {"Running", "Swimming", "Biking", "Rowing"};
     String[] Heav = {"Bench", "Squad", "Deadlift"};
     String[] Cali = {"Pushups", "Pullups", "Planking","Muscle up", "Handstand Push-Ups","Box Jumps", "1 Legged Squads"};
     String[] Stret = {"Why strech?","Lower back", "Triceps","Biceps","Shoulders","Hamstrings","Quads and Glutes"};
     String[] StringNumbers = {"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen", "twenty"};
     int[] IntNumbers = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20};
-
 
     public String title;
     private TextView tv1;
@@ -124,7 +133,7 @@ public class Exercise extends AppCompatActivity implements
         Spinner spin = (Spinner) findViewById(R.id.spinner);
         spin.setOnItemSelectedListener(this);
 
-        //Creating the ArrayAdapter instance having the country list
+        //Creating the ArrayAdapter instance having the list
         ArrayAdapter aa = new ArrayAdapter(this, android.R.layout.simple_spinner_item, Ex);
         aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         //Setting the ArrayAdapter data on the Spinner
@@ -262,12 +271,7 @@ public class Exercise extends AppCompatActivity implements
             }
             int newKm = km + km2;
             if(newKm<0){newKm = 0;};
-            Action.setExactReps(new ExersizeAction.ECallback2() {
-                @Override
-                public void onSucces() {
-                    Action.initializeTables();
-                }
-            }, exer,"Total_km", newKm);
+            Action.setExactReps(() -> Action.initializeTables(), exer,"Total_km", newKm);
         }
 
 
@@ -278,10 +282,7 @@ public class Exercise extends AppCompatActivity implements
             }
             catch (NumberFormatException ex){}
             int newReps = getReps(insert1.getText().toString()) + w2;
-            Action.setReps(new ExersizeAction.ECallback2() {
-                @Override
-                public void onSucces() {Action.initializeTables();}
-            }, exer,insert1.getText().toString(), newReps);
+            Action.setReps(() -> Action.initializeTables(), exer,insert1.getText().toString(), newReps);
 
         }
         else if (Arrays.asList(Cali).contains(exer)) {
@@ -302,15 +303,9 @@ public class Exercise extends AppCompatActivity implements
             }
             int newKm = rep + rep2;
             if(newKm<0){newKm = 0;};
-            Action.setExactReps(new ExersizeAction.ECallback2() {
-                @Override
-                public void onSucces() {
-                    Action.initializeTables();
-                }
-            }, exer,"reps", newKm);
+            Action.setExactReps(() -> Action.initializeTables(), exer,"reps", newKm);
         }
     }
-
 
 
 
@@ -341,7 +336,7 @@ public class Exercise extends AppCompatActivity implements
                     tv1 = (TextView) findViewById(R.id.one_two);
                     tv1.setText("Reps");
 
-                    for (int i = 2; i <= 18; i++) {
+              for (int i = 2; i <= 18; i++) {
                         String name = getID(i, 1);
                         int id = getResources().getIdentifier(name, "id", this.getPackageName());
                         if (id != 0) {
@@ -383,8 +378,5 @@ public class Exercise extends AppCompatActivity implements
         } catch (JSONException e) {System.out.println("error e");}
 
     }
-
-
-
 }
 

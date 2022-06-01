@@ -46,12 +46,9 @@ public class SignUpScreen extends AppCompatActivity {
         signup.requestSignUpValidation(new SignUpAction.SignUpCallBack() {
             @Override
             public void onSucces() {
-                signup.requestSignUpToDB(new SignUpAction.SignUpToDB() {
-                    @Override
-                    public void Succes() {
-                        signup.makeEmptytables();
-                        showPopupWindow(caller, false);
-                    }
+                signup.requestSignUpToDB(() -> {
+                    signup.makeEmptytables();
+                    showPopupWindow(caller, false);
                 });
             }
 
@@ -90,9 +87,9 @@ public class SignUpScreen extends AppCompatActivity {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 popupWindow.dismiss();
-                if(!fail){
+                if (!fail) {
                     Intent backLogin = new Intent(SignUpScreen.this, Login.class);
-                    startActivity(backLogin);
+                    SignUpScreen.this.startActivity(backLogin);
                 }
                 return true;
             }

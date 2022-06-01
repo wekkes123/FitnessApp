@@ -75,36 +75,27 @@ public class SignUpAction extends ASign {
 
         StringRequest submitRequest = new StringRequest(Request.Method.GET, requestURL,
 
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        try {
-                            JSONArray responseArray = new JSONArray(response);
-                            boolean a = false;
-                            for(int i = 0; i < responseArray.length(); i++){
-                                JSONObject curObject = responseArray.getJSONObject(i);
-                                if(curObject.getString("Username").toLowerCase().equals(username.toLowerCase())){
-                                    a = true;
-                                    callBack.onFail();
-                                    return;
-                                }
-                            }
-                            if(!a){
-                                callBack.onSucces();
+                response -> {
+                    try {
+                        JSONArray responseArray = new JSONArray(response);
+                        boolean a = false;
+                        for(int i = 0; i < responseArray.length(); i++){
+                            JSONObject curObject = responseArray.getJSONObject(i);
+                            if(curObject.getString("Username").toLowerCase().equals(username.toLowerCase())){
+                                a = true;
+                                callBack.onFail();
+                                return;
                             }
                         }
-                        catch( JSONException e ){
-                            //display error message
+                        if(!a){
+                            callBack.onSucces();
                         }
+                    }
+                    catch( JSONException e ){
+                        //display error message
                     }
                 },
-
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        System.out.print("error");
-                    }
-                }
+                error -> System.out.print("error")
         );
         requestqueue.add(submitRequest);
     }
@@ -115,26 +106,11 @@ public class SignUpAction extends ASign {
 
         StringRequest submitRequest = new StringRequest(Request.Method.GET, requestURL,
 
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        try {
-                            JSONArray responseArray = new JSONArray(response);
-                            callBack.Succes();
-                        }
-
-                        catch( JSONException e ){
-                            //display error message
-                        }
-                    }
+                response -> {
+                        callBack.Succes();
                 },
 
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        System.out.print("error");
-                    }
-                }
+                error -> System.out.print("error")
         );
         requestqueue.add(submitRequest);
     }
@@ -145,26 +121,9 @@ public class SignUpAction extends ASign {
 
         StringRequest submitRequest = new StringRequest(Request.Method.GET, requestURL,
 
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        try {
-                            JSONArray responseArray = new JSONArray(response);
-                            callBack.Succes();
-                        }
+                response -> callBack.Succes(),
 
-                        catch( JSONException e ){
-                            //display error message
-                        }
-                    }
-                },
-
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        System.out.print("error");
-                    }
-                }
+                error -> System.out.print("error")
         );
         requestqueue.add(submitRequest);
     }
@@ -175,26 +134,11 @@ public class SignUpAction extends ASign {
 
         StringRequest submitRequest = new StringRequest(Request.Method.GET, requestURL,
 
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        try {
-                            JSONArray responseArray = new JSONArray(response);
-                            callBack.Succes();
-                        }
-
-                        catch( JSONException e ){
-                            //display error message
-                        }
-                    }
+                response -> {
+                        callBack.Succes();
                 },
 
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        System.out.print("error");
-                    }
-                }
+                error -> System.out.print("error")
         );
         requestqueue.add(submitRequest);
     }
@@ -205,26 +149,11 @@ public class SignUpAction extends ASign {
 
         StringRequest submitRequest = new StringRequest(Request.Method.GET, requestURL,
 
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        try {
-                            JSONArray responseArray = new JSONArray(response);
-                            callBack.Succes();
-                        }
-
-                        catch( JSONException e ){
-                            //display error message
-                        }
-                    }
+                response -> {
+                        callBack.Succes();
                 },
 
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        System.out.print("error");
-                    }
-                }
+                error -> System.out.print("error")
         );
         requestqueue.add(submitRequest);
     }
@@ -235,26 +164,11 @@ public class SignUpAction extends ASign {
 
         StringRequest submitRequest = new StringRequest(Request.Method.GET, requestURL,
 
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        try {
-                            JSONArray responseArray = new JSONArray(response);
-                            callBack.Succes();
-                        }
-
-                        catch( JSONException e ){
-                            //display error message
-                        }
-                    }
+                response -> {
+                        callBack.Succes();
                 },
 
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        System.out.print("error");
-                    }
-                }
+                error -> System.out.print("error")
         );
         requestqueue.add(submitRequest);
     }
@@ -265,56 +179,19 @@ public class SignUpAction extends ASign {
 
         StringRequest submitRequest = new StringRequest(Request.Method.GET, requestURL,
 
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        try {
-                            JSONArray responseArray = new JSONArray(response);
-                            callBack.Succes();
-                        }
-
-                        catch( JSONException e ){
-                            //display error message
-                        }
-                    }
+                response -> {
+                        callBack.Succes();
                 },
-
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        System.out.print("error");
-                    }
-                }
+                error -> System.out.print("error")
         );
         requestqueue.add(submitRequest);
     }
     @Override
     public void makeEmptytables(){
-        makeEmptyCardio(new cardio() {
-            @Override
-            public void Succes() {
-                makeEmptyHeavyBench(new heavy() {
-                    @Override
-                    public void Succes() {
-                        makeEmptyHeavySquad(new heavy() {
-                            @Override
-                            public void Succes() {
-                                makeEmptyHeavyDeadlift(new heavy() {
-                                    @Override
-                                    public void Succes() {
-                                        makeEmptyHeavyCali(new cali() {
-                                            @Override
-                                            public void Succes() {
-
-                                            }
-                                        });
-                                    }
-                                });
-                            }
-                        });
-                    }
-                });
-            }
-        });
+        makeEmptyCardio(() -> makeEmptyHeavyBench(()
+                           -> makeEmptyHeavySquad(()
+                           -> makeEmptyHeavyDeadlift(()
+                           -> makeEmptyHeavyCali(()
+                           -> {})))));
     }
 }

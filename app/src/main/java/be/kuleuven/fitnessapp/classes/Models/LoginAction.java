@@ -58,33 +58,25 @@ public class LoginAction extends ALog{
 
         StringRequest submitRequest = new StringRequest(Request.Method.GET, requestURL,
 
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        try {
-                            JSONArray responseArray = new JSONArray(response);
-                            for(int i = 0; i < responseArray.length(); i++){
-                                JSONObject curObject = responseArray.getJSONObject(i);
-                                if(curObject.getString("Username").equals(Username) && curObject.getString("Password").equals(Password)){
-                                    //System.out.println("true");
-                                    callBack.onSucces();
-                                    return;
-                                }
+                response -> {
+                    try {
+                        JSONArray responseArray = new JSONArray(response);
+                        for(int i = 0; i < responseArray.length(); i++){
+                            JSONObject curObject = responseArray.getJSONObject(i);
+                            if(curObject.getString("Username").equals(Username) && curObject.getString("Password").equals(Password)){
+                                //System.out.println("true");
+                                callBack.onSucces();
+                                return;
                             }
-                            callBack.onFail();
                         }
-                        catch( JSONException e ){
-                            //display error message
-                        }
+                        callBack.onFail();
+                    }
+                    catch( JSONException e ){
+                        //display error message
                     }
                 },
 
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        System.out.print("error");
-                    }
-                }
+                error -> System.out.print("error")
         );
         requestqueue.add(submitRequest);
     }
